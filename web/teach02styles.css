@@ -3,16 +3,16 @@ div:hover {
 }
 
 #div1 {
-	font-size: 25;
+	font-size: 1em;
 	background-color: red;
 }
 
 #div2 {
-	font-size: 35;
+	font-size: 2em;
 	background-color: blue;
 }
 
 #div3 {
-	font-size: 45;
+	font-size: 3em;
 	background-color: green;
 }
