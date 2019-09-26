@@ -10,7 +10,7 @@ function changeColor() {
 $(document).ready(function() {
 	$("#button2").click(function() {
 
-		var x = $("color").val();
+		var x = $("#color").val();
 
 		$("#div1").css("background-color", x);
 
