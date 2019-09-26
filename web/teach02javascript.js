@@ -4,5 +4,5 @@ function showAlert() {
 
 function changeColor() {
 	var x = document.getElementById("color").value;
-	document.getElementById("div1").style.color = x;
+	document.getElementById("div1").style.backgroundColor = x;
 }
