@@ -12,4 +12,7 @@ $(document).ready(function() {
 		var x = $("#color").val();
 		$("#div1").css("background-color", x);
 	})
+	$("#button3").click(function() {
+		$("#div3").fadeToggle("slow");
+	})
 });
