@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 		var x = $("color").val();
 
-		$("#div1").css("backgroundColor", x);
+		$("#div1").css("background-color", x);
 
 	})
 });
