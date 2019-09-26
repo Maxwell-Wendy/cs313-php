@@ -9,8 +9,10 @@ function changeColor() {
 
 $(document).ready(function() {
 	$("#button2").click(function() {
-		
-		$("#div1").css("backgroundColor", $("#color").val());
+
+		var x = $("color").val();
+
+		$("#div1").css("backgroundColor", x);
 
 	})
 });
