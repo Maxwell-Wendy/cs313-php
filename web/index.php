@@ -42,7 +42,7 @@
 
 	<?php
 
-	echo "It is currently " . date(l \, j M Y h:i a T) . "<br>";
+	echo "It is currently " .date(l j M Y h:i a T) . "<br>";
 
 	?>
 
