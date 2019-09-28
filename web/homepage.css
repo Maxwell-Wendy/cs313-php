@@ -2,20 +2,28 @@ div {
 	background-color: #d1bcc9;
 	font-size: 1.5em;
 	margin: 25px;
-	justify-content: center;
-}
+	padding: 10px;
 
 h1 {
-	justify-content: center;
+	text-align: center;
 	font-style: italic;
 }
 
 a {
 
-	justify-content: right;
+	text-align: right;
 }
 
 #div_intro {
 	background-color: #d1bcc9;
 	font-size: 1.5em;
 }
+
+#pademelon {
+	background-color: #b0e0e6;
+}
+
+#cliff {
+	background-color: #f5deb3;
+}
+
