@@ -1,5 +1,5 @@
 div {
-	background-color: #d1bcc9;
+	
 	font-size: 1.5em;
 	margin: 25px;
 	padding: 10px;
@@ -25,5 +25,9 @@ a {
 
 #cliff {
 	background-color: #f5deb3;
+}
+
+#wombat {
+	background-color: #b0e0e6;
 }
 
