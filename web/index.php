@@ -15,7 +15,7 @@
 
 <body>
 
-	<a href="assignments.php">Access Links to Assignments</a>
+	<a class="assignments" href="assignments.php">Access Links to Assignments</a>
 
 	<h1>Beautiful Tasmania</h1>
 
@@ -23,21 +23,24 @@
 		<p>If you ever get the chance to visit Tasmania, Australia, Cradle Mountain is a beautiful destination! This photo was taken at sunset in July of 2019. Yes, that is snow on the mountain because July is in the middle of winter in the Southern Hemisphere. The following pictures are from a trip my husband and I look to Tasmania to celbrate our 30th wedding anniversary. We had a fantastic and very memorable trip!</p>
 		<img src="cradlemountain_sunset.jpeg" class="rounded img-fluid" alt="Cradle Mountain at sunset">
 	</div>
-	<br>
+	
 	<div id="pademelon">
-		<p>This little pademelon was near the cabin where we stayed. A pademelon is a marsupial that looks like a small kangaroo. They are very prevalent in Tasmania.</p>
-		<img src="pademelon.jpeg" class="rounded-circle img-fluid" alt="Pademelon in the headlights">
+		<p>This little <span id="pademelon_info">pademelon<span id="pademelon_text">The Tasmanian pademelon is also known as the red-bellied padamelon and is the only species of pademelon native to Tasmania.</span> </span> was near the cabin where we stayed. A pademelon is a marsupial that looks like a small kangaroo. They are very prevalent in Tasmania.</p>
+		<img src="pademelon.jpeg" id="pademelon_pic" class="rounded-circle img-fluid" alt="Pademelon in the headlights">
 	</div>
-	<br>
+	
 	<div id="cliff">
 		<p>The scenery is stunning!</p>
 		<img src="cliff.jpeg" class="rounded img-fluid" alt="Cliff with clouds">
 	</div>
-	<br>
+	
 	<div id="wombat">
 		<p>We were only there for a few days, but we saw wildlife every day. Here is a wombat taking a stroll across the road.</p>
 		<img src="wombat.jpeg" class="rounded-circle img-fluid" alt="Wombat crossing the road">
 	</div>
+
+	<div id="summary">
+		We had a great adventure! If you ever get the chance, Tasmania is a great vacation destination!
  
 
 

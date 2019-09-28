@@ -9,7 +9,7 @@ h1 {
 	font-style: italic;
 }
 
-a {
+.assignments {
 	text-align: right;
 }
 
@@ -28,4 +28,35 @@ a {
 #wombat {
 	background-color: #b0c4de;
 }
+
+#summary {
+	background-color: #d1bcc9;
+}
+
+#pademelon_info {
+	border-bottom: 1px dotted black;
+}
+
+#pademelon_info #pademelon_text {
+	visibility: hidden;
+	width: 180px;
+	background-color: yellow;
+	color: black;
+	text-align: center;
+	padding: 5px 0;
+
+	position: absolute;
+	z-index: 1;
+	bottom: 100%
+	left: 50%;
+	margin-left: -90px;
+}
+
+#pademelon_info:hover #pademelon_text {
+	visibility: visible;
+}
+
+
+
+
 
