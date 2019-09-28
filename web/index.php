@@ -42,7 +42,7 @@
 
 	<div>
 		<?php
-		echo "It is currently " . date("l\, j M Y\, h:i:s T") . "in Melbourne, Australia.<br>";
+		echo "It is currently " . date("l\, j M Y\, h:i:s T") . " in Melbourne, Australia.<br>";
 		?>
 		<a href="assignments.php">Access Links to Assignments</a>
 	</div>
