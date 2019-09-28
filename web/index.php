@@ -42,7 +42,7 @@
 
 	<?php
 
-	echo "It is currently " .date() . "<br>";
+	echo "It is currently " .date(DATE_RFC2822) . "<br>";
 
 	?>
 

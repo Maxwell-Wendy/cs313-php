@@ -15,5 +15,7 @@
 
 	<p>More Coming Soon!</p>
 
+	<a href="index.php">Back to homepage</a>
+
 </body>
 </html>
