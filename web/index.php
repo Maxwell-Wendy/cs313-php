@@ -14,13 +14,10 @@
 </head>
 
 <body>
-
-	<a class="assignments" href="assignments.php">Access Links to Assignments</a>
-
 	<h1>Beautiful Tasmania</h1>
 
 	<div id="div_intro">
-		<p>If you ever get the chance to visit Tasmania, Australia, Cradle Mountain is a beautiful destination! This photo was taken at sunset in July of 2019. Yes, that is snow on the mountain because July is in the middle of winter in the Southern Hemisphere. The following pictures are from a trip my husband and I look to Tasmania to celbrate our 30th wedding anniversary. We had a fantastic and very memorable trip!</p>
+		<p>If you ever get the chance to visit Tasmania, Australia, <span id="cradle_mountain">Cradle Mountain<span id="cradle_mountain_text">This view of Cradle Mountain can be reached by driving to Lake Dove in the Cradle Mountain-Lake St Clair National Park. Gorgeous!</span></span> is a beautiful destination! This photo was taken at sunset in July of 2019. Yes, that is snow on the mountain because July is in the middle of winter in the Southern Hemisphere. The following pictures are from a trip my husband and I look to Tasmania to celbrate our 30th wedding anniversary. We had a fantastic and very memorable trip!</p>
 		<img src="cradlemountain_sunset.jpeg" class="rounded img-fluid" alt="Cradle Mountain at sunset">
 	</div>
 	
@@ -41,7 +38,15 @@
 
 	<div id="summary">
 		We had a great adventure! If you ever get the chance, Tasmania is a great vacation destination!
- 
+	</div>
+
+	<?php
+
+	echo "It is currently " .date() . "<br>";
+
+	?>
+
+	<a href="assignments.php">Access Links to Assignments</a>
 
 
 </body>

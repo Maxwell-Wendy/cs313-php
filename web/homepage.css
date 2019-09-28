@@ -40,7 +40,7 @@ h1 {
 #pademelon_info #pademelon_text {
 	visibility: hidden;
 	width: 240px;
-	background-color: #b0e0e6;
+	background-color: #d1bcc9;
 	color: black;
 	text-align: center;
 	font-size: .75em;
@@ -56,6 +56,36 @@ h1 {
 #pademelon_info:hover #pademelon_text {
 	visibility: visible;
 }
+
+#cradle_mountain {
+	border-bottom: 1px dotted black;
+}
+
+#cradle_mountain #cradle_mountain_text {
+	visibility: hidden;
+	width: 240px;
+	background-color: #b0e0e6;
+	color: black;
+	text-align: center;
+	font-size: .75em;
+	padding: 3px 0;
+
+	position: absolute;
+	z-index: 1;
+	bottom: 100%
+	left: 50%;
+	margin-left: -120px;
+}
+
+#cradle_mountain:hover #cradle_mountain_text {
+	visibility: visible;
+}
+
+
+
+
+
+
 
 
 
