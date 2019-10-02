@@ -12,7 +12,7 @@ echo "<br>";
 echo $_POST["comment"];
 echo "<br>";
 echo "Your continents are: <br>";
-$continents() = $_POST["continent[]"];
+$continents = $_POST["continent"];
 
 foreach ($continents as $value) {
 	echo "$value <br>";
