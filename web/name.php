@@ -13,9 +13,8 @@ echo $_POST["comment"];
 echo "<br>";
 echo "Your continents are: <br>";
 $continents = $_POST["continent"];
-
-foreach ($continents as $value) {
-	echo "$value <br>";
+foreach ($continents as $x => $x_value) {
+    echo $x_value." <br>";
 }
 
 ?>
