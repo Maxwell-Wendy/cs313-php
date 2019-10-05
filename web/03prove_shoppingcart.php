@@ -1,5 +1,8 @@
+<?php
 
+session_start();
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +18,13 @@
 
 </head>
 <body>
-	<!-- <?php $_SESSION['cart'] = array();?> -->
+	<?php 
+	$item = "Tomato"
+	if(!isset($_SESSION['cart'])){
+	    $_SESSION['cart'] = array();
+	    $_SESSION['cart'][] = $item;
+    }
+	?> 
 
 	<h1>Seeds for Your Home Garden</h1>
 

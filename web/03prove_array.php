@@ -2,13 +2,13 @@
 
 session_start();
 
-//if (!isset($_SESSION["cart"])) {
-//	$_SESSION["cart"] = array();
-//}
+if (!isset($_SESSION['cart'])) {
+	$_SESSION['cart'] = array();
+}
 
-$name = $_POST["name"];
+//$name = $_POST["name"];
 
-echo $name;
+//echo $name;
 
 //$price =$_POST["price"];
 
@@ -16,9 +16,9 @@ echo $name;
  	//$tomato = $_POST["tomato"];
  	//array_push($_SESSION["cart"], $tomato);
 
- 	//foreach ($_SESSION["cart"] as $key => $value) {
- 	//	echo $value;
- 	//}
+ 	foreach ($_SESSION['cart'] as $key => $value) {
+ 		echo $value;
+ 	}
  //} 
 //echo $tomato;
 
