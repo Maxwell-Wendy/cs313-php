@@ -10,7 +10,7 @@ var cartList = [];
 
 function addToCart(typeOfSeed) {
 	var seed = typeOfSeed.value;
-	cartlist.push(seed);
+	//cartlist.push(seed);
 
 	alert ("Hello" + seed);
 
