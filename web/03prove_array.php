@@ -12,14 +12,14 @@ if (!isset($_SESSION['cart'])) {
 
 //$price =$_POST["price"];
 
-//if (isset($_POST["tomato"])) {
- 	//$tomato = $_POST["tomato"];
- 	//array_push($_SESSION["cart"], $tomato);
+if (isset($_POST["tomato"])) {
+ 	$tomato = $_POST["tomato"];
+ 	array_push($_SESSION['cart'], $tomato);
 
  	foreach ($_SESSION['cart'] as $key => $value) {
  		echo $value;
  	}
- //} 
+ } 
 //echo $tomato;
 
 //echo $_POST["name"]; 
