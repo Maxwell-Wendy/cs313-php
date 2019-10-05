@@ -26,7 +26,7 @@ session_start();
 		<p>Tomatoes are a popular choice for any home garden!</p>
 		<p class="quantity">25 seeds</p>
 		<p class="price">$3.50</p>
-		<p><button onclick="addToCart(this)" value="Tomatoes">Add to Cart</button></p>
+		<p><button onclick="addToCart()">Add to Cart</button></p>
 	</div>
 
 	<div class="seeds">

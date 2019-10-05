@@ -8,7 +8,7 @@ session_start();
 
 var cartList = [];
 
-function addToCart(typeOfSeed) {
+function addToCart() {
 	//var seed = typeOfSeed.value;
 	//cartlist.push(seed);
 
