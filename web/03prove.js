@@ -26,13 +26,14 @@ $(document).ready(function() {
 	$("#tomato").click(function() {
 		$.post("03prove_array.php",
 		{
-			name : "Tomato"
+			name : "Tomato",
+			value : "Tomato"
 		});
 	})
 
 
 
-	
+
 	$("#button3").click(function() {
 		$("#div3").fadeToggle("slow");
 	})
