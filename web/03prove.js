@@ -19,3 +19,17 @@ function addToCart(typeOfSeed) {
 	//alert ($_SESSION['cart']);
 
 }
+
+
+
+$(document).ready(function() {
+	$("#tomato").click(function() {
+		$.post("03prove_array.php",
+		{
+			'cartItem[]' : ["Tomato"]
+		});
+	})
+	$("#button3").click(function() {
+		$("#div3").fadeToggle("slow");
+	})
+});

@@ -1,8 +1,4 @@
-<?php
 
-session_start();
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +15,7 @@ session_start();
 
 </head>
 <body>
-	<?php $_SESSION['cart'] = array();?>
+	<!-- <?php $_SESSION['cart'] = array();?> -->
 
 	<h1>Seeds for Your Home Garden</h1>
 
@@ -28,9 +24,10 @@ session_start();
 		<p>Tomatoes are a popular choice for any home garden!</p>
 		<p class="quantity">25 seeds</p>
 		<p class="price">$3.50</p>
-		<form action="03prove_array.php" method="post">
+		<p><button id="tomato">Add to Cart</button></p>
+		<!--<form action="03prove_array.php" method="post">
 			<input type="submit" name="tomato" value="Tomato">
-		</form>
+		</form> -->
 	</div>
 
 	<div class="seeds">
@@ -38,7 +35,7 @@ session_start();
 		<p>The perfect start to a fresh salad!</p>
 		<p class="quantity">90 seeds</p>
 		<p class="price">$1.00</p>
-		<p><button onclick="">Add to Cart</button></p>
+		<p><button id="lettuce">Add to Cart</button></p>
 	</div>
 
 	<div class="seeds">
@@ -46,7 +43,7 @@ session_start();
 		<p>Great fresh or pickled!</p>
 		<p class="quantity">20 seeds</p>
 		<p class="price">$1.50</p>
-		<p><button>Add to Cart</button></p>
+		<p><button id="cucumber">Add to Cart</button></p>
 	</div>
 
 	<div class="seeds">
@@ -54,7 +51,7 @@ session_start();
 		<p>Italian seasoning at your fingertips!</p>
 		<p class="quantity">50 seeds</p>
 		<p class="price">$2.00</p>
-		<p><button>Add to Cart</button></p>
+		<p><button id="oregano">Add to Cart</button></p>
 	</div>
 
 	<div class="seeds">
@@ -62,7 +59,7 @@ session_start();
 		<p>Mix with your home-grown tomatoes for fresh salsa!</p>
 		<p class="quantity">30 seeds</p>
 		<p class="price">$2.50</p>
-		<p><button>Add to Cart</button></p>
+		<p><button id="cilantro">Add to Cart</button></p>
 	</div>
 
 	<div class="seeds">
@@ -70,8 +67,12 @@ session_start();
 		<p>The perfect start to a fresh salad!</p>
 		<p class="quantity">75 seeds</p>
 		<p class="price">$3.00</p>
-		<p><button>Add to Cart</button></p>
+		<p><button id="dill">Add to Cart</button></p>
 	</div>
+
+	<form action="03prove_array.php" method="post">
+		<input type="submit" name="View Cart">
+	</form>
 
 
 
