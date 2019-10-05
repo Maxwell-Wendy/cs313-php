@@ -20,16 +20,7 @@ session_start();
 </head>
 <body>
 
-	<?php 
-	$item = "Tomato"
-	if(!isset($_SESSION['cart'])){
-	    $_SESSION['cart'] = array();
-	    $_SESSION['cart'][] = $item;
-
-    }
-
-
-	?> 
+	
 
 	<h1>Seeds for Your Home Garden</h1>
 
