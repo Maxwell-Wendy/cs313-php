@@ -22,7 +22,7 @@ session_start();
 
 	
 <?php 
-	$item = "Tomato"
+	$item = "Tomato";
 	echo $item;
     
 
