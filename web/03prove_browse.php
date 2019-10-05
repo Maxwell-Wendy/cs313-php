@@ -24,6 +24,10 @@ session_start();
 <?php 
 	$item = "Tomato";
 	echo $item;
+
+	if (!isset($_SESSION['cart'])) {
+		$_SESSION['cart'] = array();
+	}
     
 
 	?> 
