@@ -26,7 +26,7 @@ $(document).ready(function() {
 	$("#tomato").click(function() {
 		$.post("03prove_array.php",
 		{
-			'cartItem[]' : ["Tomato"]
+			name : "Tomato"
 		});
 	})
 	$("#button3").click(function() {

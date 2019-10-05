@@ -6,7 +6,7 @@ session_start();
 //	$_SESSION["cart"] = array();
 //}
 
-$name = $_POST["cartItem"];
+$name = $_POST["name"];
 
 echo $name;
 
