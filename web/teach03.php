@@ -29,7 +29,7 @@ Continents Visited: <br>
 <input type="checkbox" name="continent[]" id="aus" value="Australia">Australia<br>
 <input type="checkbox" name="continent[]" id="asia" value="Asia">Asia<br>
 <input type="checkbox" name="continent[]" id="afr" value="Africa">Africa<br>
-<input type="checkbox" name="continent[]" id="ant" va;ue="Antartica">Antartica<br>
+<input type="checkbox" name="continent[]" id="ant" value="Antartica">Antartica<br>
 
 <input type="submit">
 </form>
