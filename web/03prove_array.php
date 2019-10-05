@@ -6,6 +6,15 @@ if (!isset($_SESSION['cart'])) {
 	$_SESSION['cart'] = array();
 }
 
+?>
+
+<!DOCTYPE html>
+<html>
+<p>hi</p>
+</html>
+<?php
+
+echo $_SESSION['cart'][0];
 //$name = $_POST["name"];
 
 //echo $name;
@@ -30,3 +39,4 @@ if (isset($_POST["tomato"])) {
 //$mail = $_POST["email"];
 
 ?>
+
