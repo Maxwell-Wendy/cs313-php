@@ -20,7 +20,11 @@ session_start();
 </head>
 <body>
 
-	
+	<?php 
+	$item = "Tomato";
+
+
+	?> 
 
 	<h1>Seeds for Your Home Garden</h1>
 
