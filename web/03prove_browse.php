@@ -28,6 +28,9 @@ session_start();
 	if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = array();
 		echo $item;
+		array_push($_SESSION['cart'], $item);
+
+		echo $_SESSION['cart'][0];
 	}
     
 
