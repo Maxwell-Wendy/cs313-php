@@ -3,6 +3,7 @@
 session_start();
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +19,7 @@ session_start();
 
 </head>
 <body>
+
 	<?php 
 	$item = "Tomato"
 	if(!isset($_SESSION['cart'])){
@@ -46,52 +48,9 @@ session_start();
 		</form> -->
 	</div>
 
-	<div class="seeds">
-		<h2>Lettuce</h2>
-		<p>The perfect start to a fresh salad!</p>
-		<p class="quantity">90 seeds</p>
-		<p class="price">$1.00</p>
-		<p><button id="lettuce">Add to Cart</button></p>
-	</div>
-
-	<div class="seeds">
-		<h2>Cucumber</h2>
-		<p>Great fresh or pickled!</p>
-		<p class="quantity">20 seeds</p>
-		<p class="price">$1.50</p>
-		<p><button id="cucumber">Add to Cart</button></p>
-	</div>
-
-	<div class="seeds">
-		<h2>Oregano</h2>
-		<p>Italian seasoning at your fingertips!</p>
-		<p class="quantity">50 seeds</p>
-		<p class="price">$2.00</p>
-		<p><button id="oregano">Add to Cart</button></p>
-	</div>
-
-	<div class="seeds">
-		<h2>Cilantro</h2>
-		<p>Mix with your home-grown tomatoes for fresh salsa!</p>
-		<p class="quantity">30 seeds</p>
-		<p class="price">$2.50</p>
-		<p><button id="cilantro">Add to Cart</button></p>
-	</div>
-
-	<div class="seeds">
-		<h2>Dill</h2>
-		<p>The perfect start to a fresh salad!</p>
-		<p class="quantity">75 seeds</p>
-		<p class="price">$3.00</p>
-		<p><button id="dill">Add to Cart</button></p>
-	</div>
-
 	<form action="03prove_array.php" method="post">
 		<input type="submit" name="View Cart">
 	</form>
-
-
-
 
 
 </body>
