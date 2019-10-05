@@ -17,6 +17,7 @@ session_start();
 
 </head>
 <body>
+	$_SESSION['cart'] = array();
 
 	<h1>Seeds for Your Home Garden</h1>
 
