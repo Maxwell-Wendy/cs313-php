@@ -4,14 +4,18 @@ session_start();
 if (!isset($_SESSION['cart'])) {
 	$_SESSION['cart'] = array();
 }
-var cartList = [$_SESSION['cart']];
+//var cartList = [$_SESSION['cart']];
+
+var cartList = [];
 
 function addToCart(typeOfSeed) {
 	var seed = typeOfSeed.value;
 	cartlist.push(seed);
 
-	$_SESSION['cart'] = cartList;
+	alert (seed);
 
-	alert ($_SESSION['cart']);
+	//$_SESSION['cart'] = cartList;
+
+	//alert ($_SESSION['cart']);
 
 }
