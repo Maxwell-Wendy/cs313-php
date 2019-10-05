@@ -1,12 +1,12 @@
-<?php
-session_start();
-?>
+//<?php
+//session_start();
+//?>
 //if (!isset($_SESSION['cart'])) {
 //	$_SESSION['cart'] = array();
 //}
 //var cartList = [$_SESSION['cart']];
 
-var cartList = [];
+//var cartList = [];
 
 function addToCart() {
 	//var seed = typeOfSeed.value;
@@ -18,4 +18,8 @@ function addToCart() {
 
 	//alert ($_SESSION['cart']);
 
+}
+
+function showAlert() {
+	alert("Clicked!");
 }

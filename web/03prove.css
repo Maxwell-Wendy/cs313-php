@@ -1,6 +1,7 @@
 .seeds {
 	box-shadow: 0 4px 8px 0 rgba(84, 0, 216, 0.2);
 	text-align: left;
+	padding: 20px;
 }
 
 .price {
@@ -9,8 +10,8 @@
 }
 
 .seeds button {
-	padding: 8px;
-	background-color: rgb(84, 0, 216);
+	padding: 20px;
+	background-color: rgba(84, 0, 216, .2);
 	color: black;
 	text-align: center;
 	cursor: pointer;
