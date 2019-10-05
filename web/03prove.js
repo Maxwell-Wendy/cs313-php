@@ -6,7 +6,7 @@
 //}
 //var cartList = [$_SESSION['cart']];
 
-var cartList = [];
+var cartItem = [];
 
 function addToCart(typeOfSeed) {
 	var seed = typeOfSeed.value;
