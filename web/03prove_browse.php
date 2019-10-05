@@ -20,9 +20,11 @@ session_start();
 </head>
 <body>
 
-	<?php 
-	$item = "Tomato";
-
+	
+<?php 
+	$item = "Tomato"
+	echo $item;
+    }
 
 	?> 
 
