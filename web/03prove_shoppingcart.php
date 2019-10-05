@@ -23,7 +23,14 @@ session_start();
 	if(!isset($_SESSION['cart'])){
 	    $_SESSION['cart'] = array();
 	    $_SESSION['cart'][] = $item;
+
+	    echo "woerlk";
+
     }
+
+    else {
+     echo "yuck"
+}
 	?> 
 
 	<h1>Seeds for Your Home Garden</h1>
