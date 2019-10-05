@@ -6,20 +6,16 @@
 //}
 //var cartList = [$_SESSION['cart']];
 
-//var cartList = [];
+var cartList = [];
 
-function addToCart() {
-	//var seed = typeOfSeed.value;
-	//cartlist.push(seed);
+function addToCart(typeOfSeed) {
+	var seed = typeOfSeed.value;
+	cartlist.push(seed);
 
-	alert ("Hello" /*+ seed*/);
+	alert ("Hello" + seed);
 
 	//$_SESSION['cart'] = cartList;
 
 	//alert ($_SESSION['cart']);
 
-}
-
-function showAlert() {
-	alert("Clicked!");
 }
