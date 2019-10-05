@@ -12,7 +12,7 @@ function addToCart(typeOfSeed) {
 	var seed = typeOfSeed.value;
 	//cartlist.push(seed);
 
-	alert ("Hello" + seed);
+	alert ("Added " + seed);
 
 	//$_SESSION['cart'] = cartList;
 
