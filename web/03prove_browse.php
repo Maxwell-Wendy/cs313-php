@@ -24,7 +24,7 @@ session_start();
 <?php 
 	$item = "Tomato"
 	echo $item;
-    }
+    
 
 	?> 
 
