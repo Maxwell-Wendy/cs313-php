@@ -45,7 +45,7 @@ session_start();
 		<p class="quantity">25 seeds</p>
 		<p class="price">$3.50</p>
 		<!--<p><button id="tomato">Add to Cart</button></p> -->
-		<form action="about:blank" method="post">
+		<form action="03prove_browse.php" method="post">
 			<input type="hidden" name="tomato" value="Tomato">
 			<input type="submit" name="sumbit_tomato" value="Add to Cart">
 		</form>
