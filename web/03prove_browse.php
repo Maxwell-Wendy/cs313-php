@@ -21,17 +21,10 @@ session_start();
 <body>
 
 	
-<?php 
-	//$item = "Tomato";
-	//echo $item;
-	//echo "nope";
+<?php
 
 	if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = array();
-		//echo $item;
-		//array_push($_SESSION['cart'], $item);
-
-		//echo $_SESSION['cart'][0];
 	}
     
 
@@ -60,7 +53,9 @@ session_start();
  	$tomato = $_POST["tomato"];
  	array_push($_SESSION['cart'], $tomato);
 
- 	echo $_SESSION['cart'][0];
+ 	foreach ($_SESSION['cart'] as $key => $value) {
+ 		echo "You have added" . $value . "to your cart.<br>";
+ 	}
  }
  else {
  	echo "nope";
