@@ -14,7 +14,7 @@ if (!isset($_SESSION['cart'])) {
 </html>
 <?php
 
-echo $_SESSION['cart'][0];
+//echo $_SESSION['cart'][0];
 //$name = $_POST["name"];
 
 //echo $name;
@@ -25,11 +25,11 @@ if (isset($_POST["tomato"])) {
  	$tomato = "Tomato-for-you";
  	array_push($_SESSION['cart'], $tomato);
 
- 	echo $_SESSION['cart'][1] . "X";
+ 	//echo $_SESSION['cart'][1] . "X";
 
- 	//foreach ($_SESSION['cart'] as $key => $value) {
- 	//	echo $value;
- 	//}
+ 	foreach ($_SESSION['cart'] as $key => $value) {
+ 		echo $value;
+ 	}
  } 
 //echo $tomato;
 

@@ -22,16 +22,16 @@ session_start();
 
 	
 <?php 
-	$item = "Tomato";
-	echo $item;
-	echo "nope";
+	//$item = "Tomato";
+	//echo $item;
+	//echo "nope";
 
 	if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = array();
-		echo $item;
-		array_push($_SESSION['cart'], $item);
+		//echo $item;
+		//array_push($_SESSION['cart'], $item);
 
-		echo $_SESSION['cart'][0];
+		//echo $_SESSION['cart'][0];
 	}
     
 
