@@ -24,17 +24,16 @@ function addToCart(typeOfSeed) {
 
 $(document).ready(function() {
 	$("#tomato").click(function() {
-		$.post("03prove_browse.php",
-		{
-			name : "Tomato",
-			value : "Tomato"
+		$.ajax({
+			url: '03prove_browser.php',
+			type: 'POST',
+			data: {
+				name: 'tomato'
+			},
+			success: function(msg) {
+				alert('data posted');
+			}
 		});
-	})
+	});
 
-
-
-
-	$("#button3").click(function() {
-		$("#div3").fadeToggle("slow");
-	})
 });
