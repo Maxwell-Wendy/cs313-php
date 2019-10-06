@@ -22,7 +22,7 @@ echo $_SESSION['cart'][0];
 //$price =$_POST["price"];
 
 if (isset($_POST["tomato"])) {
- 	$tomato = $_POST["tomato"];
+ 	$tomato = "Tomato-for-you";
  	array_push($_SESSION['cart'], $tomato);
 
  	echo $_SESSION['cart'][1] . "X";
