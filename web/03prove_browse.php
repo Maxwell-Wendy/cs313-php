@@ -44,10 +44,10 @@ session_start();
 		<p>Tomatoes are a popular choice for any home garden!</p>
 		<p class="quantity">25 seeds</p>
 		<p class="price">$3.50</p>
-		<p><button id="tomato">Add to Cart</button></p>
-		<!--<form action="03prove_array.php" method="post">
-			<input type="submit" name="tomato" value="Tomato">
-		</form> -->
+		<!--<p><button id="tomato">Add to Cart</button></p> -->
+		<form action="03prove_array.php" method="post">
+			<input type="submit" name="tomato" value="Add to Cart">
+		</form> 
 	</div>
 
 	<form action="03prove_array.php" method="post">
