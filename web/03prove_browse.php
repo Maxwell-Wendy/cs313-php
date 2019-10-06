@@ -24,6 +24,7 @@ session_start();
 <?php 
 	$item = "Tomato";
 	echo $item;
+	echo "nope";
 
 	if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = array();
@@ -52,6 +53,18 @@ session_start();
 	<form action="03prove_array.php" method="post">
 		<input type="submit" name="View Cart">
 	</form>
+
+	<?php
+	if (isset($_POST["tomato"])) {
+ 	$tomato = $_POST["tomato"];
+ 	array_push($_SESSION['cart'], $tomato);
+
+ 	echo $_SESSION['cart'][0];
+ }
+ else {
+ 	echo "nope";
+ }
+ 	?>
 
 
 </body>
