@@ -25,7 +25,7 @@ if (isset($_POST["tomato"])) {
  	$tomato = $_POST["tomato"];
  	array_push($_SESSION['cart'], $tomato);
 
- 	echo $_SESSION['cart'][0];
+ 	echo $_SESSION['cart'][1] . "X";
 
  	//foreach ($_SESSION['cart'] as $key => $value) {
  	//	echo $value;
