@@ -72,7 +72,7 @@ session_start();
 	</form>
 
 	<?php
-	if (isset($_POST)["submit_tomato"]) {
+	if (isset($_POST)["tomato"]) {
 		$tomato = $_POST["tomato"];
 		array_push($_SESSION['cart'], $tomato);
 
