@@ -26,8 +26,6 @@ session_start();
 	if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = array();
 	}
-    
-
 	?> 
 
 	<h1>Seeds for Your Home Garden</h1>
@@ -74,7 +72,7 @@ session_start();
 	</form>
 
 	<?php
-	if (isset($_POST)["submit_tomato"]) {
+	if (isset($_POST)["tomato"]) {
 		$tomato = $_POST["tomato"];
 		array_push($_SESSION['cart'], $tomato);
 
