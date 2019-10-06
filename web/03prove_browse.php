@@ -44,21 +44,46 @@ session_start();
 		</form>
 	</div>
 
+	<div class="seeds">
+		<h2>Lettuce</h2>
+		<p>The perfect start to a fresh salad!</p>
+		<p class="quantity">90 seeds</p>
+		<p class="price">$1.00</p>
+		<!--<p><button id="lettuce">Add to Cart</button></p>-->
+		<form action="03prove_browse.php" method="post">
+			<input type="hidden" name="lettuce" value="Lettuce">
+			<input type="submit" name="sumbit_lettuce" value="Add to Cart">
+		</form>
+	</div>
+
+	<div class="seeds">
+		<h2>Cucumber</h2>
+		<p>Great fresh or pickled!</p>
+		<p class="quantity">20 seeds</p>
+		<p class="price">$1.50</p>
+		<!--<p><button id="cucumber">Add to Cart</button></p>-->
+		<form action="03prove_browse.php" method="post">
+			<input type="hidden" name="cucumber" value="Cucumber">
+			<input type="submit" name="sumbit_cucumber" value="Add to Cart">
+		</form>
+	</div>
+
+	
 	<form action="03prove_array.php" method="post">
 		<input type="submit" name="View Cart">
 	</form>
 
 	<?php
-	if (isset($_POST["tomato"])) {
- 	$tomato = $_POST["tomato"];
- 	array_push($_SESSION['cart'], $tomato);
+	if (isset($_POST)["submit_tomato"]) {
+		$tomato = $_POST["tomato"];
+		array_push($_SESSION['cart'], $tomato);
 
- 	foreach ($_SESSION['cart'] as $key => $value) {
- 		echo "You have added" . $value . "to your cart.<br>";
- 	}
- }
- else {
- 	echo "nope";
+		foreach ($_SESSION['cart'] as $key => $value) {
+			echo "You have added " . $value . " to your cart.<br>";
+		}
+	}
+	else {
+ 	echo "You have no items in your cart.";
  }
  	?>
 
