@@ -36,10 +36,10 @@ session_start();
 		<p class="quantity">25 seeds</p>
 		<p class="price">$3.50</p>
 		<!--<p><button id="tomato">Add to Cart</button></p> -->
-		<form action="03prove_browse.php" method="post">
+		<!--<form action="03prove_browse.php" method="post">
 			<input type="hidden" name="tomato" value="Tomato">
 			<input type="submit" name="submit_tomato" value="Add to Cart">
-		</form>
+		</form>-->
 	</div>
 
 	<div class="seeds">
@@ -76,9 +76,9 @@ session_start();
 		$tomato = $_POST["tomato"];
 		array_push($_SESSION['cart'], $tomato);
 
-		foreach ($_SESSION['cart'] as $key => $value) {
-			echo "You have added " . $value . " to your cart.<br>";
-		}
+		//foreach ($_SESSION['cart'] as $key => $value) {
+		//	echo "You have added " . $value . " to your cart.<br>";
+		//}
 	}
 	else {
  	echo "You have no items in your cart.";
