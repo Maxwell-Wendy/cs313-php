@@ -24,7 +24,7 @@ function addToCart(typeOfSeed) {
 
 $(document).ready(function() {
 	$("#tomato").click(function() {
-		$.post("03prove_array.php",
+		$.post("03prove_browse.php",
 		{
 			name : "Tomato",
 			value : "Tomato"
