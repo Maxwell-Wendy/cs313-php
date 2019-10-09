@@ -23,7 +23,7 @@ function addToCart(typeOfSeed) {
 
 
 $(document).ready(function() {
-	$("#tomato").click(function() {
+	$("#submit_tomato").click(function() {
 		$.ajax({
 			url: '03prove_browser.php',
 			type: 'POST',
