@@ -27,12 +27,12 @@ if (!isset($_SESSION['cart'])) {
 ?>
     <p>This is a test to print the name: <?php echo $value ?></p>
         <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-			<input type="hidden" name="name" value="<?php echo $_SESSION['cart'][$value]?>">
+			<input type="hidden" name="name" value="<?php echo $value ?>">
 			<input type="submit" name="submit" value="Remove Item">
 		</form>
 <?php 
 	if(isset($_POST["name"]))
-	$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$value]);
+	$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$_POST["name"]);
 
 
  	}
