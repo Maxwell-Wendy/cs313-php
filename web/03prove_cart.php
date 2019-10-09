@@ -21,13 +21,13 @@ if (!isset($_SESSION['cart'])) {
 	<br>
 
 <?php
-
- 	foreach ($_SESSION['cart'] as $key => $value) {
- 		echo "You have added " . $value . " to your cart.<br>";
+	echo "Your cart contains: <br>";
+ 	//foreach ($_SESSION['cart'] as $key => $value) {
+ 		//echo "You have added " . $value . " to your cart.<br>";
 ?>
         <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-			<input type="hidden" name="remove" value="<?php echo $value ?>">
-			<input type="submit" name="submit" value="Remove Item">
+			<!--<input type="hidden" name="remove" value="<?php //echo $value ?>">-->
+			<!--<input type="submit" name="submit" value="Remove Item">-->
 			<?php foreach($_SESSION['cart'] as $k => $p): ?>
         <?php echo $p; ?>&nbsp;<button type="submit" name="remove" value="<?php echo $k; ?>">Remove</button><br/>
     <?php endforeach; ?>
