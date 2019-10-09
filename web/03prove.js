@@ -43,3 +43,7 @@ $(document).ready(function() {
 		});
 	});
 });
+
+function message() {
+	confirm("Do you really want to remove this item?");
+}

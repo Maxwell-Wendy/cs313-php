@@ -27,16 +27,17 @@ if (!isset($_SESSION['cart'])) {
 ?>
         <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 			<input type="hidden" name="remove" value="<?php echo $value ?>">
-			<input type="submit" name="submit" value="Remove Item">
+			<!-- <input type="submit" name="submit" value="Remove Item"> -->
+			<input type="button" name="delete" onclick="message()" value="Remove Item">
 		</form>
 	<?php 
 	if(isset($_POST["remove"])) {
 		$item = $_POST["remove"]; ?>
-		<div class="delete">
-			<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-			<input type="hidden" name="confirm" value="<?php echo $value ?>">
+		<!-- <div class="delete">
+			<form action="<?php //echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+			<input type="hidden" name="confirm" value="<?php //echo $value ?>">
 			<input type="submit" name="submit" value="Confirm Remove Item">
-		</form>
+		</form>-->
 
 
 		<?php 
