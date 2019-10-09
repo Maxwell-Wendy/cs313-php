@@ -18,7 +18,14 @@ if (!isset($_SESSION['cart'])) {
 
 	<h1>Shopping Cart</h1>
 	<br>
-	<br>
+	<?php 
+	if(isset($_POST["remove"])) {
+		$item = $_POST["remove"]; 
+		//$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
+		unset($_SESSION['cart'] [$item]);
+	}
+	
+?>
 
 <?php
 	echo "Your cart contains: <br>";
@@ -34,8 +41,8 @@ if (!isset($_SESSION['cart'])) {
 			<!--<input type="button" name="delete" onclick="message()" value="Remove Item"> -->
 		</form>
 	<?php 
-	if(isset($_POST["remove"])) {
-		$item = $_POST["remove"]; ?>
+	//if(isset($_POST["remove"])) {
+		//$item = $_POST["remove"]; ?>
 		<!-- <div class="delete">
 			<form action="<?php //echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 			<input type="hidden" name="confirm" value="<?php //echo $value ?>">
@@ -45,7 +52,7 @@ if (!isset($_SESSION['cart'])) {
 
 		<?php 
 		//$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
-		unset($_SESSION['cart'] [$item]);
+		//unset($_SESSION['cart'] [$item]);
 	}
 	
 ?>
