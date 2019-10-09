@@ -1,5 +1,5 @@
 <?php
-header("Location: 03prove_cart.php")
+header("Location: 03prove_cart.php");
 
 session_start();
 
