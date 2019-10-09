@@ -34,7 +34,7 @@ $(document).ready(function() {
 				alert('data posted');
 			}
 		});
-		e.preventDefault();
+		//e.preventDefault();
 	});
 });
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
 				alert('data posted');
 			}
 		});
-		e.preventDefault();
+		//e.preventDefault();
 	});
 });
 
@@ -66,6 +66,6 @@ $(document).ready(function() {
 				alert('data posted');
 			}
 		});
-		e.preventDefault();
+		//e.preventDefault();
 	});
 });
