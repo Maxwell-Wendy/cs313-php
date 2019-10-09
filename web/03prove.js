@@ -25,7 +25,7 @@ function addToCart(typeOfSeed) {
 $(document).ready(function() {
 	$("#tomato").click(function(e) {
 		$.ajax({
-			url: '03prove_cart.php',
+			url: '03prove_browse.php',
 			type: 'POST',
 			data: {
 				name: 'tomato'
@@ -41,7 +41,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#cucumber").click(function(e) {
 		$.ajax({
-			url: '03prove_cart.php',
+			url: '03prove_browse.php',
 			type: 'POST',
 			data: {
 				name: 'cucumber'
@@ -57,7 +57,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#lettuce").click(function(e) {
 		$.ajax({
-			url: '03prove_cart.php',
+			url: '03prove_browse.php',
 			type: 'POST',
 			data: {
 				name: 'lettuce'
