@@ -31,11 +31,13 @@ if (!isset($_SESSION['cart'])) {
 			<input type="submit" name="submit" value="Remove Item">
 		</form>
 <?php 
-	if(isset($_POST["name"]))
-	$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$_POST["name"]);
+	if(isset($_POST["name"])) {
+		$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$_POST["name"]);
+}
+	
 
 
- 	}
+ 	
 
 ?>
 </body>
