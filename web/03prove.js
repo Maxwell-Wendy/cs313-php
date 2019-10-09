@@ -23,9 +23,9 @@ function addToCart(typeOfSeed) {
 
 
 $(document).ready(function() {
-	$("#tomato").click(function() {
+	$("#tomato").click(function(e) {
 		$.ajax({
-			url: '03prove_browser.php',
+			url: '03prove_array.php',
 			type: 'POST',
 			data: {
 				name: 'tomato'
@@ -34,11 +34,12 @@ $(document).ready(function() {
 				alert('data posted');
 			}
 		});
+		e.preventDefault();
 	});
 });
 
 $(document).ready(function() {
-	$("#cucumber").click(function() {
+	$("#cucumber").click(function(e) {
 		$.ajax({
 			url: '03prove_browser.php',
 			type: 'POST',
@@ -49,11 +50,12 @@ $(document).ready(function() {
 				alert('data posted');
 			}
 		});
+		e.preventDefault();
 	});
 });
 
 $(document).ready(function() {
-	$("#lettuce").click(function() {
+	$("#lettuce").click(function(e) {
 		$.ajax({
 			url: '03prove_browser.php',
 			type: 'POST',
@@ -64,6 +66,6 @@ $(document).ready(function() {
 				alert('data posted');
 			}
 		});
+		e.preventDefault();
 	});
-
 });
