@@ -40,6 +40,7 @@ if (!isset($_SESSION['cart'])) {
 		</form>
 
 
+		<?php 
 		$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
 }
 	
