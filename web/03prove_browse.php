@@ -75,17 +75,19 @@ session_start();
 	if (isset($_POST["tomato"])) {
 		$tomato = $_POST["tomato"];
 		array_push($_SESSION['cart'], $tomato);
-
+		unset($_POST["tomato"]);
 	}
 
 	if (isset($_POST["lettuce"])) {
 		$lettuce = $_POST["lettuce"];
 		array_push($_SESSION['cart'], $lettuce);
+		unset($_POST["lettuce"]);
 	}
 
 	if (isset($_POST["cucumber"])) {
 		$cucumber = $_POST["cucumber"];
 		array_push($_SESSION['cart'], $cucumber);
+		unset($_POST["cucumber"]);
 	}
 	
 	if(!empty($_SESSION['cart'])) {
