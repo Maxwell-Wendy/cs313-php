@@ -12,11 +12,12 @@
 </head>
 <body>
 	<a href="teach02.html">Teach 02 Team Activity</a>
+	<br>
 	<a href="03prove_browse.php">Shopping Cart Activity</a>
 
 	<p>More Coming Soon!</p>
 
-	<a href="index.php">Back to homepage</a>
+	<a href="index.php">Back to Homepage</a>
 
 </body>
 </html>

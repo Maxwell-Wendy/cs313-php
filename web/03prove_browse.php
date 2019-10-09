@@ -29,6 +29,20 @@ session_start();
 	}
 ?> 
 
+<?php
+	if (isset($_POST["tomato"])) {
+		unset($_POST["tomato"]);
+	}
+
+	if (isset($_POST["lettuce"])) {
+		unset($_POST["lettuce"]);
+	}
+
+	if (isset($_POST["cucumber"])) {
+		unset($_POST["cucumber"]);
+	}
+?>
+
 
 	<h1>Seeds for Your Home Garden</h1>
 
@@ -38,7 +52,7 @@ session_start();
 		<p class="quantity">25 seeds</p>
 		<p class="price">$3.50</p>
 		<!--<p><button id="tomato">Add to Cart</button></p> -->
-		<form action="03prove_cart.php" method="post">
+		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 			<input type="hidden" name="tomato" value="Tomato">
 			<input type="submit" name="submit_tomato" value="Add to Cart">
 		</form>
@@ -50,7 +64,7 @@ session_start();
 		<p class="quantity">90 seeds</p>
 		<p class="price">$1.00</p>
 		<!--<p><button id="lettuce">Add to Cart</button></p>-->
-		<form action="03prove_cart.php" method="post">
+		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 			<input type="hidden" name="lettuce" value="Lettuce">
 			<input type="submit" name="submit_lettuce" value="Add to Cart">
 		</form>
@@ -62,7 +76,7 @@ session_start();
 		<p class="quantity">20 seeds</p>
 		<p class="price">$1.50</p>
 		<!--<p><button id="cucumber">Add to Cart</button></p>-->
-		<form action="03prove_cart.php" method="post">
+		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 			<input type="hidden" name="cucumber" value="Cucumber">
 			<input type="submit" name="submit_cucumber" value="Add to Cart">
 		</form>
