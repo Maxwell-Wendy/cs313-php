@@ -23,7 +23,7 @@ function addToCart(typeOfSeed) {
 
 
 $(document).ready(function() {
-	$("#submit_tomato").click(function() {
+	$("#tomato").click(function() {
 		$.ajax({
 			url: '03prove_browser.php',
 			type: 'POST',
@@ -35,7 +35,9 @@ $(document).ready(function() {
 			}
 		});
 	});
+});
 
+$(document).ready(function() {
 	$("#cucumber").click(function() {
 		$.ajax({
 			url: '03prove_browser.php',
@@ -48,7 +50,9 @@ $(document).ready(function() {
 			}
 		});
 	});
+});
 
+$(document).ready(function() {
 	$("#lettuce").click(function() {
 		$.ajax({
 			url: '03prove_browser.php',
