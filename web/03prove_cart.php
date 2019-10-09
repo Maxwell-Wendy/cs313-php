@@ -1,4 +1,5 @@
 <?php
+header("Location: 03prove_cart.php")
 
 session_start();
 
@@ -11,6 +12,8 @@ if (!isset($_SESSION['cart'])) {
 <!DOCTYPE html>
 <html>
 <a href="03prove_browse.php">Back to Browsing</a>
+<br>
+<br>
 </html>
 <?php
 

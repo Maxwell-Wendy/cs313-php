@@ -1,5 +1,5 @@
 <?php
-
+header("Location: 03prove_browse.php")
 session_start();
 
 ?>
