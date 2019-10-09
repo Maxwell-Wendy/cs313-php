@@ -76,13 +76,30 @@ session_start();
 		$tomato = $_POST["tomato"];
 		array_push($_SESSION['cart'], $tomato);
 
+	}
+
+	elseif (isset($_POST["lettuce"])) {
+		$lettuce = $_POST["lettuce"];
+		array_push($_SESSION, $lettuce);
+	}
+
+	elseif (isset($_POST["cucumber"])) {
+		$cucumber = $_POST["cucumber"];
+		array_push($_SESSION, $cucumber);
+	}
+	?>
+
+	<?php
+
+	if(!empty($_SESSION['cart'])) {
+
 		foreach ($_SESSION['cart'] as $key => $value) {
 			echo "You have added " . $value . " to your cart.<br>";
 		}
 	}
 	else {
- 	echo "You have no items in your cart.";
- }
+		echo "You have no items in your cart.";
+	}
  	?>
  
 
