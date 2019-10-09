@@ -80,7 +80,7 @@ session_start();
 
 	if (isset($_POST["lettuce"])) {
 		$lettuce = $_POST["lettuce"];
-		array_push($_SESSION['cart', $lettuce);
+		array_push($_SESSION['cart'], $lettuce);
 	}
 
 	if (isset($_POST["cucumber"])) {
