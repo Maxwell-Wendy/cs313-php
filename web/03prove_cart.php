@@ -44,7 +44,8 @@ if (!isset($_SESSION['cart'])) {
 
 
 		<?php 
-		$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
+		//$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
+		unset($_SESSION['cart'] [$item]);
 	}
 }	
 ?>
