@@ -16,6 +16,7 @@ if (!isset($_SESSION['cart'])) {
 </head>
 <body>
 	<a href="03prove_checkout.php">Back to Checkout</a>
+	<a href="03prove_browse.php">Back to Browsing Items</a>
 
 	<h2>Your order details</h2>
 	<div class="confirm">
