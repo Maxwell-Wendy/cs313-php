@@ -39,7 +39,7 @@ if (!isset($_SESSION['cart'])) {
 			echo $name . "<br>" . $street . "<br>";
 			echo $city . ", " . $state . " " . $zip . "<br>";
 
-			echo "Your confirmation email will be sent to " . $email . "<br>";
+			echo "Your confirmation email will be sent to " . $email . ".<br>";
 			echo "Thank you for your order!";
 
 		?>

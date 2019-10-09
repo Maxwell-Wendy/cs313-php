@@ -45,6 +45,9 @@ if (!isset($_SESSION['cart'])) {
 		<?php 
 		//$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
 		unset($_SESSION['cart'] [$item]);
+		$page = $_SERVER['PHP_SELF'];
+		$sec = ".5";
+		header("Refresh: $sec; url = $page");
 	}
 	
 ?>
