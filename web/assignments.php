@@ -12,6 +12,7 @@
 </head>
 <body>
 	<a href="teach02.html">Teach 02 Team Activity</a>
+	<a href="03prove_browse.php">Shopping Cart Activity</a>
 
 	<p>More Coming Soon!</p>
 

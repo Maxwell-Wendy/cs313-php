@@ -19,6 +19,7 @@ session_start();
 
 </head>
 <body>
+	<a href="assignments.php">Back to Assignments Page</a>
 
 	
 <?php
@@ -28,6 +29,7 @@ session_start();
 	}
 ?> 
 
+
 	<h1>Seeds for Your Home Garden</h1>
 
 	<div class="seeds">
@@ -36,7 +38,7 @@ session_start();
 		<p class="quantity">25 seeds</p>
 		<p class="price">$3.50</p>
 		<!--<p><button id="tomato">Add to Cart</button></p> -->
-		<form action="03prove_browse.php" method="post">
+		<form action="03prove_cart.php" method="post">
 			<input type="hidden" name="tomato" value="Tomato">
 			<input type="submit" name="submit_tomato" value="Add to Cart">
 		</form>
@@ -48,7 +50,7 @@ session_start();
 		<p class="quantity">90 seeds</p>
 		<p class="price">$1.00</p>
 		<!--<p><button id="lettuce">Add to Cart</button></p>-->
-		<form action="03prove_browse.php" method="post">
+		<form action="03prove_cart.php" method="post">
 			<input type="hidden" name="lettuce" value="Lettuce">
 			<input type="submit" name="submit_lettuce" value="Add to Cart">
 		</form>
@@ -60,14 +62,14 @@ session_start();
 		<p class="quantity">20 seeds</p>
 		<p class="price">$1.50</p>
 		<!--<p><button id="cucumber">Add to Cart</button></p>-->
-		<form action="03prove_browse.php" method="post">
+		<form action="03prove_cart.php" method="post">
 			<input type="hidden" name="cucumber" value="Cucumber">
 			<input type="submit" name="submit_cucumber" value="Add to Cart">
 		</form>
 	</div>
 
 	
-	<form action="03prove_array.php" method="post">
+	<form action="03prove_cart.php" method="post">
 		<input type="submit" name="View Cart">
 	</form>
 

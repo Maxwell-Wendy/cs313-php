@@ -10,7 +10,7 @@ if (!isset($_SESSION['cart'])) {
 
 <!DOCTYPE html>
 <html>
-<p>hi</p>
+<a href="03prove_browse.php">Back to Browsing</a>
 </html>
 <?php
 

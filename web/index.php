@@ -16,6 +16,10 @@
 <body>
 	<h1>Beautiful Tasmania</h1>
 
+	<div>
+		<a href="assignments.php">Access Links to Assignments</a>
+	</div>
+
 	<div id="div_intro">
 		<p>If you ever get the chance to visit Tasmania, Australia, <span id="cradle_mountain">Cradle Mountain<span id="cradle_mountain_text">This view of Cradle Mountain can be reached by driving to Lake Dove in the Cradle Mountain-Lake St Clair National Park. Gorgeous!</span></span> is a beautiful destination! This photo was taken at sunset in July of 2019. Yes, that is snow on the mountain because July is in the middle of winter in the Southern Hemisphere. The following pictures are from a trip my husband and I look to Tasmania to celebrate our 30th wedding anniversary. We had a fantastic and very memorable trip!</p>
 		<img src="cradlemountain_sunset.jpeg" class="rounded img-fluid" alt="Cradle Mountain at sunset">
