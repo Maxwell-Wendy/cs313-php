@@ -47,7 +47,7 @@ if (!isset($_SESSION['cart'])) {
 		//$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
 		unset($_SESSION['cart'] [$item]);
 	}
-}	
+	
 ?>
 	<form action="03prove_checkout.php" method="post">
 		<input type="submit" name="checkout" value="Proceed to Checkout">
