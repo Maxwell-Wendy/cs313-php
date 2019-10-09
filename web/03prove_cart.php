@@ -36,7 +36,7 @@ if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
 }
 	
- 	
+ }	
 
 ?>
 </body>
