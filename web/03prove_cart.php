@@ -27,7 +27,7 @@ if (!isset($_SESSION['cart'])) {
 		</form>
 <?php 
 	if(isset($_POST["seed"]))
-	$_SESSION['cart'] = \array_diff($_SESSION, [$value]);
+	$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$value]);
 
 
  	}
