@@ -26,7 +26,7 @@ session_start();
 	if (!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = array();
 	}
-	?> 
+?> 
 
 	<h1>Seeds for Your Home Garden</h1>
 
@@ -80,12 +80,12 @@ session_start();
 
 	if (isset($_POST["lettuce"])) {
 		$lettuce = $_POST["lettuce"];
-		array_push($_SESSION, $lettuce);
+		array_push($_SESSION['cart', $lettuce);
 	}
 
 	if (isset($_POST["cucumber"])) {
 		$cucumber = $_POST["cucumber"];
-		array_push($_SESSION, $cucumber);
+		array_push($_SESSION['cart'], $cucumber);
 	}
 	?>
 
