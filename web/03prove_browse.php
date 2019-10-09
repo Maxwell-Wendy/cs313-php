@@ -29,19 +29,7 @@ session_start();
 	}
 ?> 
 
-<?php
-	if (isset($_POST["tomato"])) {
-		unset($_POST["tomato"]);
-	}
 
-	if (isset($_POST["lettuce"])) {
-		unset($_POST["lettuce"]);
-	}
-
-	if (isset($_POST["cucumber"])) {
-		unset($_POST["cucumber"]);
-	}
-?>
 
 
 	<h1>Seeds for Your Home Garden</h1>
