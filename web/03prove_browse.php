@@ -87,16 +87,14 @@ session_start();
 		$cucumber = $_POST["cucumber"];
 		array_push($_SESSION['cart'], $cucumber);
 	}
-	?>
-
-	<?php
-
+	
 	if(!empty($_SESSION['cart'])) {
 
 		foreach ($_SESSION['cart'] as $key => $value) {
 			echo "You have added " . $value . " to your cart.<br>";
 		}
 	}
+	
 	else {
 		echo "You have no items in your cart.";
 	}
