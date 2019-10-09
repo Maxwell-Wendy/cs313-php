@@ -32,11 +32,10 @@ if (!isset($_SESSION['cart'])) {
 		</form>
 <?php 
 	if(isset($_POST["name"])) {
-		$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$_POST["name"]);
+		$item = $_POST["name"];
+		$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
 }
 	
-
-
  	
 
 ?>
