@@ -30,17 +30,17 @@ session_start();
 
 	<h1>Seeds for Your Home Garden</h1>
 
-	<div class="seeds">
+	<!--<div class="seeds">
 		<h2>Tomato</h2>
 		<p>Tomatoes are a popular choice for any home garden!</p>
 		<p class="quantity">25 seeds</p>
-		<p class="price">$3.50</p>
+		<p class="price">$3.50</p> -->
 		<!--<p><button id="tomato">Add to Cart</button></p> -->
-		<form action="03prove_browse.php" method="post">
+	<!--	<form action="03prove_browse.php" method="post">
 			<input type="hidden" name="tomato" value="Tomato">
 			<input type="submit" name="submit_tomato" value="Add to Cart">
 		</form>
-	</div>
+	</div> -->
 
 	<div class="seeds">
 		<h2>Lettuce</h2>
