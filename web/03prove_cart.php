@@ -27,8 +27,11 @@ if (!isset($_SESSION['cart'])) {
 ?>
         <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 			<input type="hidden" name="remove" value="<?php echo $value ?>">
-			<!-- <input type="submit" name="submit" value="Remove Item"> -->
-			<input type="button" name="delete" onclick="message()" value="Remove Item">
+			<input type="submit" name="submit" value="Remove Item">
+			<?php foreach($_SESSION['cart'] as $k => $p): ?>
+        <?php echo $p; ?>&nbsp;<button type="submit" name="remove" value="<?php echo $k; ?>">Remove</button><br/>
+    <?php endforeach; ?>
+			<!--<input type="button" name="delete" onclick="message()" value="Remove Item"> -->
 		</form>
 	<?php 
 	if(isset($_POST["remove"])) {
