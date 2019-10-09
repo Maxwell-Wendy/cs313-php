@@ -78,12 +78,12 @@ session_start();
 
 	}
 
-	elseif (isset($_POST["lettuce"])) {
+	if (isset($_POST["lettuce"])) {
 		$lettuce = $_POST["lettuce"];
 		array_push($_SESSION, $lettuce);
 	}
 
-	elseif (isset($_POST["cucumber"])) {
+	if (isset($_POST["cucumber"])) {
 		$cucumber = $_POST["cucumber"];
 		array_push($_SESSION, $cucumber);
 	}
