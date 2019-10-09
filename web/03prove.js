@@ -43,18 +43,3 @@ $(document).ready(function() {
 		});
 	});
 });
-
-$(document).ready(function() {
-	$("#seed").click(function(e) {
-		$.ajax({
-			url: '03prove_browse.php',
-			type: 'POST',
-			data: {
-				name: 'seed'
-			},
-			success: function(msg) {
-				alert('data posted');
-			}
-		});
-	});
-});
