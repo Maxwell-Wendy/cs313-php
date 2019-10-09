@@ -20,12 +20,23 @@ if (!isset($_SESSION['cart'])) {
 	<h2>Your order details</h2>
 	<div class="confirm">
 		<?php
-			$name = $_POST["name"];
-			$street = $_POST["street"];
-			$city = $_POST["city"];
-			$state = $_POST["state"];
-			$zip = $_POST["zip"];
-			$email = $_POST["email"];
+			$posted_name = $_POST["name"];
+			$name = filter_var($posted_name, FILTER_SANITIZE_STRING);
+
+			$posted_street = $_POST["street"];
+			$street = filter_var($posted_street, FILTER_SANITIZE_STRING);
+
+			$posted_city = $_POST["city"];
+			$city = filter_var($posted_city, FILTER_SANITIZE_STRING);
+
+			$posted_state = $_POST["state"];
+			$state = filter_var($posted_state, FILTER_SANITIZE_STRING);
+
+			$posted_zip = $_POST["zip"];
+			$zip = filter_var($posted_name, FILTER_SANITIZE_STRING);
+
+			$posted_email = $_POST["email"];
+			$email = filter_var($posted_email, FILTER_SANITIZE_EMAIL);
 
 			echo "You have ordered: <br>";
 

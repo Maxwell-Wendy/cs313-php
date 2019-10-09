@@ -19,32 +19,23 @@ if (!isset($_SESSION['cart'])) {
 	<h1>Shopping Cart</h1>
 	<br>
 
-<?php
-	echo "Your cart contains: <br>";
- 	//foreach ($_SESSION['cart'] as $key => $value) {
- 		//echo "You have added " . $value . " to your cart.<br>";
-?>
-        <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-			<!--<input type="hidden" name="remove" value="<?php //echo $value ?>">-->
-			<!--<input type="submit" name="submit" value="Remove Item">-->
-			<?php foreach($_SESSION['cart'] as $k => $p): ?>
+	<?php
+		echo "Your cart contains: <br>";
+	?>
+
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+		
+		<?php foreach($_SESSION['cart'] as $k => $p): ?>
         <?php echo $p; ?>&nbsp;<button type="submit" name="remove" value="<?php echo $k; ?>">Remove</button><br/>
-    <?php endforeach; ?>
-			<!--<input type="button" name="delete" onclick="message()" value="Remove Item"> -->
-		</form>
+    	<?php endforeach; ?>
+		
+	</form>
+
 	<?php 
 	if(isset($_POST["remove"])) {
-		$item = $_POST["remove"]; ?>
-		<!-- <div class="delete">
-			<form action="<?php //echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-			<input type="hidden" name="confirm" value="<?php //echo $value ?>">
-			<input type="submit" name="submit" value="Confirm Remove Item">
-		</form>-->
-
-
-		<?php 
-		//$_SESSION['cart'] = \array_diff($_SESSION['cart'], [$item]);
+		$item = $_POST["remove"]; 
 		unset($_SESSION['cart'] [$item]);
+
 		$page = $_SERVER['PHP_SELF'];
 		$sec = ".5";
 		header("Refresh: $sec; url = $page");

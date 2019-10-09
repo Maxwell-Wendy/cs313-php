@@ -43,8 +43,3 @@ $(document).ready(function() {
 		});
 	});
 });
-
-function message() {
-	if (confirm("Do you really want to remove this item?")) {
-		;
-}
