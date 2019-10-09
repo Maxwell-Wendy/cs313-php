@@ -1,7 +1,5 @@
 <?php
-header("Location: 03prove_cart.php");
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -72,8 +70,10 @@ session_start();
 
 	
 	<form action="03prove_cart.php" method="post">
-		<input type="submit" name="View Cart">
+		<input type="submit" name="view_cart" value="View Cart">
 	</form>
+
+	<br><br>
 
 	<?php
 	if (isset($_POST["tomato"])) {
