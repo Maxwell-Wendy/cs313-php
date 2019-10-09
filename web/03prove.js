@@ -36,4 +36,30 @@ $(document).ready(function() {
 		});
 	});
 
+	$("#cucumber").click(function() {
+		$.ajax({
+			url: '03prove_browser.php',
+			type: 'POST',
+			data: {
+				name: 'cucumber'
+			},
+			success: function(msg) {
+				alert('data posted');
+			}
+		});
+	});
+
+	$("#lettuce").click(function() {
+		$.ajax({
+			url: '03prove_browser.php',
+			type: 'POST',
+			data: {
+				name: 'lettuce'
+			},
+			success: function(msg) {
+				alert('data posted');
+			}
+		});
+	});
+
 });
