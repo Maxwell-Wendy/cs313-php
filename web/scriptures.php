@@ -45,10 +45,12 @@
 		echo "<br>Maxwell <br>";
 		//var_dump($result);*/
 
-		$sql = 'SELECT book FROM scriptures';
+		$sql = 'SELECT * FROM scriptures';
 
 		foreach ($pdo->query($sql) as $row) {
-			var_dump($row);
+
+			echo $row['book'];
+			//var_dump($row);
 		}
 
 		$pdo = null;
