@@ -21,7 +21,7 @@
 	    $db["port"],
 	    $db["user"],
 	    $db["pass"],
-	    ltrim($db["path"], "/")
+	    //ltrim($db["path"], "/")
 	))
 		or die('Could not connect: ' . pg_last_error());
 
