@@ -12,8 +12,18 @@
 	$db = parse_url(getenv("DATABASE_URL"));
 	//$db["path"] = ltrim($db["path"], "/");
 
-	$dbconn = pg_connect($db)
-		or die('Could not connect:' . pg_last_error());
+	//$dbconn = pg_connect($db)
+		//or die('Could not connect:' . pg_last_error());
+
+	$pdo = new PDO("pgsql:" . sprintf(
+	    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+	    $db["host"],
+	    $db["port"],
+	    $db["user"],
+	    $db["pass"],
+	    ltrim($db["path"], "/")
+	))
+		or die('Could not connect: ' . pg_last_error());
 
 	$query = 'SELECT * FROM scriptures';
 
