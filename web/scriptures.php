@@ -11,12 +11,27 @@
 	<?php
 	$db = parse_url(getenv("DATABASE_URL"));
 	$db["path"] = ltrim($db["path"], "/");
-	$result = pg_query($db, "SELECT book FROM scriptures WHERE scriptures.id =1");
-	echo $db;
+
+	$dbconn = pg_connect($db)
+		or die('Could not connect:' . pg_last_error());
+
+	$query = 'SELECT * FROM scriptures';
+
+	$result = pg_query($query) or die ('Error message: ' . pg_last_error());
+
+
+	while ($row = pg_fetch_row($result)) {
+		var_dump($row);
+	}
+
+	pg_free_result($result);
+	pg_close($dbconn);
+	//$result = pg_query($db, "SELECT book FROM scriptures WHERE scriptures.id =1");
+	//echo $db;
 	echo "<br>Wendy <br>";
-	echo $db["path"];
+	//echo $db["path"];
 	echo "<br>Maxwell <br>";
-	var_dump($result);
+	//var_dump($result);
 	?>
 
 </body>
