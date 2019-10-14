@@ -13,6 +13,7 @@
 	$db["path"] = ltrim($db["path"], "/");
 	$result = pg_query($db, "SELECT * FROM scriptures");
 	echo $db;
+	echo $db["path"];
 	echo $result;
 	?>
 
