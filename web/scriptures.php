@@ -21,11 +21,11 @@
 	    $db["port"],
 	    $db["user"],
 	    $db["pass"],
-	    //ltrim($db["path"], "/")
+	    ltrim($db["path"], "/")
 	))
 		or die('Could not connect: ' . pg_last_error());
 
-	$query = 'SELECT * FROM scriptures';
+	$query = 'SELECT * FROM book';
 
 	$result = pg_query($query) or die ('Error message: ' . pg_last_error());
 
