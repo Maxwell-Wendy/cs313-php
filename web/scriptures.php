@@ -49,7 +49,10 @@
 
 		foreach ($pdo->query($sql) as $row) {
 
-			echo $row['book'];
+			echo $row['book'] . " ";
+			echo $row['chapter'] . ":";
+			echo $row['verse'] . " - ";
+			echo $row['content'] . "<br>";
 			//var_dump($row);
 		}
 
