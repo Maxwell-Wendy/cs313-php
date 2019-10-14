@@ -30,7 +30,6 @@ session_start();
 		$sql = 'SELECT * FROM book';
 
 		foreach ($pdo->query($sql) as $row) {
-
 			echo $row['title'] . "<br><br>";
 		}
 
