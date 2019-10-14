@@ -16,7 +16,7 @@
 	echo "<br>Wendy <br>";
 	echo $db["path"];
 	echo "<br>Maxwell <br>";
-	echo $result;
+	var_dump($result);
 	?>
 
 </body>
