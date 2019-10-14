@@ -10,7 +10,7 @@
 
 	<?php
 	$db = parse_url(getenv("DATABASE_URL"));
-	$db["path"] = ltrim($db["path"], "/");
+	//$db["path"] = ltrim($db["path"], "/");
 
 	$dbconn = pg_connect($db)
 		or die('Could not connect:' . pg_last_error());
