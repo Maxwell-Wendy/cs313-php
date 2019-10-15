@@ -52,7 +52,7 @@ session_start();
 			die("Error message: " . $e->getMessage());
 		}
 	}
-	else {echo "it didn't work"}
+	else {echo "it didn't work";}
 	?>
 
 </body>
