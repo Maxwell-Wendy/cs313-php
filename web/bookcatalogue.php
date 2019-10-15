@@ -20,29 +20,33 @@ session_start();
 	</form>
 
 	<?php
-	try {
-		$db = parse_url(getenv("DATABASE_URL"));
 
-		$pdo = new PDO("pgsql:" . sprintf(
-		    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-		    $db["host"],
-		    $db["port"],
-		    $db["user"],
-		    $db["pass"],
-		    ltrim($db["path"], "/")
-		))
-			or die('Could not connect: ' . pg_last_error());
+	if (isset($_POST['author'])) {
+		
+		try {
+			$db = parse_url(getenv("DATABASE_URL"));
 
-		$sql = 'SELECT * FROM author where name = 'POST[author];
+			$pdo = new PDO("pgsql:" . sprintf(
+			    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+			    $db["host"],
+			    $db["port"],
+			    $db["user"],
+			    $db["pass"],
+			    ltrim($db["path"], "/")
+			))
+				or die('Could not connect: ' . pg_last_error());
 
-		foreach ($pdo->query($sql) as $row) {
-			echo $row['author'] . "<br><br>";
+			$sql = 'SELECT * FROM author where name = 'POST[author];
+
+			foreach ($pdo->query($sql) as $row) {
+				echo $row['author'] . "<br><br>";
+			}
+
+			$pdo = null;
+
+		} catch (PDOExcetion $e) {
+			die("Error message: " . $e->getMessage());
 		}
-
-		$pdo = null;
-
-	} catch (PDOExcetion $e) {
-		die("Error message: " . $e->getMessage());
 	}
 	?>
 
