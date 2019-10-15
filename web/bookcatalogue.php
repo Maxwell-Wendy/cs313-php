@@ -42,10 +42,10 @@ session_start();
 				echo $author . " is the search term.<br>";
 
 
-				$sql = "SELECT * FROM author, book where author.last_name = '$author'";
+				$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title FROM author, book WHERE author.last_name = '$author'";
 
 				foreach ($pdo->query($sql) as $row) {
-					echo $row['author.first_name'] . " " . $row['author.last_name'] . ", " . "<i>" . $row['book.title'] . "</i><br>";
+					echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
 				}
 
 				$pdo = null;
