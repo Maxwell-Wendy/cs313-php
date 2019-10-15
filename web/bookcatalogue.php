@@ -40,7 +40,7 @@ session_start();
 
 
 
-			$sql = 'SELECT * FROM author where name = $author';
+			$sql = 'SELECT * FROM author';
 
 			foreach ($pdo->query($sql) as $row) {
 				echo $row['author'] . "<br><br>";
