@@ -41,7 +41,7 @@ session_start();
 			echo $author . "is the serch term.";
 
 
-			$sql = 'SELECT * FROM author where name = '$author'';
+			$sql = 'SELECT * FROM author where name = $author';
 
 			foreach ($pdo->query($sql) as $row) {
 				echo $row['name'] . "<br><br>";
