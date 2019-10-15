@@ -75,10 +75,10 @@ session_start();
 			))
 			or die('Could not connect: ' . pg_last_error());
 
-			$sql = 'SELECT author.name AS author, title FROM author, book WHERE author_id = author.id';
+			$sql = 'SELECT author.first_name AS first_name, author.last_name AS last_name, title FROM author, book WHERE author_id = author.id';
 
 			foreach ($pdo->query($sql) as $row) {
-				echo $row['author'] . ", " . $row['title'] . "<br>";
+				echo $row['first_name'] . " " . $row['last_name'] . ", " . $row['title'] . "<br>";
 			}
 
 			$pdo = null;
