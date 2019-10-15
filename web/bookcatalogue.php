@@ -19,75 +19,82 @@ session_start();
 		<input type="submit" name="submit">
 	</form>
 
+	<div>
+		<?php
+
+		if (isset($_POST['author'])) {
+			
+			try {
+				$db = parse_url(getenv("DATABASE_URL"));
+
+				$pdo = new PDO("pgsql:" . sprintf(
+				    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+				    $db["host"],
+				    $db["port"],
+				    $db["user"],
+				    $db["pass"],
+				    ltrim($db["path"], "/")
+				))
+				or die('Could not connect: ' . pg_last_error());
+
+				$author = $_POST['author'];
+
+				echo $author . " is the search term.<br>";
+
+
+				$sql = "SELECT * FROM author where last_name = '$author'";
+
+				foreach ($pdo->query($sql) as $row) {
+					echo $row['first_name'] . " " . $row['last_name'] . "<br>";
+				}
+
+				$pdo = null;
+
+			} catch (PDOExcetion $e) {
+				die("Error message: " . $e->getMessage());
+			}
+		}
+		?>
+	</div>
+
+
 	<form name="list_all" action="bookcatalogue.php" method="POST">
 		<label>Show list of all books in catalog</label>
 		<input type="submit" name="show_all">
 	</form>
 
-	<?php
+	<div>
 
-	if (isset($_POST['author'])) {
-		
-		try {
-			$db = parse_url(getenv("DATABASE_URL"));
+		<?php
+		if (isset($_POST['show_all'])) {
+			try {
+				$db = parse_url(getenv("DATABASE_URL"));
 
-			$pdo = new PDO("pgsql:" . sprintf(
-			    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-			    $db["host"],
-			    $db["port"],
-			    $db["user"],
-			    $db["pass"],
-			    ltrim($db["path"], "/")
-			))
-			or die('Could not connect: ' . pg_last_error());
+				$pdo = new PDO("pgsql:" . sprintf(
+				    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+				    $db["host"],
+				    $db["port"],
+				    $db["user"],
+				    $db["pass"],
+				    ltrim($db["path"], "/")
+				))
+				or die('Could not connect: ' . pg_last_error());
 
-			$author = $_POST['author'];
+				$sql = 'SELECT author.first_name AS first_name, author.last_name AS last_name, title FROM author, book WHERE author_id = author.id';
 
-			echo $author . " is the search term.<br>";
+				foreach ($pdo->query($sql) as $row) {
+					echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
+				}
 
+				$pdo = null;
 
-			$sql = "SELECT * FROM author where last_name = '$author'";
-
-			foreach ($pdo->query($sql) as $row) {
-				echo $row['first_name'] . $row['last_name'] . "<br>";
+			} catch (PDOExcetion $e) {
+				die("Error message: " . $e->getMessage());
 			}
-
-			$pdo = null;
-
-		} catch (PDOExcetion $e) {
-			die("Error message: " . $e->getMessage());
 		}
-	}
-	?>
+		?>
+	</div>
 
-	<?php
-	if (isset($_POST['show_all'])) {
-		try {
-			$db = parse_url(getenv("DATABASE_URL"));
-
-			$pdo = new PDO("pgsql:" . sprintf(
-			    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-			    $db["host"],
-			    $db["port"],
-			    $db["user"],
-			    $db["pass"],
-			    ltrim($db["path"], "/")
-			))
-			or die('Could not connect: ' . pg_last_error());
-
-			$sql = 'SELECT author.first_name AS first_name, author.last_name AS last_name, title FROM author, book WHERE author_id = author.id';
-
-			foreach ($pdo->query($sql) as $row) {
-				echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
-			}
-
-			$pdo = null;
-
-		} catch (PDOExcetion $e) {
-			die("Error message: " . $e->getMessage());
-		}
-	}
-	?>
 
 </body>
 </html>
