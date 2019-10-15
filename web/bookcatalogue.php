@@ -78,7 +78,7 @@ session_start();
 			$sql = 'SELECT author.first_name AS first_name, author.last_name AS last_name, title FROM author, book WHERE author_id = author.id';
 
 			foreach ($pdo->query($sql) as $row) {
-				echo $row['first_name'] . " " . $row['last_name'] . ", " . $row['title'] . "<br>";
+				echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
 			}
 
 			$pdo = null;
