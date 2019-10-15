@@ -41,7 +41,7 @@ session_start();
 			echo $author . " is the search term.<br>";
 
 
-			$sql = "SELECT * FROM author where name = 'Brandon Sanderson'";
+			$sql = "SELECT * FROM author where name = '$author'";
 
 			foreach ($pdo->query($sql) as $row) {
 				echo $row['name'] . "<br><br>";
