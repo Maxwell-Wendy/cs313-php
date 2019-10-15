@@ -14,8 +14,10 @@ session_start();
 	<h1>Book Catalogue</h1>
 
 	<form name="search" action="bookcatalogue.php" method="POST">
-		<label>Author:</label>
-		<input type="text" name="author" placeholder="Author's last name">
+		<label>Search catalogue by author's first name</label>
+		<input type="text" name="authorfn" placeholder="Author's first name">
+		<label>Search catalogue by author's last name</label>
+		<input type="text" name="authorln" placeholder="Author's last name">
 		<input type="submit" name="submit">
 	</form>
 
@@ -37,12 +39,12 @@ session_start();
 				))
 				or die('Could not connect: ' . pg_last_error());
 
-				$author = $_POST['author'];
+				$authorfn = $_POST['authorfn'];
+				$authorln = $_POST['authorln'];
 
-				echo $author . " is the search term.<br>";
+				//echo $author . " is the search term.<br>";
 
-
-				$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title FROM author, book WHERE author.last_name = '$author' AND author_id = author.id";
+				$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title FROM author, book WHERE author.last_name = '$authorln' OR author.first_name = '$authorfn' AND author_id = author.id";
 
 				foreach ($pdo->query($sql) as $row) {
 					echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
