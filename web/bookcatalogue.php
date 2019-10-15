@@ -15,7 +15,7 @@ session_start();
 
 	<form name="search" action="bookcatalogue.php" method="POST">
 		<label>Author:</label>
-		<input type="text" name="author" placeholder="Author's name">
+		<input type="text" name="author" placeholder="Author's last name">
 		<input type="submit" name="submit">
 	</form>
 
@@ -46,10 +46,10 @@ session_start();
 			echo $author . " is the search term.<br>";
 
 
-			$sql = "SELECT * FROM author where name = '$author'";
+			$sql = "SELECT * FROM author where last_name = '$author'";
 
 			foreach ($pdo->query($sql) as $row) {
-				echo $row['name'] . "<br>";
+				echo $row['first_name'] . $row['last_name'] . "<br>";
 			}
 
 			$pdo = null;
