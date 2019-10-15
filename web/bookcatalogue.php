@@ -87,6 +87,7 @@ session_start();
 			die("Error message: " . $e->getMessage());
 		}
 	}
+	?>
 
 </body>
 </html>
