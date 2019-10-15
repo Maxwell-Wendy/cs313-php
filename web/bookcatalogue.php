@@ -38,7 +38,7 @@ session_start();
 
 			$author = $_POST['author'];
 
-			echo $author . " is the serch term.";
+			echo $author . " is the search term.";
 
 
 			$sql = 'SELECT * FROM author where name = "$author"';
@@ -53,7 +53,7 @@ session_start();
 			die("Error message: " . $e->getMessage());
 		}
 	}
-	else {echo "it didn't work";}
+	else {echo "no query";}
 	?>
 
 </body>
