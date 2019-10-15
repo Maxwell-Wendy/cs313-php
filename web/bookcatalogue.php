@@ -36,7 +36,11 @@ session_start();
 			))
 				or die('Could not connect: ' . pg_last_error());
 
-			$sql = 'SELECT * FROM author where name = 'POST[author];
+			$author = $_POST['author'];
+
+
+
+			$sql = 'SELECT * FROM author where name = $author';
 
 			foreach ($pdo->query($sql) as $row) {
 				echo $row['author'] . "<br><br>";
