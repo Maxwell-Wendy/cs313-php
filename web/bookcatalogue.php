@@ -13,6 +13,12 @@ session_start();
 	<a href="assignments.php">Back to Assignments Page</a>
 	<h1>Book Catalogue</h1>
 
+	<form name="search" action="bookcatalogue.php" method="POST">
+		<label>Author:</label>
+		<input type="text" name="author" placeholder="Author's name">
+		<input type="submit" name="submit">
+	</form>
+
 	<?php
 	try {
 		$db = parse_url(getenv("DATABASE_URL"));
@@ -27,10 +33,10 @@ session_start();
 		))
 			or die('Could not connect: ' . pg_last_error());
 
-		$sql = 'SELECT * FROM book';
+		$sql = 'SELECT * FROM author where name = 'POST[author];
 
 		foreach ($pdo->query($sql) as $row) {
-			echo $row['title'] . "<br><br>";
+			echo $row['author'] . "<br><br>";
 		}
 
 		$pdo = null;
