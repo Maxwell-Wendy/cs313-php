@@ -92,11 +92,9 @@ $db = get_db();
 					echo "You own this book.<br>";
 				}
 				else {
-					echo "You do not own this book.<br>"
+					echo "You do not own this book.<br>;"
 				}
 
-				
-				
 			}
 		}
 		?>
