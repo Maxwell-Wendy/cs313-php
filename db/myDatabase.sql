@@ -13,7 +13,6 @@ CREATE TABLE genre (
 	name varchar(80) NOT NULL
 );
 
-
 CREATE TABLE book (
 	id SERIAL NOT NULL primary key,
 	author_id int NOT NULL REFERENCES author(id),
@@ -92,4 +91,17 @@ UPDATE author SET first_name = 'Shannon', last_name = 'Hale' WHERE id = 4;
 
 UPDATE author SET first_name = 'Kiera', last_name = 'Cass' WHERE id = 5;
 
+INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read)
+	VALUES (1, 1, true, true, false, '2019-10-15');
 
+INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read)
+	VALUES (1, 2, true, true, false, '2019-07-04');
+
+INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist)
+	VALUES (2, 3, true, false, false);
+
+INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist)
+	VALUES (2, 4, true, false, false);
+
+INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read)
+	VALUES (1, 5, false, true, true, '2018-08-12');

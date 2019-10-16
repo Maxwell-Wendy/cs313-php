@@ -62,6 +62,48 @@ $db = get_db();
 		?>
 	</div>
 
+	<form name="list_users_books" action="bookcatalogue.php" method="POST">
+		<label>Show all books you own<</label>
+		<input type="text" name="username" placeholder="Your name"><br>
+		<input type="submit" name="submit">
+	</form>
+
+	<div>
+
+		<?php
+		if (isset($_POST['username'])) {
+
+			$sql = 'SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title book_user.is_owned AS owned, book_user.is_read AS read, book_user.is_wishlist AS wishlist, book_user.date_read AS date_read, genre.name AS genre FROM book_user, author, book, genre WHERE author_id = author.id';
+
+			foreach ($db->query($sql) as $row) {
+
+				$first_name = $row['first_name'];
+				$last_name = $row['last_name'];
+				$title = $row['title'];
+				$genre = $row['genre'];
+				$owned = $row['owned'];
+				$read = $row['read'];
+				$wishlist = $row['wishlist'];
+				$date_read = $row['date_read'];
+
+				echo "<p>$first_name $last_name, <i>\"$title\"</i><p>";
+				
+				if ($owned) {
+					echo "You own this book.<br>";
+				}
+				else {
+					echo "You do not own this book.<br>"
+				}
+
+				
+				
+			}
+		}
+		?>
+	</div>
+
+
+
 
 </body>
 </html>
