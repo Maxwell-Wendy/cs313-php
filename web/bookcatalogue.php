@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+require "dbConnect.php";
+$db = get_db();
 ?>
 
 <!DOCTYPE html>
@@ -26,35 +29,14 @@ session_start();
 		<?php
 
 		if (isset($_POST['authorln']) || isset($_POST['authorfn'])) {
-			
-			try {
-				$db = parse_url(getenv("DATABASE_URL"));
 
-				$pdo = new PDO("pgsql:" . sprintf(
-				    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-				    $db["host"],
-				    $db["port"],
-				    $db["user"],
-				    $db["pass"],
-				    ltrim($db["path"], "/")
-				))
-				or die('Could not connect: ' . pg_last_error());
+			$authorfn = $_POST['authorfn'];
+			$authorln = $_POST['authorln'];
 
-				$authorfn = $_POST['authorfn'];
-				$authorln = $_POST['authorln'];
+			$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title FROM author, book WHERE (author.last_name = '$authorln' OR author.first_name = '$authorfn') AND author_id = author.id";
 
-				//echo $author . " is the search term.<br>";
-
-				$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title FROM author, book WHERE (author.last_name = '$authorln' OR author.first_name = '$authorfn') AND author_id = author.id";
-
-				foreach ($pdo->query($sql) as $row) {
-					echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
-				}
-
-				$pdo = null;
-
-			} catch (PDOExcetion $e) {
-				die("Error message: " . $e->getMessage());
+			foreach ($db->query($sql) as $row) {
+				echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
 			}
 		}
 		?>
@@ -70,29 +52,11 @@ session_start();
 
 		<?php
 		if (isset($_POST['show_all'])) {
-			try {
-				$db = parse_url(getenv("DATABASE_URL"));
 
-				$pdo = new PDO("pgsql:" . sprintf(
-				    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-				    $db["host"],
-				    $db["port"],
-				    $db["user"],
-				    $db["pass"],
-				    ltrim($db["path"], "/")
-				))
-				or die('Could not connect: ' . pg_last_error());
+			$sql = 'SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title FROM author, book WHERE author_id = author.id';
 
-				$sql = 'SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title FROM author, book WHERE author_id = author.id';
-
-				foreach ($pdo->query($sql) as $row) {
-					echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
-				}
-
-				$pdo = null;
-
-			} catch (PDOExcetion $e) {
-				die("Error message: " . $e->getMessage());
+			foreach ($db->query($sql) as $row) {
+				echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
 			}
 		}
 		?>
