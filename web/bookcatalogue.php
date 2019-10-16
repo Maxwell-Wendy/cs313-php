@@ -74,7 +74,7 @@ $db = get_db();
 		if (isset($_POST['username'])) {
 			$username = ($_POST['username']);
 
-			$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title book_user.is_owned AS owned, book_user.is_read AS read, book_user.is_wishlist AS wishlist, book_user.date_read AS date_read, genre.name AS genre FROM book_user, author, book, genre WHERE user.name = '$username' AND author_id = author.id";
+			$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title, book_user.is_owned AS owned, book_user.is_read AS read, book_user.is_wishlist AS wishlist, book_user.date_read AS date_read, genre.name AS genre FROM book_user, author, book, genre WHERE user.name = '$username' AND author_id = author.id";
 
 			foreach ($db->query($sql) as $row) {
 
