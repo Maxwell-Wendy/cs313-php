@@ -18,6 +18,8 @@ $db = get_db();
 
 	<div>
 		<?php
+
+		echo $_SESSION['usernum'];
 		if (isset($_POST['authorln']) || isset($_POST['authorfn'])) {
 
 			$authorfn = $_POST['authorfn'];

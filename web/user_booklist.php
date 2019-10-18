@@ -42,6 +42,7 @@ $db = get_db();
 				$title = $row['title'];
 
 				echo "<a href=\"$url\">$first_name $last_name, <i>$title</i></a><br>";
+				echo $_SESSION['usernum'];
 			}
 		}
 		?>
