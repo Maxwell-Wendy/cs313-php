@@ -22,6 +22,7 @@ $db = get_db();
 
 			$authorfn = $_POST['authorfn'];
 			$authorln = $_POST['authorln'];
+			$user = $_SESSION['usernum'];
 
 			$sql = "SELECT author.first_name AS first_name, 
 				author.last_name AS last_name, 
@@ -29,7 +30,7 @@ $db = get_db();
 			FROM author 
 			INNER JOIN book ON author_id = author.id 
 			WHERE (author.last_name = '$authorln' OR author.first_name = '$authorfn') 
-			AND book_user.user_id = '{$_SESSION['usernum']}'
+			AND book_user.user_id = 'user'
 			ORDER BY last_name, first_name";
 
 			foreach ($db->query($sql) as $row) {
