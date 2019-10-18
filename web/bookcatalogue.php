@@ -25,6 +25,35 @@ $db = get_db();
 		<input type="submit" name="submit">
 	</form>
 
+	<form name="search_genre" action="bookcatalogue.php" method="POST">
+		<label>Search catalogue by genre</label>
+		<select name="genre">
+			<?php
+			$sql = "SELECT genre.name AS genre FROM genre";
+
+			foreach ($db->query($sql) as $row) {
+				$genre = $row['genre'];
+				echo "<option>$genre</option>";
+			}
+			?>
+		</select>
+	</form>
+
+	<div>
+		<?php
+		if (isset($_POST['genre'])) {
+
+			$genre = $_POST['genre'];
+			
+			$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title, genre.name AS genre FROM author, book, genre WHERE genre.name = '$genre' AND author_id = author.id AND genre_id = genre.id";
+
+			foreach ($db->query($sql) as $row) {
+				echo $row['first_name'] . " " . $row['last_name'] . ", " . "<i>" . $row['title'] . "</i><br>";
+			}
+		}
+		?>
+	</div>
+
 	<div>
 		<?php
 		if (isset($_POST['authorln']) || isset($_POST['authorfn'])) {
@@ -43,7 +72,7 @@ $db = get_db();
 
 
 	<form name="list_all" action="bookcatalogue.php" method="POST">
-		<label>Show list of all books in catalog</label>
+		<label>Show list of all books in catalogue (any user)</label>
 		<input type="submit" name="show_all">
 	</form>
 
