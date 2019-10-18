@@ -19,7 +19,9 @@ $db = get_db();
 		if (isset($_POST['username'])) {
 			$username = ($_POST['username']);
 
-			$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title, book_user.book_id AS book_id, book_user.user_id AS user_id FROM user_info, book_user, author, book WHERE user_info.username = '$username' AND book_user.user_id = user_info.id AND book_user.book_id = book.id AND book.author_id = author.id";
+			//$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title, book_user.book_id AS book_id, book_user.user_id AS user_id FROM user_info, book_user, author, book WHERE user_info.username = '$username' AND book_user.user_id = user_info.id AND book_user.book_id = book.id AND book.author_id = author.id";
+
+			$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title, book_user.book_id AS book_id, book_user.user_id AS user_id FROM book_user INNER JOIN book ON book_user.book_id = book.id INNER JOIN user_info ON book_user.user_id = user_info.id INNER JOIN author ON book.author_id = author.id WHERE user_info.username = '$username'";
 
 
 
