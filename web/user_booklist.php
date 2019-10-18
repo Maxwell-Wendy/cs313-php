@@ -39,7 +39,7 @@ $db = get_db();
 				//$wishlist = $row['wishlist'];
 				//$date_read = $row['date_read'];
 
-				echo "<a href=\"$url\">$first_name $last_name, <i>\"$title\"</i></a><br>";
+				echo "<a href=\"$url\">$first_name $last_name, <i>$title</i></a><br>";
 				
 				/*if ($owned) {
 					echo "<i>You own this book.</i><br>";
