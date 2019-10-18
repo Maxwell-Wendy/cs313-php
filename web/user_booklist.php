@@ -26,7 +26,7 @@ $db = get_db();
 			//$sql = "SELECT author.first_name AS first_name, author.last_name AS last_name, book.title AS title, book_user.is_owned AS owned, book_user.is_read AS read, book_user.is_wishlist AS wishlist, book_user.date_read AS date_read, genre.name AS genre FROM user_info, book_user, author, book, genre WHERE user_info.username = '$username' AND book_user.user_id = user_info.id AND book_user.book_id = book.id AND book.author_id = author.id AND book.genre_id = genre.id";
 
 			foreach ($db->query($sql) as $row) {
-				$url = "book-details.php?" . "bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
+				$url = "book_details.php?" . "bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
 
 				$first_name = $row['first_name'];
 				$last_name = $row['last_name'];
@@ -37,7 +37,7 @@ $db = get_db();
 				//$wishlist = $row['wishlist'];
 				//$date_read = $row['date_read'];
 
-				echo "<a href=\"$url\">$first_name $last_name, <i>\"$title\"</i></a>";
+				echo "<a href=\"$url\">$first_name $last_name, <i>\"$title\"</i></a><br>";
 				
 				/*if ($owned) {
 					echo "<i>You own this book.</i><br>";
