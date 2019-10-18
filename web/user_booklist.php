@@ -43,5 +43,19 @@ $db = get_db();
 		}
 		?>
 	</div>
+
+	<form name="fnsearch" action="search_results.php" method="POST">
+		<label>Search catalogue by author's first name</label>
+		<input type="text" name="authorfn" placeholder="Author's first name">
+		<br>
+		<input type="submit" name="submit">
+	</form>
+	<form name="lnsearch" action="search_results.php" method="POST">
+		<label>Search catalogue by author's last name</label>
+		<input type="text" name="authorln" placeholder="Author's last name">
+		<input type="submit" name="submit">
+	</form>
+
+
 	</body>
 	</html>

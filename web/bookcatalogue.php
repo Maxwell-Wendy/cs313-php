@@ -16,14 +16,6 @@ $db = get_db();
 	<a href="assignments.php">Back to Assignments Page</a>
 	<h1>Book Catalogue</h1>
 
-	<form name="search" action="bookcatalogue.php" method="POST">
-		<label>Search catalogue by author's first name</label>
-		<input type="text" name="authorfn" placeholder="Author's first name">
-		<br>
-		<label>Search catalogue by author's last name</label>
-		<input type="text" name="authorln" placeholder="Author's last name">
-		<input type="submit" name="submit">
-	</form>
 
 	<form name="search_genre" action="bookcatalogue.php" method="POST">
 		<label>Search catalogue by genre</label>
@@ -54,32 +46,6 @@ $db = get_db();
 			INNER JOIN book ON author_id = author.id
 			INNER JOIN genre ON genre_id = genre.id
 			WHERE genre.name = '$genre'
-			ORDER BY last_name, first_name";
-
-			foreach ($db->query($sql) as $row) {
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
-				$title = $row['title'];
-
-				echo "<p>$first_name $last_name, <i>$title</i></p>";
-			}
-		}
-		?>
-	</div>
-
-	<div>
-		<?php
-		if (isset($_POST['authorln']) || isset($_POST['authorfn'])) {
-
-			$authorfn = $_POST['authorfn'];
-			$authorln = $_POST['authorln'];
-
-			$sql = "SELECT author.first_name AS first_name, 
-				author.last_name AS last_name, 
-				book.title AS title 
-			FROM author 
-			INNER JOIN book ON author_id = author.id 
-			WHERE author.last_name = '$authorln' OR author.first_name = '$authorfn'
 			ORDER BY last_name, first_name";
 
 			foreach ($db->query($sql) as $row) {

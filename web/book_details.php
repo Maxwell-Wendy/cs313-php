@@ -20,8 +20,7 @@ $db = get_db();
 	$bookid = $_GET['bookid'];
 	$userid = $_GET['userid'];
 
-	$sql = "SELECT 
-			author.first_name AS first_name, 
+	$sql = "SELECT author.first_name AS first_name, 
 			author.last_name AS last_name, 
 			book.title AS title, 
 			book_user.is_owned AS owned, 
