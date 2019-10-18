@@ -35,7 +35,7 @@ $db = get_db();
 				$wishlist = $row['wishlist'];
 				$date_read = $row['date_read'];
 
-				echo "<p>$first_name $last_name, <i>\"$title\"</i></p>";
+				echo "<h2>$first_name $last_name, <i>\"$title\"</i></h2>";
 
 				echo "<p>Genre: $genre<br>";
 				
