@@ -36,12 +36,32 @@ $db = get_db();
 				$date_read = $row['date_read'];
 
 				echo "<p>$first_name $last_name, <i>\"$title\"</i></p>";
+
+				echo "<p>Genre: $genre<br>";
 				
 				if ($owned) {
-					echo "<i>You own this book.</i><br>";
+					echo "You own <i>\"$title\"</i>.<br>";
 				}
 				else {
-					echo "<i>You do not own this book.</i><br>";
+					echo "You do not own <i>\"$title\"</i>.<br>";
+				}
+
+				if ($read) {
+					echo "You have read <i>\"$title\"</i>.<br>";
+				}
+				else {
+					echo "You have not read <i>\"$title\"</i>.<br>";
+				}
+
+				if ($wishlist) {
+					echo "<i>\"$title\"</i> is on your wishlist.<br>";
+				}
+				else {
+					echo "<i>\"$title\"</i> is not on your wishlist.<br>";
+				}
+
+				if (!is_null($date_read)) {
+					echo "You last read <i>\"$title\"</i> on $date_read.";
 				}
 			}
 			?>
