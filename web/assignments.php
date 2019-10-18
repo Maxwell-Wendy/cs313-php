@@ -15,6 +15,8 @@
 	<br>
 	<a href="03prove_browse.php">Shopping Cart Activity</a>
 	<br>
+	<a href="scriptures.php">Teach 05 Team Activity--Scriptures</a>
+	<br>
 	<a href="bookcatalogue.php">Book Catalogue</a>
 	<br>
 	<p>More Coming Soon!</p>
