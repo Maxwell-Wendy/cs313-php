@@ -29,8 +29,10 @@ $db = get_db();
 			$sql = "SELECT author.first_name AS first_name, 
 				author.last_name AS last_name, 
 				book.title AS title 
-			FROM author 
-			INNER JOIN book ON author_id = author.id 
+			FROM book_user 
+			INNER JOIN user_info ON book_user.user_id = user_info.id 
+			INNER JOIN book ON book_user.book_id = book.id 
+			INNER JOIN author ON book.author_id = author.id
 			WHERE (author.last_name = '$authorln' OR author.first_name = '$authorfn') 
 			AND book_user.user_id = '$user'
 			ORDER BY last_name, first_name";
