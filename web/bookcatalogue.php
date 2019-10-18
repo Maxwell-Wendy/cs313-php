@@ -27,7 +27,6 @@ $db = get_db();
 
 	<div>
 		<?php
-
 		if (isset($_POST['authorln']) || isset($_POST['authorfn'])) {
 
 			$authorfn = $_POST['authorfn'];
@@ -49,7 +48,6 @@ $db = get_db();
 	</form>
 
 	<div>
-
 		<?php
 		if (isset($_POST['show_all'])) {
 
@@ -64,12 +62,11 @@ $db = get_db();
 
 	<form name="list_users_books" action="bookcatalogue.php" method="POST">
 		<label>Show all books you own</label>
-		<input type="text" name="username" placeholder="Your name"><br>
+		<input type="text" name="username" placeholder="Your username"><br>
 		<input type="submit" name="submit">
 	</form>
 
 	<div>
-
 		<?php
 		if (isset($_POST['username'])) {
 			$username = ($_POST['username']);
@@ -89,12 +86,12 @@ $db = get_db();
 
 				echo "<p>$first_name $last_name, <i>\"$title\"</i><p>";
 				
-				/*if ($owned) {
+				if ($owned) {
 					echo "You own this book.<br>";
 				}
 				else {
 					echo "You do not own this book.<br>";
-				}*/
+				}
 
 			}
 		}
