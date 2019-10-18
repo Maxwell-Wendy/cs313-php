@@ -47,7 +47,7 @@ $db = get_db();
 		?>
 	</div>
 
-	<form name="fnsearch" action="search_results.php?user=<?php $_SESSION['usernum'] ?>" method="POST">
+	<form name="fnsearch" action="search_results.php?user= <?php echo $_SESSION['usernum']; ?>" method="POST">
 		<label>Search catalogue by author's first name</label>
 		<input type="text" name="authorfn" placeholder="Author's first name">
 		<br>
