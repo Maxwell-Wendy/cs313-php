@@ -41,7 +41,7 @@ $db = get_db();
 				$last_name = $row['last_name'];
 				$title = $row['title'];
 
-				if (is_null($row['title'])) {
+				if (is_null($title)) {
 					echo "You have no books that match";
 				}
 
