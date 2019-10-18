@@ -40,17 +40,17 @@ $db = get_db();
 				echo "<p>Genre: $genre<br>";
 				
 				if ($owned) {
-					echo "You own <i>\"$title\"</i>.<br>";
+					echo "You own <i>\"$title.\"</i><br>";
 				}
 				else {
-					echo "You do not own <i>\"$title\"</i>.<br>";
+					echo "You do not own <i>\"$title.\"</i><br>";
 				}
 
 				if ($read) {
-					echo "You have read <i>\"$title\"</i>.<br>";
+					echo "You have read <i>\"$title.\"</i><br>";
 				}
 				else {
-					echo "You have not read <i>\"$title\"</i>.<br>";
+					echo "You have not read <i>\"$title.\"</i><br>";
 				}
 
 				if ($wishlist) {
