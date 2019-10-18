@@ -29,7 +29,7 @@ $db = get_db();
 		<label>Search catalogue by genre</label>
 		<select name="genre">
 			<?php
-			$sql = "SELECT genre.name AS genre FROM genre";
+			$sql = "SELECT genre.name AS genre FROM genre ORDER BY genre";
 
 			foreach ($db->query($sql) as $row) {
 				$genre = $row['genre'];
@@ -53,7 +53,8 @@ $db = get_db();
 			FROM author
 			INNER JOIN book ON author_id = author.id
 			INNER JOIN genre ON genre_id = genre.id
-			WHERE genre.name = '$genre'";
+			WHERE genre.name = '$genre'
+			ORDER BY last_name, first_name";
 
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];
@@ -78,7 +79,8 @@ $db = get_db();
 				book.title AS title 
 			FROM author 
 			INNER JOIN book ON author_id = author.id 
-			WHERE author.last_name = '$authorln' OR author.first_name = '$authorfn'";
+			WHERE author.last_name = '$authorln' OR author.first_name = '$authorfn'
+			ORDER BY last_name, first_name";
 
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];
@@ -105,7 +107,8 @@ $db = get_db();
 			author.last_name AS last_name, 
 			book.title AS title 
 			FROM author
-			INNER JOIN book on author_id = author.id';
+			INNER JOIN book on author_id = author.id
+			ORDER BY last_name, first_name';
 
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];

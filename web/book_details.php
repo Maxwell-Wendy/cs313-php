@@ -34,7 +34,8 @@ $db = get_db();
 		INNER JOIN book ON book_user.book_id = book.id 
 		INNER JOIN author ON book.author_id = author.id 
 		INNER JOIN genre ON book.genre_id = genre.id 
-		WHERE book_user.book_id = '$bookid' AND book_user.user_id = '$userid'";
+		WHERE book_user.book_id = '$bookid' AND book_user.user_id = '$userid'
+		ORDER BY last_name, first_name";
 
 
 	foreach ($db->query($sql) as $row) {

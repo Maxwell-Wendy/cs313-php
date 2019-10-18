@@ -28,7 +28,8 @@ $db = get_db();
 			INNER JOIN book ON book_user.book_id = book.id 
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
 			INNER JOIN author ON book.author_id = author.id 
-			WHERE user_info.username = '$username'";
+			WHERE user_info.username = '$username'
+			ORDER BY last_name, first_name";
 
 			foreach ($db->query($sql) as $row) {
 				$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
