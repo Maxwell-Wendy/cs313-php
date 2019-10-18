@@ -31,8 +31,11 @@ $db = get_db();
 			WHERE user_info.username = '$username'
 			ORDER BY last_name, first_name";
 
+			
+
 			foreach ($db->query($sql) as $row) {
-				$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
+				$_SESSION['usernum'] = $row['user_id'];
+				$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $_SESSION['usernum'];
 
 				$first_name = $row['first_name'];
 				$last_name = $row['last_name'];
@@ -44,7 +47,7 @@ $db = get_db();
 		?>
 	</div>
 
-	<form name="fnsearch" action="search_results.php" method="POST">
+	<form name="fnsearch" action="search_results.php?user=<?php $_SESSION['usernum'] ?>" method="POST">
 		<label>Search catalogue by author's first name</label>
 		<input type="text" name="authorfn" placeholder="Author's first name">
 		<br>
