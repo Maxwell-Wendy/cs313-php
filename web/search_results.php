@@ -19,7 +19,6 @@ $db = get_db();
 	<div>
 		<?php
 
-		echo $_SESSION['usernum'];
 		if (isset($_POST['authorln']) || isset($_POST['authorfn'])) {
 
 			$authorfn = $_POST['authorfn'];
@@ -41,6 +40,10 @@ $db = get_db();
 				$first_name = $row['first_name'];
 				$last_name = $row['last_name'];
 				$title = $row['title'];
+
+				if (is_null($row['title'][0])) {
+					echo "You have no books that match";
+				}
 
 				echo "<p>$first_name $last_name, <i>$title</i></p>";
 			}

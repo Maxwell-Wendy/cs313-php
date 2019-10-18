@@ -42,20 +42,21 @@ $db = get_db();
 				$title = $row['title'];
 
 				echo "<a href=\"$url\">$first_name $last_name, <i>$title</i></a><br>";
-				echo $_SESSION['usernum'];
 			}
 		}
 		?>
 	</div>
 
+	<h2>Search your books</h2>
+
 	<form name="fnsearch" action="search_results.php" method="POST">
-		<label>Search catalogue by author's first name</label>
+		<label>Search your books by author's first name</label>
 		<input type="text" name="authorfn" placeholder="Author's first name">
 		<br>
 		<input type="submit" name="submit">
 	</form>
 	<form name="lnsearch" action="search_results.php" method="POST">
-		<label>Search catalogue by author's last name</label>
+		<label>Search your books by author's last name</label>
 		<input type="text" name="authorln" placeholder="Author's last name">
 		<input type="submit" name="submit">
 	</form>
