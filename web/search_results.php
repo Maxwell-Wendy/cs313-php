@@ -32,7 +32,7 @@ $db = get_db();
 			FROM author 
 			INNER JOIN book ON author_id = author.id 
 			WHERE (author.last_name = '$authorln' OR author.first_name = '$authorfn') 
-			AND book_user.user_id = 'user'
+			AND book_user.user_id = '$user'
 			ORDER BY last_name, first_name";
 
 			foreach ($db->query($sql) as $row) {
