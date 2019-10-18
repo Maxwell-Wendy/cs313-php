@@ -78,7 +78,7 @@ $db = get_db();
 				book.title AS title 
 			FROM author 
 			INNER JOIN book ON author_id = author.id 
-			WHERE author.last_name = '$authorln' OR author.first_name = '$authorfn')";
+			WHERE author.last_name = '$authorln' OR author.first_name = '$authorfn'";
 
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];
