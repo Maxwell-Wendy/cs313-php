@@ -53,7 +53,7 @@ $db = get_db();
 				$last_name = $row['last_name'];
 				$title = $row['title'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>"
+				echo "<p>$first_name $last_name, <i>$title</i></p>";
 			}
 		}
 		?>
@@ -73,7 +73,7 @@ $db = get_db();
 				$last_name = $row['last_name'];
 				$title = $row['title'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>"
+				echo "<p>$first_name $last_name, <i>$title</i></p>";
 			}
 		}
 		?>
@@ -96,7 +96,7 @@ $db = get_db();
 				$last_name = $row['last_name'];
 				$title = $row['title'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>"
+				echo "<p>$first_name $last_name, <i>$title</i></p>";
 			}
 		}
 		?>
