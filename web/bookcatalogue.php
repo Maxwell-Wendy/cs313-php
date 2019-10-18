@@ -37,6 +37,7 @@ $db = get_db();
 			}
 			?>
 		</select>
+		<input type="submit" name="submit">
 	</form>
 
 	<div>
