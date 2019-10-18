@@ -105,7 +105,7 @@ $db = get_db();
 			author.last_name AS last_name, 
 			book.title AS title 
 			FROM author
-			INNER JOIN book';
+			INNER JOIN book on author_id = author.id';
 
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];
