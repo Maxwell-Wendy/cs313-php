@@ -68,6 +68,8 @@ $db = get_db();
 			AND user_info.username = '$user'
 			ORDER BY last_name, first_name";
 
+			echo "<h3>Books you own</h3>";
+
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];
 				$last_name = $row['last_name'];
@@ -86,7 +88,8 @@ $db = get_db();
 
 			$sql = "SELECT author.first_name AS first_name, 
 				author.last_name AS last_name, 
-				book.title AS title 
+				book.title AS title,
+				book_user.date_read AS date_read 
 			FROM book_user 
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
 			INNER JOIN book ON book_user.book_id = book.id 
@@ -96,12 +99,15 @@ $db = get_db();
 			AND user_info.username = '$user'
 			ORDER BY last_name, first_name";
 
+			echo "<h3>Books you have read</h3>";
+
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];
 				$last_name = $row['last_name'];
 				$title = $row['title'];
+				$date_read = $row['date_read'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>";
+				echo "<p>$first_name $last_name, <i>$title</i> $date_read</p>";
 			}
 		}
 		?>
@@ -123,6 +129,8 @@ $db = get_db();
 			WHERE book_user.is_wishlist = 'true'
 			AND user_info.username = '$user'
 			ORDER BY last_name, first_name";
+
+			echo "<h3>Your Wishlist</h3>";
 
 			foreach ($db->query($sql) as $row) {
 				$first_name = $row['first_name'];
