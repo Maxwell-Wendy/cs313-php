@@ -23,7 +23,7 @@ $db = get_db();
 
 			$authorfn = $_POST['authorfn'];
 			$authorln = $_POST['authorln'];
-			$user = $_SESSION['usernum'];
+			$user = $_SESSION['user'];
 
 			$sql = "SELECT author.first_name AS first_name, 
 				author.last_name AS last_name, 
@@ -33,7 +33,7 @@ $db = get_db();
 			INNER JOIN book ON book_user.book_id = book.id 
 			INNER JOIN author ON book.author_id = author.id
 			WHERE (author.last_name = '$authorln' OR author.first_name = '$authorfn') 
-			AND book_user.user_id = '$user'
+			AND user_info.name = '$user'
 			ORDER BY last_name, first_name";
 
 			$result = pg_query($sql)

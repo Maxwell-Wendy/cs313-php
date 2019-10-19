@@ -18,6 +18,7 @@ $db = get_db();
 		<?php
 		if (isset($_POST['username'])) {
 			$username = ($_POST['username']);
+			$_SESSION['user'] = $username;
 
 			$sql = "SELECT author.first_name AS first_name, 
 				author.last_name AS last_name, 
@@ -34,8 +35,7 @@ $db = get_db();
 			
 
 			foreach ($db->query($sql) as $row) {
-				$_SESSION['usernum'] = $row['user_id'];
-				$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $_SESSION['usernum'];
+				$url = "book_details.php?bookid=" . $row['book_id'] . "&username=" . $_SESSION['user'];
 
 				$first_name = $row['first_name'];
 				$last_name = $row['last_name'];
