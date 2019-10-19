@@ -15,7 +15,6 @@ $db = get_db();
 	<a href="user_booklist.php">Back to Book List Page</a>
 	<h1>Search Results</h1>
 
-
 	<div>
 		<?php
 
@@ -142,7 +141,6 @@ $db = get_db();
 		}
 		?>
 	</div>
-
 
 </body>
 </html>

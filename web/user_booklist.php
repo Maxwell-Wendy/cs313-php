@@ -17,7 +17,7 @@ $db = get_db();
 <div>
 		<?php
 		if (isset($_POST['username'])) {
-			
+
 			echo "<h2>Click book for more details</h2>";
 
 			$username = ($_POST['username']);
@@ -62,11 +62,6 @@ $db = get_db();
 		<input type="text" name="authorln" placeholder="Author's last name">
 		<input type="submit" name="submit">
 	</form>
-	<!--<form name="gnsearch" action="search_results.php" method="POST">
-		<label>Search your books by genre</label>
-		<input type="text" name="genre" placeholder="Author's first name">
-		<input type="submit" name="submit">
-	</form>-->
 
 	<form name="gnsearch" action="search_results.php" method="POST">
 		<label>Search your books by genre</label>
