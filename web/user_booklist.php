@@ -16,9 +16,10 @@ $db = get_db();
 	<h1>Your Booklist</h1>
 <div>
 		<?php
-
-		echo "<h3>Click book for more details</h3>";
 		if (isset($_POST['username'])) {
+			
+			echo "<h2>Click book for more details</h2>";
+
 			$username = ($_POST['username']);
 			$_SESSION['user'] = $username;
 
