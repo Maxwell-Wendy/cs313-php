@@ -23,8 +23,8 @@ $db = get_db();
 		<label>Title</label>
 		<input type="text" name="title" placeholder="Title"><br>
 		<label>Genre of book</label>
-		<input type="text" name="genre_1" placeholder="Genre">
-		<label>Check any of the following that apply</label><br>
+		<input type="text" name="genre_1" placeholder="Genre"><br>
+		<label>Check any of the following that apply:</label><br>
 		<input type="checkbox" name="is_owned">I own this book.<br>
 		<input type="checkbox" name="is_read">I have read this book.<br>
 		<input type="checkbox" name="is_wish">Include in wishlist.<br>
