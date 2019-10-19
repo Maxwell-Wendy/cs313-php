@@ -16,6 +16,8 @@ $db = get_db();
 	<h1>Your Booklist</h1>
 <div>
 		<?php
+
+		echo "<h3>Click book for more details</h3>";
 		if (isset($_POST['username'])) {
 			$username = ($_POST['username']);
 			$_SESSION['user'] = $username;
@@ -52,13 +54,45 @@ $db = get_db();
 	<form name="fnsearch" action="search_results.php" method="POST">
 		<label>Search your books by author's first name</label>
 		<input type="text" name="authorfn" placeholder="Author's first name">
-		<br>
 		<input type="submit" name="submit">
 	</form>
 	<form name="lnsearch" action="search_results.php" method="POST">
 		<label>Search your books by author's last name</label>
 		<input type="text" name="authorln" placeholder="Author's last name">
 		<input type="submit" name="submit">
+	</form>
+	<!--<form name="gnsearch" action="search_results.php" method="POST">
+		<label>Search your books by genre</label>
+		<input type="text" name="genre" placeholder="Author's first name">
+		<input type="submit" name="submit">
+	</form>-->
+
+	<form name="gnsearch" action="search_results.php" method="POST">
+		<label>Search your books by genre</label>
+		<select name="genre">
+			<?php
+			$sql = "SELECT genre.name AS genre FROM genre ORDER BY genre";
+
+			foreach ($db->query($sql) as $row) {
+				$genre = $row['genre'];
+				echo "<option>$genre</option>";
+			}
+			?>
+		</select>
+		<input type="submit" name="submit">
+	</form>
+	<form name="ownedsearch" action="search_results.php" method="POST">
+		<label>Show books that you own</label>
+		
+		<input type="submit" name="owned" value="Books Owned">
+	</form><form name="readsearch" action="search_results.php" method="POST">
+		<label>Show books that you have read</label>
+		
+		<input type="submit" name="read" value="Books Read">
+	</form><form name="wishsearch" action="search_results.php" method="POST">
+		<label>Show books on your wishlist</label>
+		
+		<input type="submit" name="wishlist" value="Wishlist">
 	</form>
 
 
