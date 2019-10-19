@@ -18,7 +18,7 @@ $db = get_db();
 
 
 	<form name="list_all" action="bookcatalogue.php" method="POST">
-		<label>Show list of all books in catalogue (any user)</label>
+		<label>Show list of all books in catalogue (any user)</label><br>
 		<input type="submit" name="show_all">
 	</form>
 
