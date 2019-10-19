@@ -17,14 +17,14 @@ $db = get_db();
 
 	<form name="newbooks">
 		<label>Author's first name</label>
-		<input type="text" name="author_first" placeholder="Author's first name">
+		<input type="text" name="author_first" placeholder="Author's first name"><br>
 		<label>Author's last name</label>
-		<input type="text" name="author_last" placeholder="Author's last name">
+		<input type="text" name="author_last" placeholder="Author's last name"><br>
 		<label>Title</label>
-		<input type="text" name="title" placeholder="Title">
+		<input type="text" name="title" placeholder="Title"><br>
 		<label>Genre of book</label>
 		<input type="text" name="genre_1" placeholder="Genre">
-		<label>Check any of the following that apply</label>
+		<label>Check any of the following that apply</label><br>
 		<input type="checkbox" name="is_owned">I own this book.<br>
 		<input type="checkbox" name="is_read">I have read this book.<br>
 		<input type="checkbox" name="is_wish">Include in wishlist.<br>
