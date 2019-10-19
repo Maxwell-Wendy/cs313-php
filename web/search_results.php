@@ -36,10 +36,10 @@ $db = get_db();
 			AND user_info.name = '$user'
 			ORDER BY last_name, first_name";
 
-			$result = pg_query($sql)
-				or die('Query failed: ' . pg_last_error());
+			//$result = pg_query($sql)
+				//or die('Query failed: ' . pg_last_error());
 
-				if(pg_num_rows($result)>0){
+				//if(pg_num_rows($result)>0){
 					foreach ($db->query($sql) as $row) {
 					$first_name = $row['first_name'];
 					$last_name = $row['last_name'];
@@ -48,10 +48,10 @@ $db = get_db();
 					echo "<p>$first_name $last_name, <i>$title</i></p>";
 				}
 
-				}
-				else {
-					echo "no matches";
-				}
+				//}
+				//else {
+					//echo "no matches";
+				//}
 
 			
 		}
