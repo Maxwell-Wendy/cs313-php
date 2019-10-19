@@ -33,7 +33,7 @@ $db = get_db();
 			INNER JOIN book ON book_user.book_id = book.id 
 			INNER JOIN author ON book.author_id = author.id
 			WHERE (author.last_name = '$authorln' OR author.first_name = '$authorfn') 
-			AND user_info.name = '$user'
+			AND user_info.username = '$user'
 			ORDER BY last_name, first_name";
 
 			//$result = pg_query($sql)
