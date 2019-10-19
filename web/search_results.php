@@ -62,9 +62,9 @@ $db = get_db();
 		?>
 	</div>
 
-	<div>
+	<!--<div>
 		<?php
-		if (isset($_POST['genre'])) {
+		/*if (isset($_POST['genre'])) {
 
 			$genre = $_POST['genre'];
 			
@@ -85,9 +85,9 @@ $db = get_db();
 
 				echo "<p>$first_name $last_name, <i>$title</i></p>";
 			}
-		}
+		}*/
 		?>
-	</div>
+	</div>-->
 
 
 
