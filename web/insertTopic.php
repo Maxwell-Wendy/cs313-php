@@ -18,12 +18,16 @@ $db = get_db();
 
       echo "$b $ch:$v $c <br>";
       $t = $_POST['topics'];
-      echo $t;
+      echo $t[0];
       echo "<br>";
-
       $scriptureId = $db->lastInsertID("scriptures_id_seq");
 
         echo $scriptureID . "<br>";
+      foreach ($t as $topicId) {
+          echo "ScriptureId: $scriptureId, topicId: $topicId";
+        }
+
+      
 
       /*try {
         $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
