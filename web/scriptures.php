@@ -24,11 +24,14 @@ $db = get_db();
 		$sql = 'SELECT id, book, chapter, verse FROM scriptures';
 
 		foreach ($db->query($sql) as $row) {
-			$url = "scripture_results.php?id=" . $row['id'];
+			$id = $row['id'];
+			$b = $row['book'];
+			$ch = $row['chapter'];
+			$v = $row['verse'];
 
-			echo $row['id'];
+			$url = "scripture_results.php?id=$id";
 
-			echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a></b><br/>";
+			echo "<b><a href=\"$url\">$b $ch:$v</a></b><br/>";
 
 			//echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
 			//echo "\"" . $row['content'] . "\"<br><br>";
