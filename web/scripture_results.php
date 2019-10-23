@@ -28,9 +28,9 @@ $db = get_db();
 		foreach ($db->query($sql) as $row) {
 			$url = "scripture_results.php?id=" . $row['id'];
 
-			echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a></b><br/>";
+			echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a></b>" . $row['content'] . "<br/>";
 
-			echo $row['content'] "<br>";
+			//echo $row['content'] "<br>";
 		}
 	}
 ?>
