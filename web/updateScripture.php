@@ -10,6 +10,8 @@ $db = connect_db();
   </head>
   <body>
     <?php
+
+    echo "Hello";
     /*foreach ($db->query('SELECT book, chapter, verse, content FROM public.scripture') as $row)
     {
       echo 'Book: <b>' . $row['book'] . "</b>";
