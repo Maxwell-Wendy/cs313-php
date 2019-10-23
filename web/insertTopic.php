@@ -21,18 +21,12 @@ $db = get_db();
       echo $t[0];
       echo "<br>";
       foreach ($t as $topicId) {
-          echo "TopicId: $topicId";
+          echo "TopicId: $topicId  ";
         }
-      //$scriptureId = $db->lastInsertID("scriptures_id_seq");
-
-        //echo $scriptureID . "<br>";
-      //foreach ($t as $topicId) {
-          //echo "ScriptureId: $scriptureId, topicId: $topicId";
-        //}
 
       
 
-      /*try {
+      try {
         $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
         $stmt->bindValue(':book', $b, PDO::PARAM_STR);
         $stmt->bindValue(':chapter', $ch, PDO::PARAM_INT);
@@ -40,7 +34,7 @@ $db = get_db();
         $stmt->bindValue(':content', $c, PDO::PARAM_STR);
         $stmt->execute();
 
-        $scriptureId = $db->lastInsertID("scriptures_id_seq");
+        $scriptureId = $db->lastInsertId('scriptures_id_seq');
 
         echo $scriptureID . "<br>";
 
