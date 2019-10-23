@@ -21,7 +21,7 @@ $db = get_db();
 		//$book = $_POST['book'];
 
 		//$sql = "SELECT * FROM Scriptures WHERE Scriptures.book = '$book'";
-		$sql = 'SELECT book, chapter, verse FROM scriptures';
+		$sql = 'SELECT id, book, chapter, verse FROM scriptures';
 
 		foreach ($db->query($sql) as $row) {
 			$url = "scripture_results.php?id=" . $row['id'];
