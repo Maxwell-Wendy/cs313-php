@@ -30,7 +30,7 @@ $db = get_db();
 
 			//echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
 			//echo "\"" . $row['content'] . "\"<br><br>";
-		//}
+		}
 
 	?>
 
