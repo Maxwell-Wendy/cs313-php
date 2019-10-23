@@ -9,30 +9,16 @@ $db = get_db();
     <title></title>
   </head>
   <body>
-    <?php
-
-    echo "Hello";
-    /*foreach ($db->query('SELECT book, chapter, verse, content FROM public.scripture') as $row)
-    {
-      echo 'Book: <b>' . $row['book'] . "</b>";
-      echo '<br/>';
-      echo 'Chapter: <b>' . $row['chapter'] . "</b>";
-      echo '<br/>';
-      echo 'Verse: <b>' . $row['verse'] . "</b>";
-      echo '<br/>';
-      echo 'Content: <b>' . $row['content'] . "</b>";
-      echo '<br/><hr>';
-    }*/
-     ?>
+   
      <form class="" action="updatedScriptures.php" method="post">
        Book: <input type="text" name="book" value=""><br>
        Chapter: <input type="text" name="chapter" value=""><br>
        Verse: <input type="text" name="verse" value=""><br>
        Content: <textarea name="content" rows="8" cols="80"></textarea><br>
        <?php
-       foreach ($db->query('SELECT name FROM topic') as $row)
-       {
-        echo  '<input type="checkbox" name="topic[]" value="' . $row['name'] .'">';
+       foreach ($db->query('SELECT name FROM topic') as $row) {
+        $name = $row['name'];
+        echo  '<input type="checkbox" name="topic[]" value="$name">';
        }
         ?>
         <br>
