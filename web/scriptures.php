@@ -23,7 +23,7 @@ $db = get_db();
 		//$sql = "SELECT * FROM Scriptures WHERE Scriptures.book = '$book'";
 		$sql = 'SELECT book, chapter, verse FROM scriptures';
 
-		foreach ($pdo->query($sql) as $row) {
+		foreach ($db->query($sql) as $row) {
 			$url = "result.php?" ."id=" . $row['id'];
 
 			echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a></b><br/>";
