@@ -24,7 +24,7 @@ $db = get_db();
 		$sql = 'SELECT book, chapter, verse FROM scriptures';
 
 		foreach ($db->query($sql) as $row) {
-			$url = "result.php?" ."id=" . $row['id'];
+			$url = "scripture_results.php?id=" . $row['id'];
 
 			echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a></b><br/>";
 
