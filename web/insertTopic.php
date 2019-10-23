@@ -16,7 +16,7 @@ $db = get_db();
       $v = htmlspecialchars($_POST['verse']);
       $c = htmlspecialchars($_POST['content']);
 
-      //echo "$b $ch:$v $c";
+      echo "$b $ch:$v $c <br>";
       $t = $_POST['topics'];
       echo $t;
       echo "<br>";
