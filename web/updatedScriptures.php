@@ -10,7 +10,7 @@ $db = get_db();
   </head>
   <body>
     <?php
-    if (isset $_POST['book']) {
+    if (isset ($_POST['book'])) {
       $b = $_POST['book'];
       $ch = $_POST['chapter'];
       $v = $_POST['verse'];
