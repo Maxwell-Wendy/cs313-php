@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+require "dbConnect.php";
+$db = get_db();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -10,41 +16,28 @@
 	<h1>Scripture Resources</h1>
 
 	<?php
-	if (isset($_POST['book']))
-		try {
-			$db = parse_url(getenv("DATABASE_URL"));
+	//if (isset($_POST['book'])) {
 
-			$pdo = new PDO("pgsql:" . sprintf(
-			    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-			    $db["host"],
-			    $db["port"],
-			    $db["user"],
-			    $db["pass"],
-			    ltrim($db["path"], "/")
-			))
-				or die('Could not connect: ' . pg_last_error());
+		//$book = $_POST['book'];
 
-			$book = $_POST['book'];
+		//$sql = "SELECT * FROM Scriptures WHERE Scriptures.book = '$book'";
+		$sql = 'SELECT book, chapter, verse FROM scriptures';
 
-			$sql = "SELECT * FROM Scriptures WHERE Scriptures.book = '$book'";
+		foreach ($pdo->query($sql) as $row) {
+			$url = "result.php?" ."id=" . $row['id'];
 
+			echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a></b><br/>";
 
+			//echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
+			//echo "\"" . $row['content'] . "\"<br><br>";
+		//}
 
-			foreach ($pdo->query($sql) as $row) {
-				$url = "result.php?" ."id=" . $row['id'];
-
-				echo "<b><a href=\"$url\">" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a></b><br/>";
-
-				//echo "<b>" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . " - </b>";
-				//echo "\"" . $row['content'] . "\"<br><br>";
-			}
-
-			//$pdo = null;
-		} 
-		catch (PDOExcetion $e) {
-			die("Error message: " . $e->getMessage());
-		}
 	?>
+
+	<form name="search" action="scriptures.php" method="post">
+		Search Book: <input type="text" name="book" />
+		<input type="submit" value="Search"><br/>
+	</form>
 
 </body>
 </html>
