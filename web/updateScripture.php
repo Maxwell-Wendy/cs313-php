@@ -1,7 +1,7 @@
 <?php
 require "dbConnect.php";
-$db = connect_db();
- ?>
+$db = get_db();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -30,7 +30,7 @@ $db = connect_db();
        Verse: <input type="text" name="verse" value=""><br>
        Content: <textarea name="content" rows="8" cols="80"></textarea><br>
        <?php
-       foreach ($db->query('SELECT name FROM public.topic') as $row)
+       foreach ($db->query('SELECT name FROM topic') as $row)
        {
         echo  '<input type="checkbox" name="topic[]" value="' . $row['name'] .'">';
        }
