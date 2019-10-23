@@ -6,23 +6,29 @@ $db = get_db();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Topic Entry</title>
   </head>
   <body>
+    <a href="assignments.php">Back to Assignments Page</a>
+    <h1>Enter New Sriptures and Topics</h1>
    
-     <form class="" action="updatedScriptures.php" method="post">
+     <form class="" action="insertTopic.php" method="post">
        Book: <input type="text" name="book" value=""><br>
        Chapter: <input type="text" name="chapter" value=""><br>
        Verse: <input type="text" name="verse" value=""><br>
        Content: <textarea name="content" rows="8" cols="80"></textarea><br>
+       Topics:
        <?php
-       foreach ($db->query('SELECT name FROM topic') as $row) {
+       foreach ($db->query('SELECT id, name FROM topic') as $row) {
+        $id = $row['id'];
         $name = $row['name'];
-        echo  '<input type="checkbox" name="topic[]" value="$name">';
+        echo "<input type='checkbox' name='topics[]' id='topics$id' value='$id'>";
+        echo "<label for='topics$id'>$name</label><br/>";
+        echo "\n";
        }
         ?>
         <br>
-       <input type="submit" name="" value="Push it NOW!!!">
+       <input type="submit" value="Push it NOW!!!">
      </form>
   </body>
 </html>

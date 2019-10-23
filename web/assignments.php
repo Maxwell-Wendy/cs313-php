@@ -17,6 +17,8 @@
 	<br>
 	<a href="scriptures.php">Teach 05 Team Activity--Scriptures</a>
 	<br>
+	<a href="topicEntry.php">Teach 06 Team Activity--Scripture Topics</a>
+	<br>
 	<a href="bookcatalogue.php">Book Catalogue</a>
 	<br>
 	<p>More Coming Soon!</p>
