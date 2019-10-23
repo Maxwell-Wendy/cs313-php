@@ -17,8 +17,15 @@ $db = get_db();
       $c = htmlspecialchars($_POST['content']);
 
       //echo "$b $ch:$v $c";
-      $t = htmlspecialchars($_POST['topics']);
-      try {
+      $t = $_POST['topics'];
+      echo $t;
+      echo "<br>";
+
+      $scriptureId = $db->lastInsertID("scriptures_id_seq");
+
+        echo $scriptureID . "<br>";
+
+      /*try {
         $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
         $stmt->bindValue(':book', $b, PDO::PARAM_STR);
         $stmt->bindValue(':chapter', $ch, PDO::PARAM_INT);
@@ -27,6 +34,8 @@ $db = get_db();
         $stmt->execute();
 
         $scriptureId = $db->lastInsertID("scriptures_id_seq");
+
+        echo $scriptureID . "<br>";
 
         foreach ($t as $topicId) {
           echo "ScriptureId: $scriptureId, topicId: $topicId";
@@ -48,15 +57,13 @@ $db = get_db();
       }
       
       // finally, redirect them to a new page to actually show the topics
-      header("Location: showTopics.php");
+      //header("Location: showTopics.php");
       
       die(); // we always include a die after redirects. In this case, there would be no
              // harm if the user got the rest of the page, because there is nothing else
              // but in general, there could be things after here that we don't want them
              // to see.
-
-      
-    }
+    }*/
     ?>
   </body>
 </html>
