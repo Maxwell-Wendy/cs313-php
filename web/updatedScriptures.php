@@ -1,5 +1,5 @@
 <?php
-required "dbConnect.php";
+require "dbConnect.php";
 $db = get_db();
  ?>
 <!DOCTYPE html>
@@ -15,8 +15,8 @@ $db = get_db();
       $ch = $_POST['chapter'];
       $v = $_POST['verse'];
       $c = $_POST['content'];
-      $t = $_POST['topic'];
-      $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
+      //$t = $_POST['topic'];
+      $db->prepare('INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)');
       $stmt->bindValue(':book', $b, PDO::PARAM_STR);
       $stmt->bindValue(':chapter', $ch, PDO::PARAM_INT);
       $stmt->bindValue(':verse', $v, PDO::PARAM_INT);
