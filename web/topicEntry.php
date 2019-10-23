@@ -17,7 +17,7 @@ $db = get_db();
        Chapter: <input type="text" name="chapter" value=""><br>
        Verse: <input type="text" name="verse" value=""><br>
        Content: <textarea name="content" rows="8" cols="80"></textarea><br>
-       Topics:
+       Topics: <br>
        <?php
        foreach ($db->query('SELECT id, name FROM topic') as $row) {
         $id = $row['id'];
