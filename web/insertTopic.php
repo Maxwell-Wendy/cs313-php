@@ -20,12 +20,15 @@ $db = get_db();
       $t = $_POST['topics'];
       echo $t[0];
       echo "<br>";
-      $scriptureId = $db->lastInsertID("scriptures_id_seq");
-
-        echo $scriptureID . "<br>";
       foreach ($t as $topicId) {
-          echo "ScriptureId: $scriptureId, topicId: $topicId";
+          echo "TopicId: $topicId";
         }
+      //$scriptureId = $db->lastInsertID("scriptures_id_seq");
+
+        //echo $scriptureID . "<br>";
+      //foreach ($t as $topicId) {
+          //echo "ScriptureId: $scriptureId, topicId: $topicId";
+        //}
 
       
 
