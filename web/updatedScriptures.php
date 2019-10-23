@@ -16,7 +16,7 @@ $db = get_db();
       $v = $_POST['verse'];
       $c = $_POST['content'];
       $t = $_POST['topic'];
-      $db->prepare("INSERT INTO public.scripture(book, chapter, verse, content) VALUES(:book, :chapter, :verse, :content)");
+      $db->prepare("INSERT INTO scriptures (book, chapter, verse, content) VALUES (:book, :chapter, :verse, :content)");
       $stmt->bindValue(':book', $b, PDO::PARAM_STR);
       $stmt->bindValue(':chapter', $ch, PDO::PARAM_INT);
       $stmt->bindValue(':verse', $v, PDO::PARAM_INT);
