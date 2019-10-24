@@ -17,7 +17,7 @@ $db = get_db();
       $c = htmlspecialchars($_POST['content']);
 
       echo "$b $ch:$v $c <br>";
-      $t = $_POST['topics'];
+      $t = htmlspecialchars($_POST['topics']);
       echo $t[0];
       echo "<br>";
       foreach ($t as $topicId) {

@@ -10,7 +10,7 @@ $db = get_db();
   </head>
   <body>
     <a href="assignments.php">Back to Assignments Page</a>
-    <h1>Enter New Sriptures and Topics</h1>
+    <h1>Enter New Scriptures and Topics</h1>
    
      <form class="" action="insertTopic.php" method="post">
        Book: <input type="text" name="book" value=""><br>
@@ -26,8 +26,18 @@ $db = get_db();
         echo "<label for='topics$id'>$name</label><br/>";
         echo "\n";
        }
+
+       $topic = $_POST['']
+
+        echo "<input type='checkbox' name='topics[]'' id='new_topic'>";
+        echo "<input type='text' name='new_topic' placeholder='Enter your own topic here'>"
+
         ?>
+
+        <input type="checkbox" name="topics[]" id="new_topic" placeholder="Enter your own topic here">
+        <input type="text" name="new_topic">
         <br>
+
        <input type="submit" value="Push it NOW!!!">
      </form>
   </body>
