@@ -49,15 +49,15 @@ else {
 	$stmt_a->bindValue('name', $a);
 	$stmt_a->execute();*/
 
-	foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
+	/*foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
 				$author_name = $row['name'];
 				$author_id = $row['id'];
 
 				echo "<p>$author_name, id: $author_id</p>";
-			}
+			}*/
 
 
-	/*$stmt_a_id = $db->prepare('SELECT name, id FROM author WHERE name = $a');
+	$stmt_a_id = $db->prepare("SELECT name, id FROM author WHERE name = '$a'");
 	$stmt_a_id->execute();
 	$row_a = $stmt_a_id->fetch();
 	$a_id = $row_a['id'];*/
