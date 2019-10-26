@@ -45,22 +45,22 @@ else {
 	$is_w = false;
 }
 	
-	/*$stmt_a = $db->prepare('INSERT INTO author (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
+	$stmt_a = $db->prepare('INSERT INTO author (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_a->bindValue('name', $a);
-	$stmt_a->execute();*/
+	$stmt_a->execute();
 
-	/*foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
+	foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
 				$author_name = $row['name'];
 				$author_id = $row['id'];
 
 				echo "<p>$author_name, id: $author_id</p>";
-			}*/
+			}
 
 
-	$stmt_a_id = $db->prepare("SELECT name, id FROM author WHERE name = '$a'");
+	/*$stmt_a_id = $db->prepare("SELECT name, id FROM author WHERE name = '$a'");
 	$stmt_a_id->execute();
 	$row_a = $stmt_a_id->fetch();
-	$a_id = $row_a['id'];
+	$a_id = $row_a['id'];*/
 
 	echo "The author id is $author_id";
 
