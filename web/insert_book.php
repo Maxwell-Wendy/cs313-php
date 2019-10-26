@@ -30,8 +30,6 @@ if (isset($_POST['is_wish'])) {
 else {
 	$is_w = false;
 }
-
-try {
 	
 	$stmt_a = $db->prepare('INSERT INTO author (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_a->bindValue('name', $a);
@@ -43,6 +41,8 @@ try {
 	$row_a = $stmt_a_id->fetch();
 	$a_id = $row_a['id'];
 
+	echo "The author id is $a_id";
+
 
 	$stmt_g = $db->prepare('INSERT INTO genre (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_g->bindValue(':name', $g);
@@ -53,6 +53,8 @@ try {
 	$stmt_g_id->execute();
 	$row_g = $stmt_g_id->fetch();
 	$g_id = $row_g['id'];
+
+	echo "The genre id is $g_id";
 
 	
 	$stmt_b = $db->prepare('INSERT INTO book (title, author_id, genre_id) VALUES (:title, :author_id, :genre_id) ON CONFLICT (title) DO NOTHING');
@@ -77,5 +79,5 @@ try {
 	$stmt_b_u->bindValue(':date_read', $d);
 	$stmt_b_u->execute();
 
-}
+
 ?>
