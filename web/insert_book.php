@@ -107,7 +107,7 @@ else {
 			INNER JOIN book ON book_user.book_id = book.id 
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
 			INNER JOIN author ON book.author_id = author.id 
-			WHERE user_info.username = '$user' AND book.id = '$b_id'
+			WHERE user_info.username = '$user' 
 			ORDER BY name";
 
 			
