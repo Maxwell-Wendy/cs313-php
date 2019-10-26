@@ -88,9 +88,16 @@ else {
 
 			echo "<p>$user, $is_o, $is_r, $is_w, $d<p>";
 
+	foreach ($db->query("SELECT username, id FROM user_info WHERE username = '$user'") as $row) {
+				$u_name = $row['username'];
+				$u_id = $row['id'];
+
+				echo "<p>$u_name, id: $u_id</p>";
+			}
+
 
 	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read)');
-	$stmt_b_u->bindValue(':user_id', $user);
+	$stmt_b_u->bindValue(':user_id', $u_id;
 	$stmt_b_u->bindValue(':book_id', $b_id);
 	$stmt_b_u->bindValue(':is_owned', $is_o);
 	$stmt_b_u->bindValue(':is_read', $is_r);
