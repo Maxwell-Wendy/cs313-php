@@ -53,7 +53,7 @@ else {
 				$a_name = $row['name'];
 				$a_id = $row['id'];
 
-				echo "<p>$a_name, id: $author_id</p>";
+				echo "<p>$a_name, id: $a_id</p>";
 			}
 
 	echo "The author id is $a_id";
@@ -85,6 +85,8 @@ else {
 
 				echo "<p>$b_title, id: $b_id</p>";
 			}
+
+			echo "<p>$is_o, $is_r, $is_w, $d<p>";
 
 
 	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read) DO NOTHING');
