@@ -60,7 +60,7 @@ else {
 	$stmt_a_id = $db->prepare("SELECT name, id FROM author WHERE name = '$a'");
 	$stmt_a_id->execute();
 	$row_a = $stmt_a_id->fetch();
-	$a_id = $row_a['id'];*/
+	$a_id = $row_a['id'];
 
 	echo "The author id is $author_id";
 
