@@ -23,8 +23,6 @@ $db = get_db();
 			$username = ($_POST['username']);
 			$_SESSION['user'] = $username;
 
-			$user = $_SESSION['user'];
-
 			echo "<p>Your username is $user.<p>"
 
 			$sql = "SELECT author.name AS name, 

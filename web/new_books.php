@@ -3,6 +3,12 @@ session_start();
 
 require "dbConnect.php";
 $db = get_db();
+
+if (isset($_POST['username'])) {
+
+			$username = ($_POST['username']);
+			$_SESSION['user'] = $username;
+		}
 ?>
 <!DOCTYPE html>
 <html>
