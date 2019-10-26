@@ -49,7 +49,7 @@ else {
 	$stmt_a->bindValue('name', $a);
 	$stmt_a->execute();*/
 
-	foreach ($db->query('SELECT name, id FROM author WHERE name = $a') as $row) {
+	foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
 				$author_name = $row['name'];
 				$author_id = $row['id'];
 
