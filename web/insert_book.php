@@ -50,30 +50,25 @@ else {
 	$stmt_a->execute();
 
 	foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
-				$author_name = $row['name'];
-				$author_id = $row['id'];
+				$a_name = $row['name'];
+				$a_id = $row['id'];
 
-				echo "<p>$author_name, id: $author_id</p>";
+				echo "<p>$a_name, id: $author_id</p>";
 			}
 
-
-	/*$stmt_a_id = $db->prepare("SELECT name, id FROM author WHERE name = '$a'");
-	$stmt_a_id->execute();
-	$row_a = $stmt_a_id->fetch();
-	$a_id = $row_a['id'];*/
-
-	echo "The author id is $author_id";
+	echo "The author id is $a_id";
 
 
-	/*$stmt_g = $db->prepare('INSERT INTO genre (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
+	$stmt_g = $db->prepare('INSERT INTO genre (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_g->bindValue(':name', $g);
 	$stmt_g->execute();
 
+	foreach ($db->query("SELECT name, id FROM genre WHERE name = '$g'") as $row) {
+				$g_name = $row['name'];
+				$g_id = $row['id'];
 
-	$stmt_g_id = $db->prepare('SELECT name, id FROM genre WHERE name = $g');
-	$stmt_g_id->execute();
-	$row_g = $stmt_g_id->fetch();
-	$g_id = $row_g['id'];
+				echo "<p>$g_name, id: $g_id</p>";
+			}
 
 	echo "The genre id is $g_id";
 
@@ -84,11 +79,12 @@ else {
 	$stmt_b->bindValue(':genre_id',  $g_id);
 	$stmt_b->execute();
 
+	foreach ($db->query("SELECT title, id FROM book WHERE title = '$t'") as $row) {
+				$b_title = $row['title'];
+				$b_id = $row['id'];
 
-	$stmt_b_id = $db->prepare('SELECT title, id FROM book WHERE title = $t');
-	$stmt_b_id->execute();
-	$row_b = $stmt_b_id->fetch();
-	$b_id = $row_b['id'];
+				echo "<p>$b_title, id: $b_id</p>";
+			}
 
 
 	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read) DO NOTHING');
@@ -98,7 +94,29 @@ else {
 	$stmt_b_u->bindValue(':is_read', $is_r);
 	$stmt_b_u->bindValue(':is_wishlist', $is_w);
 	$stmt_b_u->bindValue(':date_read', $d);
-	$stmt_b_u->execute();*/
+	$stmt_b_u->execute();
+
+
+	$sql = "SELECT author.name AS name, 
+				book.title AS title, 
+				book_user.book_id AS book_id, 
+				book_user.user_id AS user_id 
+			FROM book_user 
+			INNER JOIN book ON book_user.book_id = book.id 
+			INNER JOIN user_info ON book_user.user_id = user_info.id 
+			INNER JOIN author ON book.author_id = author.id 
+			WHERE user_info.username = '$user' AND book.id = '$b_id'
+			ORDER BY name";
+
+			
+			foreach ($db->query($sql) as $row) {
+				$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
+
+				$name = $row['name'];
+				$title = $row['title'];
+
+				echo "<a href=\"$url\">$name, <i>$title</i></a><br>";
+			}
 
 
 ?>
