@@ -18,33 +18,29 @@ $db = get_db();
 	<div>
 		<?php
 
-		if (isset($_POST['authorln']) || isset($_POST['authorfn']) || isset($_POST['genre'])) {
+		if (isset($_POST['author']) || isset($_POST['genre'])) {
 
-			$authorfn = $_POST['authorfn'];
-			$authorln = $_POST['authorln'];
+			$author = $_POST['author'];
 			$genre = $_POST['genre'];
 			$user = $_SESSION['user'];
 
-			$sql = "SELECT author.first_name AS first_name, 
-				author.last_name AS last_name, 
+			$sql = "SELECT author.name AS name, 
 				book.title AS title 
 			FROM book_user 
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
 			INNER JOIN book ON book_user.book_id = book.id 
 			INNER JOIN author ON book.author_id = author.id
 			INNER JOIN genre ON book.genre_id = genre.id
-			WHERE (author.last_name = '$authorln' 
-				OR author.first_name = '$authorfn' 
+			WHERE (author.name = '$author' 
 				OR genre.name = '$genre') 
 			AND user_info.username = '$user'
-			ORDER BY last_name, first_name";
+			ORDER BY name";
 			
 			foreach ($db->query($sql) as $row) {
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
+				$name = $row['name'];
 				$title = $row['title'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>";
+				echo "<p>$name, <i>$title</i></p>";
 			}
 		}
 		?>
@@ -55,8 +51,7 @@ $db = get_db();
 		if (isset($_POST['owned'])) {
 			$user = $_SESSION['user'];
 
-			$sql = "SELECT author.first_name AS first_name, 
-				author.last_name AS last_name, 
+			$sql = "SELECT author.name AS name, 
 				book.title AS title 
 			FROM book_user 
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
@@ -65,16 +60,15 @@ $db = get_db();
 			INNER JOIN genre ON book.genre_id = genre.id
 			WHERE book_user.is_owned = 'true'
 			AND user_info.username = '$user'
-			ORDER BY last_name, first_name";
+			ORDER BY name";
 
 			echo "<h3>Books you own</h3>";
 
 			foreach ($db->query($sql) as $row) {
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
+				$name = $row['name'];
 				$title = $row['title'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>";
+				echo "<p>$name, <i>$title</i></p>";
 			}
 		}
 		?>
@@ -85,8 +79,7 @@ $db = get_db();
 		if (isset($_POST['read'])) {
 			$user = $_SESSION['user'];
 
-			$sql = "SELECT author.first_name AS first_name, 
-				author.last_name AS last_name, 
+			$sql = "SELECT author.name AS name, 
 				book.title AS title,
 				book_user.date_read AS date_read 
 			FROM book_user 
@@ -96,17 +89,16 @@ $db = get_db();
 			INNER JOIN genre ON book.genre_id = genre.id
 			WHERE book_user.is_read = 'true'
 			AND user_info.username = '$user'
-			ORDER BY last_name, first_name";
+			ORDER BY name";
 
 			echo "<h3>Books you have read</h3>";
 
 			foreach ($db->query($sql) as $row) {
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
+				$name = $row['name'];
 				$title = $row['title'];
 				$date_read = $row['date_read'];
 
-				echo "<p>$first_name $last_name, <i>$title</i> $date_read</p>";
+				echo "<p>$name, <i>$title</i> $date_read</p>";
 			}
 		}
 		?>
@@ -117,8 +109,7 @@ $db = get_db();
 		if (isset($_POST['wishlist'])) {
 			$user = $_SESSION['user'];
 
-			$sql = "SELECT author.first_name AS first_name, 
-				author.last_name AS last_name, 
+			$sql = "SELECT author.name AS name, 
 				book.title AS title 
 			FROM book_user 
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
@@ -127,16 +118,15 @@ $db = get_db();
 			INNER JOIN genre ON book.genre_id = genre.id
 			WHERE book_user.is_wishlist = 'true'
 			AND user_info.username = '$user'
-			ORDER BY last_name, first_name";
+			ORDER BY name";
 
 			echo "<h3>Your Wishlist</h3>";
 
 			foreach ($db->query($sql) as $row) {
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
+				$name = $row['name'];
 				$title = $row['title'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>";
+				echo "<p>$name, <i>$title</i></p>";
 			}
 		}
 		?>

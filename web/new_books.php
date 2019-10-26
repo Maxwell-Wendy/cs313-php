@@ -15,11 +15,9 @@ $db = get_db();
 	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
 	<h1>Add a new book to your list</h1>
 
-	<form name="newbooks">
-		<label>Author's first name</label>
-		<input type="text" name="author_first" placeholder="Author's first name"><br>
-		<label>Author's last name</label>
-		<input type="text" name="author_last" placeholder="Author's last name"><br>
+	<form name="newbooks" action="insert_book.php" method="POST">
+		<label>Author's name</label>
+		<input type="text" name="author" placeholder="Author's name"><br>
 		<label>Title</label>
 		<input type="text" name="title" placeholder="Title"><br>
 		<label>Genre of book</label>

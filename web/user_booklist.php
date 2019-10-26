@@ -23,8 +23,7 @@ $db = get_db();
 			$username = ($_POST['username']);
 			$_SESSION['user'] = $username;
 
-			$sql = "SELECT author.first_name AS first_name, 
-				author.last_name AS last_name, 
+			$sql = "SELECT author.name AS name, 
 				book.title AS title, 
 				book_user.book_id AS book_id, 
 				book_user.user_id AS user_id 
@@ -33,18 +32,17 @@ $db = get_db();
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
 			INNER JOIN author ON book.author_id = author.id 
 			WHERE user_info.username = '$username'
-			ORDER BY last_name, first_name";
+			ORDER BY name";
 
 			
 
 			foreach ($db->query($sql) as $row) {
 				$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
 
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
+				$name = $row['name'];
 				$title = $row['title'];
 
-				echo "<a href=\"$url\">$first_name $last_name, <i>$title</i></a><br>";
+				echo "<a href=\"$url\">$name, <i>$title</i></a><br>";
 			}
 		}
 		?>
@@ -53,13 +51,8 @@ $db = get_db();
 	<h2>Search your books</h2>
 
 	<form name="fnsearch" action="search_results.php" method="POST">
-		<label>Search your books by author's first name</label>
-		<input type="text" name="authorfn" placeholder="Author's first name">
-		<input type="submit" name="submit">
-	</form>
-	<form name="lnsearch" action="search_results.php" method="POST">
-		<label>Search your books by author's last name</label>
-		<input type="text" name="authorln" placeholder="Author's last name">
+		<label>Search your books by author's name</label>
+		<input type="text" name="author" placeholder="Author's name">
 		<input type="submit" name="submit">
 	</form>
 

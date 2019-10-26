@@ -78,19 +78,6 @@ INSERT INTO book (author_id, genre_id, title)
 INSERT INTO book (author_id, genre_id, title)
 	VALUES (5, 4, 'The Selection');
 
-ALTER TABLE author RENAME COLUMN name TO first_name;
-ALTER TABLE author ADD COLUMN last_name varchar(80);
-
-UPDATE author SET first_name = 'Brandon', last_name = 'Sanderson' WHERE id = 1;
-
-UPDATE author SET first_name = 'Brandon', last_name = 'Mull' WHERE id = 2;
-
-UPDATE author SET first_name = 'J. K.', last_name = 'Rowling' WHERE id = 3;
-
-UPDATE author SET first_name = 'Shannon', last_name = 'Hale' WHERE id = 4;
-
-UPDATE author SET first_name = 'Kiera', last_name = 'Cass' WHERE id = 5;
-
 INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read)
 	VALUES (1, 1, true, true, false, '2019-10-15');
 
@@ -105,3 +92,12 @@ INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist)
 
 INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read)
 	VALUES (1, 5, false, true, true, '2018-08-12');
+
+ALTER TABLE author ADD CONSTRAINT unique_author_constraint UNIQUE (name);
+
+ALTER TABLE genre ADD CONSTRAINT unique_genre_constraint UNIQUE (name);
+
+ALTER TABLE book ADD CONSTRAINT unique_book_constraint UNIQUE (title);
+
+
+

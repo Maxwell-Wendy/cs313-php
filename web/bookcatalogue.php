@@ -26,19 +26,17 @@ $db = get_db();
 		<?php
 		if (isset($_POST['show_all'])) {
 
-			$sql = 'SELECT author.first_name AS first_name, 
-			author.last_name AS last_name, 
-			book.title AS title 
+			$sql = 'SELECT author.name AS name, 
+				book.title AS title 
 			FROM author
 			INNER JOIN book on author_id = author.id
-			ORDER BY last_name, first_name';
+			ORDER BY name';
 
 			foreach ($db->query($sql) as $row) {
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
+				$name = $row['name'];
 				$title = $row['title'];
 
-				echo "<p>$first_name $last_name, <i>$title</i></p>";
+				echo "<p>$name, <i>$title</i></p>";
 			}
 		}
 		?>

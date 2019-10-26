@@ -20,8 +20,7 @@ $db = get_db();
 	$bookid = $_GET['bookid'];
 	$userid = $_GET['userid'];
 
-	$sql = "SELECT author.first_name AS first_name, 
-			author.last_name AS last_name, 
+	$sql = "SELECT author.name AS name, 
 			book.title AS title, 
 			book_user.is_owned AS owned, 
 			book_user.is_read AS read, 
@@ -34,13 +33,12 @@ $db = get_db();
 		INNER JOIN author ON book.author_id = author.id 
 		INNER JOIN genre ON book.genre_id = genre.id 
 		WHERE book_user.book_id = '$bookid' AND book_user.user_id = '$userid'
-		ORDER BY last_name, first_name";
+		ORDER BY name";
 
 
 	foreach ($db->query($sql) as $row) {
 				
-				$first_name = $row['first_name'];
-				$last_name = $row['last_name'];
+				$name = $row['name'];
 				$title = $row['title'];
 				$genre = $row['genre'];
 				$owned = $row['owned'];
@@ -48,7 +46,7 @@ $db = get_db();
 				$wishlist = $row['wishlist'];
 				$date_read = $row['date_read'];
 
-				echo "<h2>$first_name $last_name, <i>$title</i></h2>";
+				echo "<h2>$name, <i>$title</i></h2>";
 
 				echo "<p>Genre: $genre<br>";
 				
