@@ -96,15 +96,21 @@ else {
 			}
 
 
-	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read)');
+	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id) VALUES (:user_id, :book_id)');
+	$stmt_b_u->bindValue(':user_id', $u_id;
+	$stmt_b_u->bindValue(':book_id', $b_id);
+	
+	$stmt_b_u->execute();
+
+
+/*$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read)');
 	$stmt_b_u->bindValue(':user_id', $u_id;
 	$stmt_b_u->bindValue(':book_id', $b_id);
 	$stmt_b_u->bindValue(':is_owned', $is_o);
 	$stmt_b_u->bindValue(':is_read', $is_r);
 	$stmt_b_u->bindValue(':is_wishlist', $is_w);
 	$stmt_b_u->bindValue(':date_read', $d);
-	$stmt_b_u->execute();
-
+	$stmt_b_u->execute();*/
 
 	/*$sql = "SELECT author.name AS name, 
 				book.title AS title, 
