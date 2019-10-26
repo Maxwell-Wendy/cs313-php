@@ -27,7 +27,7 @@ $db = get_db();
         echo "\n";
        }
 
-       $topic = $_POST['']
+       $topic = $_POST['new_topic'];
 
         echo "<input type='checkbox' name='topics[]'' id='new_topic'>";
         echo "<input type='text' name='new_topic' placeholder='Enter your own topic here'>"
