@@ -44,7 +44,7 @@ else {
 	echo "The author id is $a_id";
 
 
-	$stmt_g = $db->prepare('INSERT INTO genre (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
+	/*$stmt_g = $db->prepare('INSERT INTO genre (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_g->bindValue(':name', $g);
 	$stmt_g->execute();
 
@@ -77,7 +77,7 @@ else {
 	$stmt_b_u->bindValue(':is_read', $is_r);
 	$stmt_b_u->bindValue(':is_wishlist', $is_w);
 	$stmt_b_u->bindValue(':date_read', $d);
-	$stmt_b_u->execute();
+	$stmt_b_u->execute();*/
 
 
 ?>
