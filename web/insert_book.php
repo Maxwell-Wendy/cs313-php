@@ -44,50 +44,42 @@ if (isset($_POST['is_wish'])) {
 else {
 	$is_w = 0;
 }
-	
+	//if author is not in database, add author
 	$stmt_a = $db->prepare('INSERT INTO author (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_a->bindValue('name', $a);
 	$stmt_a->execute();
 
+	//get author id number
 	foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
 				$a_name = $row['name'];
 				$a_id = $row['id'];
-
-				echo "<p>$a_name, id: $a_id</p>";
 			}
 
-	echo "The author id is $a_id";
-
-
+	//if genre is not in database, add genre
 	$stmt_g = $db->prepare('INSERT INTO genre (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_g->bindValue(':name', $g);
 	$stmt_g->execute();
 
+	//get genre id number
 	foreach ($db->query("SELECT name, id FROM genre WHERE name = '$g'") as $row) {
 				$g_name = $row['name'];
 				$g_id = $row['id'];
-
-				echo "<p>$g_name, id: $g_id</p>";
 			}
-
-	echo "The genre id is $g_id";
-
 	
+	//if book is not in database, add book
 	$stmt_b = $db->prepare('INSERT INTO book (title, author_id, genre_id) VALUES (:title, :author_id, :genre_id) ON CONFLICT (title) DO NOTHING');
 	$stmt_b->bindValue(':title', $t);
 	$stmt_b->bindValue(':author_id',  $a_id);
 	$stmt_b->bindValue(':genre_id',  $g_id);
 	$stmt_b->execute();
 
+	//get book id number
 	foreach ($db->query("SELECT title, id FROM book WHERE title = '$t'") as $row) {
 				$b_title = $row['title'];
 				$b_id = $row['id'];
-
-				echo "<p>$b_title, id: $b_id</p>";
 			}
 
-			echo "<p>$user, $is_o, $is_r, $is_w, $d<p>";
-
+	//get user id number
 	foreach ($db->query("SELECT username, id FROM user_info WHERE username = '$user'") as $row) {
 				$u_name = $row['username'];
 				$u_id = $row['id'];
@@ -95,14 +87,7 @@ else {
 				echo "<p>$u_name, id: $u_id</p>";
 			}
 
-
-	/*$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id) VALUES (:user_id, :book_id)');
-	$stmt_b_u->bindValue(':user_id', $u_id);
-	$stmt_b_u->bindValue(':book_id', $b_id);
-	
-	$stmt_b_u->execute();*/
-
-
+	//add book and user info to book_user
 	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read)');
 	$stmt_b_u->bindValue(':user_id', $u_id);
 	$stmt_b_u->bindValue(':book_id', $b_id);
@@ -112,6 +97,7 @@ else {
 	$stmt_b_u->bindValue(':date_read', $d);
 	$stmt_b_u->execute();
 
+	//list new user booklist with links to details page
 	$sql = "SELECT author.name AS name, 
 				book.title AS title, 
 				book_user.book_id AS book_id, 

@@ -12,7 +12,7 @@ $db = get_db();
 </head>
 
 <body>
-	<a href="user_booklist.php">Back to Book List Page</a>
+	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
 	<h1>Your Book Details</h1>
 <div>
 	<?php
