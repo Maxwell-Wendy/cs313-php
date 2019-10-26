@@ -3,6 +3,20 @@ session_start();
 
 require "dbConnect.php";
 $db = get_db();
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>New Book Added</title>
+</head>
+
+<body>
+	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
+	<h1>Your New Book Details</h1>
+<div>
+
+<?php
 
 $user = $_SESSION['user'];
 $a = htmlspecialchars($_POST['author']);
@@ -81,3 +95,6 @@ else {
 
 
 ?>
+</div>
+</body>
+</html>
