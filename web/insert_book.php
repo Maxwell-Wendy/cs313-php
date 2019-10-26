@@ -25,24 +25,24 @@ $g = htmlspecialchars($_POST['genre_1']);
 $d = htmlspecialchars($_POST['date_read']);
 
 if (isset($_POST['is_owned'])) {
-	$is_o = true;
+	$is_o = 1;
 }
 else {
-	$is_o = false;
+	$is_o = 0;
 }
 
 if (isset($_POST['is_read'])) {
-	$is_r = true;
+	$is_r = 1;
 }
 else {
-	$is_r = false;
+	$is_r = 0;
 }
 
 if (isset($_POST['is_wish'])) {
-	$is_w = true;
+	$is_w = 1;
 }
 else {
-	$is_w = false;
+	$is_w = 0;
 }
 	
 	$stmt_a = $db->prepare('INSERT INTO author (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
@@ -86,7 +86,7 @@ else {
 				echo "<p>$b_title, id: $b_id</p>";
 			}
 
-			echo "<p>$is_o, $is_r, $is_w, $d<p>";
+			echo "<p>$user, $is_o, $is_r, $is_w, $d<p>";
 
 
 	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read) DO NOTHING');
