@@ -28,7 +28,7 @@
       ?>
     </div>
 
-  <h1>Sign In</h1>
+  <h1>Sign In to Your Book Catalogue Account</h1>
     <form class="" action="check_login.php" method="POST">
         <label>Username</label><br>
         <input type="text" name="username" placeholder="Username"><br>

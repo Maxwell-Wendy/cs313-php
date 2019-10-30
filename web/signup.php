@@ -16,7 +16,9 @@
         <label>Username</label><br>
         <input type="text" name="username" placeholder="Username"><br>
         <label>Password</label><br>
-        <input type="password" name="password" value="Enter Password"><br>
+        <input type="password" name="password-1" value="Enter Password"><br>
+        <label>Re-enter Password</label><br>
+        <input type="password" name="password_2" value="Re-enter Password"><br>
         <input type="submit" name="" value="Create Account"><br>
     </form>
     
