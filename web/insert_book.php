@@ -24,6 +24,8 @@ $t = htmlspecialchars($_POST['title']);
 $g = htmlspecialchars($_POST['genre_1']);
 $d = htmlspecialchars($_POST['date_read']);
 
+echo "<p>$user, $a, $t, $g, $d</>";
+
 if (isset($_POST['is_owned'])) {
 	$is_o = 1;
 }
