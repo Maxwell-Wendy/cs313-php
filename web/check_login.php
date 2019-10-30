@@ -25,10 +25,16 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 		}
 		else {
 			$badLogin = true;
+			header("Location: signin.php");
+			$_SESSION['is_bad_login'] = $badLogin;
+			die();
 		}
 	}
 	else {
 		$badLogin = true;
+		header("Location: signin.php");
+		$_SESSION['is_bad_login'] = $badLogin;
+		die();
 	}
 }
 $_SESSION['is_bad_login'] = $badLogin;
