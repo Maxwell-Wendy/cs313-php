@@ -20,9 +20,15 @@ $db = get_db();
 
 			echo "<h2>Click book for more details</h2>";
 
-			$username = $_SESSION['user'];
+			if (isset($_SESSION['user'])) {
+				$username = $_SESSION['user'];
+			}
+			else {
+				header("Location: signin.php");
+				die(); 
+			}
 
-			echo "<p>Your username is $username.<p>"
+			echo "<p>Your username is $username.<p>";
 
 			$sql = "SELECT author.name AS name, 
 				book.title AS title, 
