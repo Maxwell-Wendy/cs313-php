@@ -4,7 +4,6 @@
     require "dbConnect.php";
     $db = get_db();
 ?>
-//signUP, welcome, and signin pages
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>

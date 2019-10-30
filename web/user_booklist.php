@@ -16,14 +16,13 @@ $db = get_db();
 	<h1>Your Booklist</h1>
 <div>
 		<?php
-		if (isset($_POST['username'])) {
+		if (isset($_POST['submit_list'])) {
 
 			echo "<h2>Click book for more details</h2>";
 
-			$username = ($_POST['username']);
-			$_SESSION['user'] = $username;
+			$username = $_SESSION['user'];
 
-			echo "<p>Your username is $user.<p>"
+			echo "<p>Your username is $username.<p>"
 
 			$sql = "SELECT author.name AS name, 
 				book.title AS title, 

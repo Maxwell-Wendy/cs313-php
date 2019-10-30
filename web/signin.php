@@ -11,7 +11,7 @@
     }
     
 ?>
-//signin pages
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -19,14 +19,15 @@
     <title>Sign In Here</title>
   </head>
   <body>
+    <div class="failed_login">
+      <?php
 
-  <?php
+      if($badLogin) {
+        echo "Incorrect username or password.<br>";
+      }
+      ?>
+    </div>
 
-  if($badLogin) {
-    echo "Incorrect username or password.<br>";
-  }
-  ?>
-  
   <h1>Sign In</h1>
     <form class="" action="check_login.php" method="POST">
         <label>Username</label><br>
