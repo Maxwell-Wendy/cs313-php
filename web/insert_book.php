@@ -24,7 +24,7 @@ $t = htmlspecialchars($_POST['title']);
 $g = htmlspecialchars($_POST['genre_1']);
 $d = htmlspecialchars($_POST['date_read']);
 
-echo "<p>$user, $a, $t, $g, $d</>";
+echo "<p>$user, $a, $t, $g, $d</p>";
 
 if (isset($_POST['is_owned'])) {
 	$is_o = 1;
@@ -46,6 +46,8 @@ if (isset($_POST['is_wish'])) {
 else {
 	$is_w = 0;
 }
+
+echo "<p>$is_o, $is_r, $is_w</p>";
 	//if author is not in database, add author
 	$stmt_a = $db->prepare('INSERT INTO author (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_a->bindValue('name', $a);
