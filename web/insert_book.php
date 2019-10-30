@@ -53,6 +53,8 @@ else {
 	foreach ($db->query("SELECT name, id FROM author WHERE name = '$a'") as $row) {
 				$a_name = $row['name'];
 				$a_id = $row['id'];
+
+				echo "<p>$a_name, id: $a_id</p>";
 			}
 
 	//if genre is not in database, add genre
@@ -64,6 +66,8 @@ else {
 	foreach ($db->query("SELECT name, id FROM genre WHERE name = '$g'") as $row) {
 				$g_name = $row['name'];
 				$g_id = $row['id'];
+
+				echo "<p>$g_name, id: $g_id</p>";
 			}
 	
 	//if book is not in database, add book
@@ -77,6 +81,8 @@ else {
 	foreach ($db->query("SELECT title, id FROM book WHERE title = '$t'") as $row) {
 				$b_title = $row['title'];
 				$b_id = $row['id'];
+
+				echo "<p>$b_title, id: $b_id</p>";
 			}
 
 	//get user id number
