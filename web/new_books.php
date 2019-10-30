@@ -4,11 +4,21 @@ session_start();
 require "dbConnect.php";
 $db = get_db();
 
-if (isset($_POST['username'])) {
+if (isset($_SESSION['user']))
+{
+	$user = $_SESSION['user'];
+}
+else
+{
+	header("Location: signin.php");
+	die(); 
+}
 
-			$username = ($_POST['username']);
-			$_SESSION['user'] = $username;
-		}
+//if (isset($_POST[''])) {
+
+			//$username = ($_POST['username']);
+			//$_SESSION['user'] = $username;
+		//}
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,7 +29,7 @@ if (isset($_POST['username'])) {
 
 <body>
 	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
-	<h1>Add a new book to your list</h1>
+	<h1>Add a new book to your list, <?php echo $user ?></h1>
 
 	<form name="newbooks" action="insert_book.php" method="POST">
 		<label>Author's name</label>
