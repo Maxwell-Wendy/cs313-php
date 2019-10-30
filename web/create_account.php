@@ -6,10 +6,10 @@ require "dbConnect.php";
 $db = get_db();
 
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = $_POST['password_1'];
 
 if(!isset($_POST['username']) || $username =="" 
-		|| !isset($_POST['password']) || $password == ""){
+		|| !isset($_POST['password_1']) || $password == ""){
     header("Location: signup.php");
     die();
 }
