@@ -3,6 +3,16 @@ session_start();
 
 require "dbConnect.php";
 $db = get_db();
+
+if (isset($_SESSION['user']))
+{
+	$user = $_SESSION['user'];
+}
+else
+{
+	header("Location: signin.php");
+	die(); 
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +26,27 @@ $db = get_db();
 	<a href="assignments.php">Back to Assignments Page</a>
 	<h1>Book Catalogue</h1>
 
+	<h2>Welcome to your personal book catalogue, <?php echo $user ?>!</h2>
+	<p>What would you like to do next?</p>
+
+	<form name="list_users_books" action="user_booklist.php" method="POST">
+		<input type="submit" name="submit_list" value="Show all of your books"><br>
+	</form>
+
+	<form name="new_books" action="new_books.php" method="POST">
+		<input type="submit" name="submit_new" value="Enter new books">
+	</form>
+
+	<a href="signout.php">Sign Out</a>
+
+	<br><br>
+
+
+	<p>This is a growing catalogue. The list of books is expanding as readers include titles from their personal collections. If you would like to see a full list of books in the catalogue, you can do so here.<p>
 
 	<form name="list_all" action="bookcatalogue.php" method="POST">
 		<label>Show list of all books in catalogue (any user)</label><br>
-		<input type="submit" name="show_all">
+		<input type="submit" name="show_all" value="Show All Books">
 	</form>
 
 	<div>
@@ -41,20 +68,5 @@ $db = get_db();
 		}
 		?>
 	</div>
-
-	<form name="list_users_books" action="user_booklist.php" method="POST">
-		<label>Show all books you own</label>
-		<input type="text" name="username" placeholder="Your username"><br>
-		<input type="submit" name="submit">
-	</form>
-
-	<form name="new_books" action="new_books.php" method="POST">
-		<label>Go to page to enter new books</label>
-		<input type="text" name="username" placeholder="Your username"><br>
-		<input type="submit" name="submit">
-	</form>
-
-
-
 </body>
 </html>

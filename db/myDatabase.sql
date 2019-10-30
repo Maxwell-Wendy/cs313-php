@@ -3,15 +3,22 @@ CREATE TABLE user_info (
 	username varchar(80) NOT NULL UNIQUE
 );
 
+ALTER TABLE user_info ADD COLUMN password varchar(120);
+ALTER TABLE user_info ALTER COLUMN password SET NOT NULL;
+
 CREATE TABLE author (
 	id SERIAL NOT NULL primary key,
 	name varchar(80) NOT NULL
 );
 
+ALTER TABLE author ADD CONSTRAINT unique_author_constraint UNIQUE (name);
+
 CREATE TABLE genre (
 	id SERIAL NOT NULL primary key,
 	name varchar(80) NOT NULL
 );
+
+ALTER TABLE genre ADD CONSTRAINT unique_genre_constraint UNIQUE (name);
 
 CREATE TABLE book (
 	id SERIAL NOT NULL primary key,
@@ -19,6 +26,8 @@ CREATE TABLE book (
 	genre_id int REFERENCES genre(id),
 	title TEXT NOT NULL
 );
+
+ALTER TABLE book ADD CONSTRAINT unique_book_constraint UNIQUE (title);
 
 CREATE TABLE book_user (
 	user_id int NOT NULL REFERENCES user_info(id),
@@ -93,11 +102,6 @@ INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist)
 INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read)
 	VALUES (1, 5, false, true, true, '2018-08-12');
 
-ALTER TABLE author ADD CONSTRAINT unique_author_constraint UNIQUE (name);
 
-ALTER TABLE genre ADD CONSTRAINT unique_genre_constraint UNIQUE (name);
-
-ALTER TABLE book ADD CONSTRAINT unique_book_constraint UNIQUE (title);
-
-
-
+UPDATE user_info SET password = 'hashedpassword' WHERE id = 1;
+UPDATE user_info SET password = 'hashedpassword' WHERE id = 2;
