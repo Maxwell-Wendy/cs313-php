@@ -13,6 +13,7 @@ $db = get_db();
 
 <body>
 	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
+	<a href="user_booklist.php">Back to Booklist</a>
 	<h1>You Have Added This Book to Your Catalogue</h1>
 <div>
 
@@ -80,7 +81,7 @@ if (isset($_POST['submit_new'])) {
 		$a_name = $row['name'];
 		$a_id = $row['id'];
 
-		echo "<p>$a_name, id: $a_id</p>";
+		//echo "<p>$a_name, id: $a_id</p>";
 	}
 
 	//if genre is not in database, add genre
@@ -93,7 +94,7 @@ if (isset($_POST['submit_new'])) {
 		$g_name = $row['name'];
 		$g_id = $row['id'];
 
-		echo "<p>$g_name, id: $g_id</p>";
+		//echo "<p>$g_name, id: $g_id</p>";
 	}
 	
 	//if book is not in database, add book
@@ -108,7 +109,7 @@ if (isset($_POST['submit_new'])) {
 		$b_title = $row['title'];
 		$b_id = $row['id'];
 
-		echo "<p>$b_title, id: $b_id</p>";
+		//echo "<p>$b_title, id: $b_id</p>";
 	}
 }
 
@@ -155,7 +156,7 @@ foreach ($db->query("SELECT username, id FROM user_info WHERE username = '$user'
 	$u_name = $row['username'];
 	$u_id = $row['id'];
 
-	echo "<p>$u_name, id: $u_id</p>";
+	//echo "<p>$u_name, id: $u_id</p>";
 }
 
 	//add book and user info to book_user with and without dates
