@@ -66,7 +66,7 @@ if(isset($_POST['submit_changes'])) {
 		$stmt_b_u->execute();
 	}
 
-	header("Location: book_details.php");
+	header("Location: user_booklist.php");
 	die();
 }
 ?>
