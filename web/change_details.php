@@ -13,28 +13,28 @@ if(isset($_POST['submit_changes'])) {
 		die(); 
 	}
 
-	if (isset($_POST['date_read_new'])) {
+	if (isset($_POST['date_read'])) {
 		$d = htmlspecialchars($_POST['date_read']);
 	} 
 	else {
 		$d = NULL;
 	}
 
-	if (isset($_POST['is_owned_new'])) {
+	if (isset($_POST['is_owned'])) {
 		$is_o = 1;
 	}
 	else {
 		$is_o = 0;
 	}
 
-	if (isset($_POST['is_read_new'])) {
+	if (isset($_POST['is_read'])) {
 		$is_r = 1;
 	}
 	else {
 		$is_r = 0;
 	}
 
-	if (isset($_POST['is_wish_new'])) {
+	if (isset($_POST['is_wish'])) {
 		$is_w = 1;
 	}
 	else {
@@ -44,7 +44,7 @@ if(isset($_POST['submit_changes'])) {
 	$b_id = $_POST['book_id'];
 	$u_id = $_POST['user_id'];
 
-	echo " $is_o, $is_r, $is_w, $d, $b_id, $u_id There should be 8 values.";
+	echo " $is_o, $is_r, $is_w, $d, $b_id, $u_id There should be 6 values.";
 
 	//update book and user info to book_user with and without dates
 	if ($d == NULL) {
