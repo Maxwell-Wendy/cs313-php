@@ -6,8 +6,9 @@ $db = get_db();
 
 if (isset($_POST['title'])) {
 	$title = $_POST['title'];
+	$user = $_SESSION['user'];
 
-	foreach ($db->query("SELECT title, id FROM book WHERE title = '$t'") as $row) {
+	foreach ($db->query("SELECT title, id FROM book WHERE title = '$title'") as $row) {
 		$b_title = $row['title'];
 		$b_id = $row['id'];
 
