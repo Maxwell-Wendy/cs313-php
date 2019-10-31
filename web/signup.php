@@ -3,23 +3,29 @@
 
     require "dbConnect.php";
     $db = get_db();
+
+    if (isset($_SESSION['pwd_error'])) {
+      $error_msg = $_SESSION['pwd_error'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up Here</title>
   </head>
   <body>
   <h1>Sign up for a new account here</h1>
     <form class="" action="create_account.php" method="POST">
         <label>Username</label><br>
-        <input type="text" name="username" placeholder="Username"><br>
-        <label>Password</label><br>
-        <input type="password" name="password_1"><br>
+        <input type="text" name="username" placeholder="Username"><br><span style="color:red;">  * required</span><br>
+        <label>Password (must contain at least 7 characters and at least 1 number.</label><br>
+        <input type="password" name="password_1"><span style="color:red;">  * required</span><br>
         <label>Re-enter Password</label><br>
-        <input type="password" name="password_2"><br>
-        <input type="submit" name="" value="Create Account"><br>
+        <input type="password" name="password_2"><br><span style="color:red;">  * required</span><br>
+        <input type="submit" name="submit_pwd" value="Create Account"><br>
+        <span style="color:red;"><?php echo $error_msg; ?></span>
     </form>
     <br>
 
