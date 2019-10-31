@@ -26,6 +26,38 @@ $d = htmlspecialchars($_POST['date_read']);
 
 echo "<p>$user, $a, $t, $g, $d</p>";
 
+if (isset($_POST['author'])) {
+	$a = htmlspecialchars($_POST['author'], ENT_QUOTES, 'UTF-8');
+}
+
+else {
+	echo "An author's name is required.";
+}
+
+if (isset($_POST['title'])) {
+	$t = htmlspecialchars($_POST['title'], ENT_QUOTES, 'UTF-8');
+}
+
+else {
+	echo "A title is required.";
+}
+
+if (isset($_POST['genre_1'])) {
+	$g = htmlspecialchars($_POST['genre_1'], ENT_QUOTES, 'UTF-8');
+}
+
+else {
+	$g = NULL;
+}
+
+if (isset($_POST['date_read'])) {
+	$d = htmlspecialchars($_POST['date_read']);
+}
+
+else {
+	$d = NULL;
+}
+
 if (isset($_POST['is_owned'])) {
 	$is_o = 1;
 }
