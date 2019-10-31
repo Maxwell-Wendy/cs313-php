@@ -3,22 +3,6 @@ session_start();
 
 require "dbConnect.php";
 $db = get_db();
-
-if (isset($_SESSION['user']))
-{
-	$user = $_SESSION['user'];
-}
-else
-{
-	header("Location: signin.php");
-	die(); 
-}
-
-//if (isset($_POST[''])) {
-
-			//$username = ($_POST['username']);
-			//$_SESSION['user'] = $username;
-		//}
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,21 +14,20 @@ else
 <body>
 	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
 	<?php
-		//if (isset($_POST['submit_list'])) {
 
-			echo "<h2>Click book for more details</h2>";
+		echo "<h2>Click book for more details</h2>";
 
-			if (isset($_SESSION['user'])) {
-				$username = $_SESSION['user'];
-			}
-			else {
-				header("Location: signin.php");
-				die(); 
-			}
+		if (isset($_SESSION['user'])) {
+			$username = $_SESSION['user'];
+		}
+		else {
+			header("Location: signin.php");
+			die(); 
+		}
 
-			//echo "<p>Your username is $username.<p>";
+		//echo "<p>Your username is $username.<p>";
 
-			$sql = "SELECT author.name AS name, 
+		$sql = "SELECT author.name AS name, 
 				book.title AS title, 
 				book_user.book_id AS book_id, 
 				book_user.user_id AS user_id 
@@ -55,18 +38,15 @@ else
 			WHERE user_info.username = '$username'
 			ORDER BY name";
 
-			
+		foreach ($db->query($sql) as $row) {
+			$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
 
-			foreach ($db->query($sql) as $row) {
-				$url = "book_details.php?bookid=" . $row['book_id'] . "&userid=" . $row['user_id'];
+			$name = $row['name'];
+			$title = $row['title'];
 
-				$name = $row['name'];
-				$title = $row['title'];
-
-				echo "<a href=\"$url\">$name, <i>$title</i></a><br>";
-			}
-		//}
-		?>
+			echo "<a href=\"$url\">$name, <i>$title</i></a><br>";
+		}
+	?>
 
 	<h1>Add a book from our ever-growing catalogue to your personal catalogue</h1>
 	<form name="add_existing_book" action="insert_book.php" method="POST">
@@ -91,9 +71,7 @@ else
 		<input type="submit" name="submit_existing">
 	</form>
 
-
-
-	<h1>Add a new book to your list, <?php echo $user ?></h1>
+	<h1>Add a new book to your list, <?php echo $username ?></h1>
 
 	<form name="newbooks" action="insert_book.php" method="POST">
 		<label>Author's name</label><br>

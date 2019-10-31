@@ -159,7 +159,7 @@ foreach ($db->query("SELECT username, id FROM user_info WHERE username = '$user'
 	//echo "<p>$u_name, id: $u_id</p>";
 }
 
-	//add book and user info to book_user with and without dates
+//add book and user info to book_user with and without dates
 if ($d == NULL) {
 	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist)');
 	$stmt_b_u->bindValue(':user_id', $u_id);
