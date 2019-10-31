@@ -54,7 +54,7 @@ if(isset($_POST['submit_changes'])) {
 	}
 
 	else {
-		$stmt_b_u = $db->prepare("UPDATE book_user SET is_owned = :is_owned, is_read = :is_read, is_wishlist = :is_wishlist, date_read = :date_read WHERE user_id = '$u_id' AND book_id = '$b_id'");
+		$stmt_b_u = $db->prepare("UPDATE book_user SET is_owned = :is_owned, is_read = :is_read, is_wishlist = :is_wishlist, date_read = :date_read WHERE user_id = $u_id AND book_id = $b_id");
 		$stmt_b_u->bindValue(':is_owned', $is_o);
 		$stmt_b_u->bindValue(':is_read', $is_r);
 		$stmt_b_u->bindValue(':is_wishlist', $is_w);
