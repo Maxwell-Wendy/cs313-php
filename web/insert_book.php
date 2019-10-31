@@ -155,6 +155,7 @@ else {
 			INNER JOIN user_info ON book_user.user_id = user_info.id 
 			INNER JOIN author ON book.author_id = author.id 
 			WHERE user_info.username = '$user' 
+			AND book_user.book_id = '$b_id'
 			ORDER BY name";
 
 			
