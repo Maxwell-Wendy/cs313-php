@@ -63,11 +63,11 @@ else
 		<label>Genre of book</label><br>
 		<input type="text" name="genre_1" placeholder="Genre"><br>
 		<label>Check any of the following that apply:</label><br>
-		<input type="checkbox" name="is_owned">I own this book.<br>
-		<input type="checkbox" name="is_read">I have read this book.<br>
-		<input type="checkbox" name="is_wish">Include in wishlist.<br>
+		<input type="checkbox" name="is_owned_new">I own this book.<br>
+		<input type="checkbox" name="is_read_new">I have read this book.<br>
+		<input type="checkbox" name="is_wish_new">Include in wishlist.<br>
 		<label>Date you last read this book</label><br>
-		<input type="date" name="date_read"><br>
+		<input type="date" name="date_read _new"><br>
 		<input type="submit" name="submit_new">
 	</form>
 

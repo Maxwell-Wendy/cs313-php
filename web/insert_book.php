@@ -42,28 +42,28 @@ if (isset($_POST['submit_new'])) {
 		$g = NULL;
 	}
 
-	if (isset($_POST['date_read'])) {
+	if (isset($_POST['date_read_new'])) {
 		$d = htmlspecialchars($_POST['date_read']);
 	} 
 	else {
 		$d = NULL;
 	}
 
-	if (isset($_POST['is_owned'])) {
+	if (isset($_POST['is_owned_new'])) {
 		$is_o = 1;
 	}
 	else {
 		$is_o = 0;
 	}
 
-	if (isset($_POST['is_read'])) {
+	if (isset($_POST['is_read_new'])) {
 		$is_r = 1;
 	}
 	else {
 		$is_r = 0;
 	}
 
-	if (isset($_POST['is_wish'])) {
+	if (isset($_POST['is_wish_new'])) {
 		$is_w = 1;
 	}
 	else {
@@ -115,10 +115,9 @@ if (isset($_POST['submit_new'])) {
 if (isset($_POST['submit_existing'])) {
 	if (isset($_POST['title'])) {
 		$t = $_POST['title'];
-		foreach ($variable as $key => $value) {
-			($db->query("SELECT title, id FROM book WHERE title = '$t'") as $row) {
-		$b_title = $row['title'];
-		$b_id = $row['id'];
+		foreach ($db->query("SELECT title, id FROM book WHERE title = '$t'") as $row) {
+			$b_title = $row['title'];
+			$b_id = $row['id'];
 		}
 	}
 
