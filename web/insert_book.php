@@ -19,9 +19,9 @@ $db = get_db();
 <?php
 
 $user = $_SESSION['user'];
-$a = htmlspecialchars($_POST['author']);
-$t = htmlspecialchars($_POST['title']);
-$g = htmlspecialchars($_POST['genre_1']);
+$a = htmlspecialchars($_POST['author'], ENT_QUOTES, 'UTF-8');
+$t = htmlspecialchars($_POST['title'], ENT_QUOTES, 'UTF-8');
+$g = htmlspecialchars($_POST['genre_1'], ENT_QUOTES, 'UTF-8');
 $d = htmlspecialchars($_POST['date_read']);
 
 echo "<p>$user, $a, $t, $g, $d</p>";
