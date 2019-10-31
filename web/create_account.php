@@ -7,7 +7,7 @@ $db = get_db();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_pwd'])) {
 	if (isset($_SESSION['pwd_error'])) {
-		unset($_SESSION['pwd_error']));
+		unset($_SESSION['pwd_error']);
 	}
 
 	$username = $_POST['username'];
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_pwd'])) {
 	if(!isset($_POST['username']) || $username =="" 
 			|| !isset($_POST['password_1']) || $password == "" 
 			|| !isset($_POST['password_2']) || $check_password == ""){
-		$_SESSION['pwd_error'] = "You must fill all fields."
+		$_SESSION['pwd_error'] = "You must fill all fields.";
 	    header("Location: signup.php");
 	    die();
 	}
