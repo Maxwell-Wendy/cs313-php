@@ -41,7 +41,7 @@ else
 				INNER JOIN book ON book_user.book_id = book.id 
 				INNER JOIN author ON book.author_id = author.id
 				INNER JOIN genre ON book.genre_id = genre.id
-				WHERE user_info.username <> '$username'
+				WHERE user_info.username <> '$user'
 				ORDER BY title";
 
 				foreach ($db->query($sql) as $row) {
@@ -50,7 +50,7 @@ else
 				}
 			?>
 		</select>
-
+		<br>
 		<label>Check any of the following that apply:</label><br>
 		<input type="checkbox" name="is_owned">I own this book.<br>
 		<input type="checkbox" name="is_read">I have read this book.<br>
