@@ -91,8 +91,6 @@ $db = get_db();
 			<input type="submit" name="submit_changes">
 		</form>
 
-		<?php echo "$bookid, $userid"; ?>
-		
 	</div>
 </body>
 </html>
