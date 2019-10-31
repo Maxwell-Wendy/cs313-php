@@ -86,12 +86,12 @@ $db = get_db();
 			<input type="checkbox" name="is_wish">Include in wishlist.<br>
 			<label>Date you last read this book</label>
 			<input type="date" name="date_read"><br>
-			<input type="hidden" name="book_id" value="<?php echo '$bookid' ?>">
-			<input type="hidden" name="user_id" value="<?php echo '$userid' ?>">
+			<input type="hidden" name="book_id" value="<?php echo $bookid ?>">
+			<input type="hidden" name="user_id" value="<?php echo $userid ?>">
 			<input type="submit" name="submit_changes">
 		</form>
 
-		<?php echo '$bookid, $userid' ?>
+		<?php echo $bookid, $userid ?>
 		
 	</div>
 </body>
