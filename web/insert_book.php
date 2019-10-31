@@ -114,7 +114,7 @@ if (isset($_POST['submit_new'])) {
 
 if (isset($_POST['submit_existing'])) {
 	if (isset($_POST['title'])) {
-		$t = htmlspecialchars($_POST['title']);
+		$t = htmlspecialchars($_POST['title'], ENT_QUOTES, 'UTF-8');
 		foreach ($db->query("SELECT title, id FROM book WHERE title = '$t'") as $row) {
 			$b_title = $row['title'];
 			$b_id = $row['id'];
