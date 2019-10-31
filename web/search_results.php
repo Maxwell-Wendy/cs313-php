@@ -18,9 +18,37 @@ $db = get_db();
 	<div>
 		<?php
 
-		if (isset($_POST['author']) || isset($_POST['genre'])) {
+		if (isset($_POST['author'])) {
 
 			$author = $_POST['author'];
+			$user = $_SESSION['user'];
+
+			$sql = "SELECT author.name AS name, 
+				book.title AS title 
+			FROM book_user 
+			INNER JOIN user_info ON book_user.user_id = user_info.id 
+			INNER JOIN book ON book_user.book_id = book.id 
+			INNER JOIN author ON book.author_id = author.id
+			INNER JOIN genre ON book.genre_id = genre.id
+			WHERE author.name = '$author' 
+			AND user_info.username = '$user'
+			ORDER BY name";
+			
+			foreach ($db->query($sql) as $row) {
+				$name = $row['name'];
+				$title = $row['title'];
+
+				echo "<p>$name, <i>$title</i></p>";
+			}
+		}
+		?>
+	</div>
+
+	<div>
+		<?php
+
+		if (isset($_POST['genre'])) {
+
 			$genre = $_POST['genre'];
 			$user = $_SESSION['user'];
 
@@ -31,8 +59,7 @@ $db = get_db();
 			INNER JOIN book ON book_user.book_id = book.id 
 			INNER JOIN author ON book.author_id = author.id
 			INNER JOIN genre ON book.genre_id = genre.id
-			WHERE (author.name = '$author' 
-				OR genre.name = '$genre') 
+			WHERE genre.name = '$genre'
 			AND user_info.username = '$user'
 			ORDER BY name";
 			
