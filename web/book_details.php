@@ -77,6 +77,20 @@ $db = get_db();
 			}
 			?>
 		</div>
+
+		<div>
+			<form name="change" action="change_details.php" method="POST">
+				<label>Check any of the following that apply:</label><br>
+				<input type="checkbox" name="is_owned">I own this book.<br>
+				<input type="checkbox" name="is_read">I have read this book.<br>
+				<input type="checkbox" name="is_wish">Include in wishlist.<br>
+				<label>Date you last read this book</label>
+				<input type="date" name="date_read"><br>
+				<input type="hidden" name="book_id" value="<?php echo $bookid ?>">
+				<input type="hidden" name="user_id" value="<?php echo $userid ?>">
+				<input type="submit" name="submit_changes">
+			</form>
+		</div>
 	</body>
 	</html>
 
