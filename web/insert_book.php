@@ -13,7 +13,7 @@ $db = get_db();
 
 <body>
 	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
-	<h1>Your New Book Details</h1>
+	<h1>You Have Added This Book to Your Catalogue</h1>
 <div>
 
 <?php
@@ -73,7 +73,7 @@ else {
 	$is_w = 0;
 }
 
-echo "<p>$is_o, $is_r, $is_w</p>";
+//echo "<p>$is_o, $is_r, $is_w</p>";
 	//if author is not in database, add author
 	$stmt_a = $db->prepare('INSERT INTO author (name) VALUES (:name) ON CONFLICT (name) DO NOTHING');
 	$stmt_a->bindValue('name', $a);

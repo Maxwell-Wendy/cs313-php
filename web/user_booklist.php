@@ -16,7 +16,7 @@ $db = get_db();
 	<h1>Your Booklist</h1>
 <div>
 		<?php
-		if (isset($_POST['submit_list'])) {
+		//if (isset($_POST['submit_list'])) {
 
 			echo "<h2>Click book for more details</h2>";
 
@@ -28,7 +28,7 @@ $db = get_db();
 				die(); 
 			}
 
-			echo "<p>Your username is $username.<p>";
+			//echo "<p>Your username is $username.<p>";
 
 			$sql = "SELECT author.name AS name, 
 				book.title AS title, 
@@ -51,45 +51,82 @@ $db = get_db();
 
 				echo "<a href=\"$url\">$name, <i>$title</i></a><br>";
 			}
-		}
+		//}
 		?>
 	</div>
 
 	<h2>Search your books</h2>
+	<div>
+		<form name="fnsearch" action="search_results.php" method="POST">
+			<label>Search your books by author's name</label>
+			<!--<input type="text" name="author" placeholder="Author's name">-->
+			<select name="author">
+				<?php
+				$sql = "SELECT name FROM author ORDER BY name";
 
-	<form name="fnsearch" action="search_results.php" method="POST">
-		<label>Search your books by author's name</label>
-		<input type="text" name="author" placeholder="Author's name">
-		<input type="submit" name="submit">
-	</form>
+				foreach ($db->query($sql) as $row) {
+					$author = $row['name'];
+					echo "<option>$author</option>";
+				}
+				?>
+			</select>
+			<input type="submit" name="submit">
+		</form>
 
-	<form name="gnsearch" action="search_results.php" method="POST">
-		<label>Search your books by genre</label>
-		<select name="genre">
-			<?php
-			$sql = "SELECT genre.name AS genre FROM genre ORDER BY genre";
+		<form name="gnsearch" action="search_results.php" method="POST">
+			<label>Search your books by genre</label>
+			<select name="genre">
+				<?php
+				$sql = "SELECT name FROM genre ORDER BY name";
 
-			foreach ($db->query($sql) as $row) {
-				$genre = $row['genre'];
-				echo "<option>$genre</option>";
-			}
-			?>
-		</select>
-		<input type="submit" name="submit">
-	</form>
-	<form name="ownedsearch" action="search_results.php" method="POST">
-		<label>Show books that you own</label>
-		
-		<input type="submit" name="owned" value="Books Owned">
-	</form><form name="readsearch" action="search_results.php" method="POST">
-		<label>Show books that you have read</label>
-		
-		<input type="submit" name="read" value="Books Read">
-	</form><form name="wishsearch" action="search_results.php" method="POST">
-		<label>Show books on your wishlist</label>
-		
-		<input type="submit" name="wishlist" value="Wishlist">
-	</form>
+				foreach ($db->query($sql) as $row) {
+					$genre = $row['name'];
+					echo "<option>$genre</option>";
+				}
+				?>
+			</select>
+			<input type="submit" name="submit">
+		</form>
+		<form name="ownedsearch" action="search_results.php" method="POST">
+			<label>Show books that you own</label>
+			
+			<input type="submit" name="owned" value="Books Owned">
+		</form><form name="readsearch" action="search_results.php" method="POST">
+			<label>Show books that you have read</label>
+			
+			<input type="submit" name="read" value="Books Read">
+		</form><form name="wishsearch" action="search_results.php" method="POST">
+			<label>Show books on your wishlist</label>
+			
+			<input type="submit" name="wishlist" value="Wishlist">
+		</form>
+
+	</div>
+
+	<h2>Delete a book from your catalogue</h2>
+	<div>
+		<form name="fnsearch" action="delete.php" method="POST">
+			<label>Choose book to delete</label>
+			<!--<input type="text" name="author" placeholder="Author's name">-->
+			<select name="title">
+				<?php
+				$sql = "SELECT title FROM book ORDER BY title";
+
+				foreach ($db->query($sql) as $row) {
+					$book = $row['title'];
+					echo "<option>$book</option>";
+				}
+				?>
+			</select>
+			<input type="submit" name="submit">
+		</form>
+
+	</div>
+
+
+</body>
+</html>
+
 
 
 	</body>
