@@ -44,6 +44,8 @@ if(isset($_POST['submit_changes'])) {
 	$b_id = $_POST['book_id'];
 	$u_id = $_POST['user_id'];
 
+	echo " $is_o, $is_r, $is_w, $d, $b_id, $u_id There should be 8 values.";
+
 	//update book and user info to book_user with and without dates
 	if ($d == NULL) {
 		$stmt_b_u = $db->prepare('UPDATE book_user SET is_owned = :is_owned, is_read = :is_read, is_wishlist = :is_wishlist WHERE user_id = :user_id AND book_id = :book_id');
@@ -66,7 +68,7 @@ if(isset($_POST['submit_changes'])) {
 		$stmt_b_u->execute();
 	}
 
-	header("Location: user_booklist.php");
-	die();
+	//header("Location: user_booklist.php");
+	//die();
 }
 ?>

@@ -85,7 +85,7 @@ $db = get_db();
 		<input type="checkbox" name="is_read_new">I have read this book.<br>
 		<input type="checkbox" name="is_wish_new">Include in wishlist.<br>
 		<label>Date you last read this book</label><br>
-		<input type="date" name="date_read _new"><br>
+		<input type="date" name="date_read_new"><br>
 		<input type="submit" name="submit_new">
 	</form>
 
