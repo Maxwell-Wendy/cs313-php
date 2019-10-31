@@ -20,8 +20,6 @@ $db = get_db();
 
 $user = $_SESSION['user'];
 
-echo "<p>$user, $a, $t, $g, $d</p>";
-
 if (isset($_POST['author'])) {
 	$a = htmlspecialchars($_POST['author'], ENT_QUOTES, 'UTF-8');
 }
@@ -125,15 +123,27 @@ echo "<p>$is_o, $is_r, $is_w</p>";
 				echo "<p>$u_name, id: $u_id</p>";
 			}
 
-	//add book and user info to book_user
-	$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read)');
-	$stmt_b_u->bindValue(':user_id', $u_id);
-	$stmt_b_u->bindValue(':book_id', $b_id);
-	$stmt_b_u->bindValue(':is_owned', $is_o);
-	$stmt_b_u->bindValue(':is_read', $is_r);
-	$stmt_b_u->bindValue(':is_wishlist', $is_w);
-	$stmt_b_u->bindValue(':date_read', $d);
-	$stmt_b_u->execute();
+	//add book and user info to book_user with and without dates
+	if ($d == NULL) {
+		$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist)');
+		$stmt_b_u->bindValue(':user_id', $u_id);
+		$stmt_b_u->bindValue(':book_id', $b_id);
+		$stmt_b_u->bindValue(':is_owned', $is_o);
+		$stmt_b_u->bindValue(':is_read', $is_r);
+		$stmt_b_u->bindValue(':is_wishlist', $is_w);
+		$stmt_b_u->execute();
+	}
+
+	else {
+		$stmt_b_u = $db->prepare('INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read) VALUES (:user_id, :book_id, :is_owned, :is_read, :is_wishlist, :date_read)');
+		$stmt_b_u->bindValue(':user_id', $u_id);
+		$stmt_b_u->bindValue(':book_id', $b_id);
+		$stmt_b_u->bindValue(':is_owned', $is_o);
+		$stmt_b_u->bindValue(':is_read', $is_r);
+		$stmt_b_u->bindValue(':is_wishlist', $is_w);
+		$stmt_b_u->bindValue(':date_read', $d);
+		$stmt_b_u->execute();
+	}
 
 	//list new user booklist with links to details page
 	$sql = "SELECT author.name AS name, 
