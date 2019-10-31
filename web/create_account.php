@@ -58,6 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_pwd'])) {
           die();
         }
     }
+    else {
+    	header("Location: signup.php");
+	    die();
+    }
 }
 
 ?>
