@@ -15,8 +15,6 @@ $db = get_db();
 <body>
 	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
 	
-	
-
 	<h2>Click book for more details</h2>
 	<div>
 	<?php
