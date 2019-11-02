@@ -20,14 +20,12 @@
     <title>Sign In Here</title>
   </head>
   <body>
-    <div class="failed_login">
       <?php
 
       if($badLogin) {
         echo "Incorrect username or password.<br>";
       }
       ?>
-    </div>
 
   <h1>Sign In to Your Book Catalogue Account</h1>
   <div>
@@ -35,7 +33,7 @@
         <label>Username</label><br>
         <input type="text" name="username" placeholder="Username"><br>
         <label>Password</label><br>
-        <input type="password" name="password"><br>
+        <input type="password" name="password" placeholder="Password"><br>
         <input type="submit" name="" value="Sign In"><br>
     </form>
     <br>

@@ -43,9 +43,7 @@ $db = get_db();
 			}
 		}
 		?>
-	</div>
-
-	<div>
+	
 		<?php
 
 		if (isset($_POST['genre'])) {
@@ -72,9 +70,7 @@ $db = get_db();
 			}
 		}
 		?>
-	</div>
 
-	<div>
 		<?php
 		if (isset($_POST['owned'])) {
 			$user = $_SESSION['user'];
@@ -100,9 +96,7 @@ $db = get_db();
 			}
 		}
 		?>
-	</div>
 
-	<div>
 		<?php
 		if (isset($_POST['read'])) {
 			$user = $_SESSION['user'];
@@ -130,9 +124,7 @@ $db = get_db();
 			}
 		}
 		?>
-	</div>
-
-	<div>
+	
 		<?php
 		if (isset($_POST['wishlist'])) {
 			$user = $_SESSION['user'];
