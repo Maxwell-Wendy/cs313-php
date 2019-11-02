@@ -29,15 +29,3 @@ if (isset($_POST['title'])) {
 	die();
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Delete</title>
-</head>
-
-<body>
-<a href="user_booklist.php">Back to Book List Page</a>	
-</body>
-</html>

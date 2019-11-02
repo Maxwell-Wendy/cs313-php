@@ -1,0 +1,16 @@
+div {
+	border-style: double;
+	border-width: medium;
+	border-color: blue;
+	border-radius: 5px;
+	font-size: 1.5em;
+	margin: 25px;
+	padding: 10px;
+}
+
+h1 {
+	font-style: italic;
+	color: blue;
+	margin: 25px;
+	padding: 10px;
+}

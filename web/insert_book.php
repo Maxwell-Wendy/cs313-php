@@ -8,6 +8,7 @@ $db = get_db();
 <html>
 
 <head>
+	<link rel="stylesheet" type="text/css" href="book.css">
 	<title>New Book Added</title>
 </head>
 

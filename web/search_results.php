@@ -8,6 +8,7 @@ $db = get_db();
 <html>
 
 <head>
+	<link rel="stylesheet" type="text/css" href="book.css">
 	<title>Search Results</title>
 </head>
 

@@ -19,6 +19,7 @@ else
 <html>
 
 <head>
+	<link rel="stylesheet" type="text/css" href="book.css">
 	<title>Book Catalogue</title>
 </head>
 
@@ -27,17 +28,19 @@ else
 	<h1>Book Catalogue</h1>
 
 	<h2>Welcome to your personal book catalogue, <?php echo $user ?>!</h2>
-	<p>What would you like to do next?</p>
+	<div>
+		<p>What would you like to do next?</p>
 
-	<form name="list_users_books" action="user_booklist.php" method="POST">
-		<input type="submit" name="submit_list" value="Show all of your books"><br>
-	</form>
+		<form name="list_users_books" action="user_booklist.php" method="POST">
+			<input type="submit" name="submit_list" value="Show all of your books"><br>
+		</form>
 
-	<form name="new_books" action="new_books.php" method="POST">
-		<input type="submit" name="submit_new" value="Enter new books">
-	</form>
+		<form name="new_books" action="new_books.php" method="POST">
+			<input type="submit" name="submit_new" value="Enter new books">
+		</form>
 
-	<a href="signout.php">Sign Out</a>
+		<a href="signout.php">Sign Out</a>
+	</div>
 
 	<br><br>
 
