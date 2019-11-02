@@ -182,7 +182,7 @@ else {
 	$stmt_b_u->execute();
 }
 
-//list new user booklist with links to details page
+//list new user book with links to details page
 $sql = "SELECT author.name AS name, 
 				book.title AS title, 
 				book_user.book_id AS book_id, 

@@ -102,7 +102,4 @@ INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist)
 INSERT INTO book_user (user_id, book_id, is_owned, is_read, is_wishlist, date_read)
 	VALUES (1, 5, false, true, true, '2018-08-12');
 
-
-UPDATE user_info SET password = 'hashedpassword' WHERE id = 1;
-UPDATE user_info SET password = 'hashedpassword' WHERE id = 2;
 UPDATE book SET title = 'Harry Potter and the Sorcerer&#039;s Stone' WHERE id = 4;

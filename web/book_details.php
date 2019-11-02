@@ -81,7 +81,7 @@ $db = get_db();
 
 	<div>
 		<form name="change" action="change_details.php" method="POST">
-			<label>Check any of the following that apply:</label><br>
+			<label>If you want to change your details, check any of the following that apply:</label><br>
 			<input type="checkbox" name="is_owned">I own this book.<br>
 			<input type="checkbox" name="is_read">I have read this book.<br>
 			<input type="checkbox" name="is_wish">Include in wishlist.<br>
