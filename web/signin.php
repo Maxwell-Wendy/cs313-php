@@ -33,7 +33,7 @@
         <label>Username</label><br>
         <input type="text" name="username" placeholder="Username"><br><br>
         <label>Password</label><br>
-        <input type="password" name="password" placeholder="Password"><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
         <input type="submit" name="" value="Sign In"><br>
     </form>
     <br>

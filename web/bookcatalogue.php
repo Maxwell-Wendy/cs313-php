@@ -32,11 +32,11 @@ else
 		<p>What would you like to do next?</p>
 
 		<form name="list_users_books" action="user_booklist.php" method="POST">
-			<input type="submit" name="submit_list" value="Show all of your books"><br>
+			<input type="submit" name="submit_list" value="Show all of your books"><br><br>
 		</form>
 
 		<form name="new_books" action="new_books.php" method="POST">
-			<input type="submit" name="submit_new" value="Enter new books">
+			<input type="submit" name="submit_new" value="Enter new books"><br>
 		</form>
 
 		<a href="signout.php">Sign Out</a>
@@ -45,9 +45,9 @@ else
 	<br><br>
 
 
-	<p>This is a growing catalogue. The list of books is expanding as readers include titles from their personal collections. If you would like to see a full list of books in the catalogue, you can do so here.<p>
+	<p class="tab">This is a growing catalogue. The list of books is expanding as readers include titles from their personal collections. If you would like to see a full list of books in the catalogue, you can do so here.<p>
 
-	<form name="list_all" action="bookcatalogue.php" method="POST">
+	<form class="tab" name="list_all" action="bookcatalogue.php" method="POST">
 		<label>Show list of all books in catalogue (any user)</label><br>
 		<input type="submit" name="show_all" value="Show All Books">
 	</form>

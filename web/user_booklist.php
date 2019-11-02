@@ -83,7 +83,7 @@ $db = get_db();
 		<form name="gnsearch" action="search_results.php" method="POST">
 			<label>Search your books by genre</label><br>
 			<select name="genre">
-				<option> </option>
+		
 				<?php
 				$sql = "SELECT name FROM genre ORDER BY name";
 
@@ -117,7 +117,7 @@ $db = get_db();
 			<label>Choose book to delete</label>
 			<!--<input type="text" name="author" placeholder="Author's name">-->
 			<select name="title">
-				<option> </option>
+				
 				<?php
 					$sql = "SELECT book.title AS title 
 					FROM book_user 
