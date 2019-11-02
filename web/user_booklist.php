@@ -15,12 +15,11 @@ $db = get_db();
 <body>
 	<a href="bookcatalogue.php">Back to Book Catalogue Page</a>
 	<h1>Your Booklist</h1>
-<div>
+
+	<h2>Click book for more details</h2>
+
+	<div>
 		<?php
-		//if (isset($_POST['submit_list'])) {
-
-			echo "<h2>Click book for more details</h2>";
-
 			if (isset($_SESSION['user'])) {
 				$username = $_SESSION['user'];
 			}
@@ -28,8 +27,6 @@ $db = get_db();
 				header("Location: signin.php");
 				die(); 
 			}
-
-			//echo "<p>Your username is $username.<p>";
 
 			$sql = "SELECT author.name AS name, 
 				book.title AS title, 
@@ -52,7 +49,6 @@ $db = get_db();
 
 				echo "<a href=\"$url\">$name, <i>$title</i></a><br>";
 			}
-		//}
 		?>
 	</div>
 
@@ -117,7 +113,7 @@ $db = get_db();
 			<label>Choose book to delete</label>
 			<!--<input type="text" name="author" placeholder="Author's name">-->
 			<select name="title">
-				
+				<option> </option>
 				<?php
 					$sql = "SELECT book.title AS title 
 					FROM book_user 

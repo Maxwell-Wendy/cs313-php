@@ -36,7 +36,7 @@ else
 		</form>
 
 		<form name="new_books" action="new_books.php" method="POST">
-			<input type="submit" name="submit_new" value="Enter new books"><br>
+			<input type="submit" name="submit_new" value="Enter new books"><br><br>
 		</form>
 
 		<a href="signout.php">Sign Out</a>
