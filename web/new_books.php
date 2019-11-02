@@ -45,7 +45,7 @@ $db = get_db();
 			$name = $row['name'];
 			$title = $row['title'];
 
-			echo "<a href=\"$url\">$name, <i>$title</i></a><br>";
+			echo "<a class="tab" href=\"$url\">$name, <i>$title</i></a><br>";
 		}
 	?>
 
