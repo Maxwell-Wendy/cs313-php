@@ -53,6 +53,7 @@ $db = get_db();
 	<div>
 		<form name="add_existing_book" action="insert_book.php" method="POST">
 			<select name="title">
+				<option> </option>
 				<?php
 
 					$sql = "SELECT title FROM book ORDER BY title";
