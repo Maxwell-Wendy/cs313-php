@@ -63,7 +63,7 @@ $db = get_db();
 						INNER JOIN book ON book_user.book_id = book.id 
 						INNER JOIN author ON book.author_id = author.id
 						INNER JOIN genre ON book.genre_id = genre.id
-						WHERE user_info.username <> '$user'
+						WHERE user_info.username <> '$username'
 						ORDER BY title";
 
 					foreach ($db->query($sql) as $row) {
