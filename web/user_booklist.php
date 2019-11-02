@@ -57,7 +57,7 @@ $db = get_db();
 	</div>
 
 	<h2>Enter a new book</h2>
-	<form name="new_books" action="new_books.php" method="POST">
+	<form class="tab" name="new_books" action="new_books.php" method="POST">
 		<input type="submit" name="submit_new" value="Enter new books">
 	</form>
 
