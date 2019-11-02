@@ -64,7 +64,7 @@ $db = get_db();
 	<h2>Search your books</h2>
 	<div>
 		<form name="fnsearch" action="search_results.php" method="POST">
-			<label>Search your books by author's name</label>
+			<label>Search your books by author's name</label><br>
 			<!--<input type="text" name="author" placeholder="Author's name">-->
 			<select name="author">
 				<option> </option>
@@ -81,7 +81,7 @@ $db = get_db();
 		</form>
 
 		<form name="gnsearch" action="search_results.php" method="POST">
-			<label>Search your books by genre</label>
+			<label>Search your books by genre</label><br>
 			<select name="genre">
 				<option> </option>
 				<?php

@@ -3,6 +3,7 @@ div {
 	border-width: medium;
 	border-color: blue;
 	border-radius: 5px;
+	border-width: medium;
 	font-size: 1em;
 	margin: 25px;
 	padding: 10px;
@@ -11,6 +12,16 @@ div {
 h1 {
 	font-style: italic;
 	color: blue;
+	margin: 25px;
+	padding: 10px;
+}
+
+h2 {
+	margin: 25px;
+	padding: 10px;
+}
+
+#new_books {
 	margin: 25px;
 	padding: 10px;
 }
