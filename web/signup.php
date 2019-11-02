@@ -22,7 +22,7 @@
   <div>
     <form class="" action="create_account.php" method="POST">
         <label>Username</label><br>
-        <input type="text" name="username" placeholder="Username"><span style="color:red;"><?php echo $err_star; ?></span><br>
+        <input type="text" name="username" placeholder="Username"><span style="color:red;"><?php echo $err_star; ?></span><br><br>
         <label>Password (must contain at least 7 characters and at least 1 number)</label><br>
         <input type="password" name="password_1"><span style="color:red;"><?php echo $err_star; ?></span><br><br>
         <label>Re-enter Password</label><br>
